@@ -1,0 +1,56 @@
+@import ~styles/abstract/variables
+@import ~styles/abstract/mixins
+
+.accordion-tab
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 20px
+  cursor: pointer
+  user-select: none
+  &__title
+    width: 40%
+  &__meta
+    width: 20%
+    padding: 0 30px
+    display: flex
+    justify-content: center
+    align-items: center
+    &-item
+      font-size: rem(14px)
+      font-weight: 500
+      line-height: 1
+      &:first-child
+        margin-right: 20px
+  &__icon
+    width: 40%
+    display: flex
+    justify-content: flex-end
+    &-circle
+      width: 32px
+      height: 32px
+      border-radius: 50%
+      display: flex
+      justify-content: center
+      align-items: center
+      border: 2px solid $c-gray-2
+    &-line
+      position: relative
+      width: 16px
+      height: 2px
+      border-radius: 5px
+      display: block
+      background-color: $c-gray-2
+      &:after
+        position: absolute
+        content: ''
+        background-color: $c-gray-2
+        transform: rotate(90deg)
+        display: block
+        width: 16px
+        height: 2px
+        border-radius: 5px
+        transition: 0.2s
+      &.is-expanded
+        &:after
+          opacity: 0
