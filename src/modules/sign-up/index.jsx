@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 // UI
 import SignContainer from 'modules/sign-container';
 import Typography from 'components/typography';
@@ -11,14 +10,17 @@ import Button from 'components/button';
 // Styles
 import './styles.sass';
 
-const SignIn = () => {
+const SignUp = () => {
   const handleSubmit = e => {
     e.preventDefault()
   };
   return (
     <SignContainer>
       <Form onSubmit={handleSubmit}>
-        <Typography className="sign-in__title" component="h2">Sign in</Typography>
+        <Typography className="sign-up__title" component="h2">Create an account</Typography>
+        <FormGroup>
+          <Input placeholder="Email" />
+        </FormGroup>
         <FormGroup>
           <Input placeholder="Username" />
         </FormGroup>
@@ -26,17 +28,23 @@ const SignIn = () => {
           <Input placeholder="Password" />
         </FormGroup>
         <FormGroup>
-          <Checkbox label="Remember me" checked={true} />
+          <Input placeholder="Confirm password" />
         </FormGroup>
         <FormGroup>
-          <Button type="submit" variant="primary" size="xl">Sign In</Button>
+          <Checkbox label="I certify that I am of legal gambling age in my juristiction" checked={true} />
         </FormGroup>
-        <Link to="/sign-up">
-          <span className="sign-in__create">Create a new account</span>
-        </Link>
+        <FormGroup>
+          <Checkbox
+            label={<>
+              <span>I have read and agreed to the</span> <a href="http://example.com" className="sign-up__link">Terms and Conditions</a> <span>of this website</span>
+            </>}
+            checked={false}
+          />
+        </FormGroup>
+        <Button type="submit" variant="primary" size="xl">Register</Button>
       </Form>
     </SignContainer>
   );
 };
 
-export default SignIn;
+export default SignUp;

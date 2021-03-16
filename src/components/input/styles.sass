@@ -1,0 +1,40 @@
+@import ~styles/abstract/variables
+@import ~styles/abstract/mixins
+
+input
+  outline: none
+  border: none
+  box-shadow: none
+  margin: 0
+  display: block
+  font-family: inherit
+  &::-ms-clear
+    display: none
+    height: 0
+    width: 0
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+  &[type=number]
+    -moz-appearance: textfield
+
+.input
+  width: 100%
+  max-width: 100%
+  background-color: transparent
+  border: 1px solid $c-gray-2
+  border-radius: $r-primary
+  color: $c-dark-1
+  padding: 15px 20px
+  font-family: inherit
+  font-weight: 500
+  font-size: rem(12px)
+  line-height: 1
+  transition: 0.2s
+  &::placeholder
+    color: $c-dark-3
+  &:focus
+    border-color: $c-gray-3
+  &--invalid
+    border: 1px solid $c-danger !important

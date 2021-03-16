@@ -5,7 +5,8 @@ import ScrollToTop from 'components/scroll-to-top';
 import Header from 'modules/header';
 // Pages
 import HomePage from 'pages/home-page';
-import AuthorizationPage from 'pages/authorization-page';
+import SignInPage from 'pages/sign-in-page';
+import SignUpPage from 'pages/sign-up-page';
 // Styles
 import './app.sass';
 
@@ -17,7 +18,8 @@ const App = () => {
         <ScrollToTop>
           <Switch>
             <Route path="/" exact component={HomePage} />
-            <Route to="/sign-in" component={AuthorizationPage} />
+            <Route path="/sign-in" exact component={SignInPage} />
+            <Route path="/sign-up" exact component={SignUpPage} />
             <Redirect to="/" />
           </Switch>
         </ScrollToTop>
