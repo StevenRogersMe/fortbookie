@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 // UI
 import SignContainer from 'modules/sign-container';
 import Typography from 'components/typography';
@@ -11,7 +11,7 @@ import Button from 'components/button';
 // Styles
 import './styles.sass';
 
-const SignIn = () => {
+const SignIn = ({ history }) => {
   const handleSubmit = e => {
     e.preventDefault()
   };
@@ -29,7 +29,7 @@ const SignIn = () => {
           <Checkbox label="Remember me" checked={true} />
         </FormGroup>
         <FormGroup>
-          <Button type="submit" variant="primary" size="xl">Sign In</Button>
+          <Button type="submit" variant="primary" size="xl" onClick={() => history.push('/events')}>Sign In</Button>
         </FormGroup>
         <Link to="/sign-up">
           <span className="sign-in__create">Create a new account</span>
@@ -39,4 +39,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default withRouter(SignIn);

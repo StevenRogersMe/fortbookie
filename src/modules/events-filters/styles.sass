@@ -1,0 +1,26 @@
+@import ~styles/abstract/_grid
+@import ~styles/abstract/variables
+
+.event-filters
+  background-color: $c-light
+  border-radius: $r-primary
+  padding: 20px
+  &__wrap
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    margin: 0 -20px
+  &__item
+    display: flex
+    align-items: center
+    width: 25%
+    padding: 0 20px
+    &-title
+      margin-right: 15px
+      font-size: rem(12px)
+      line-height: 1
+      font-weight: 700
+      white-space: nowrap
+    &-select
+      width: 100%
+      max-width: 100%

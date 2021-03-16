@@ -7,6 +7,7 @@ import Header from 'modules/header';
 import HomePage from 'pages/home-page';
 import SignInPage from 'pages/sign-in-page';
 import SignUpPage from 'pages/sign-up-page';
+import EventsPage from 'pages/events-page';
 // Styles
 import './app.sass';
 
@@ -20,6 +21,7 @@ const App = () => {
             <Route path="/" exact component={HomePage} />
             <Route path="/sign-in" exact component={SignInPage} />
             <Route path="/sign-up" exact component={SignUpPage} />
+            <Route path="/events" exact component={EventsPage} />
             <Redirect to="/" />
           </Switch>
         </ScrollToTop>
