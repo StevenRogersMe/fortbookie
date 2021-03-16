@@ -1,0 +1,34 @@
+@import ~styles/abstract/_grid
+@import ~styles/abstract/variables
+
+.header-spacer
+  height: $h-height
+.header
+  position: fixed
+  top: 0
+  left: 0
+  height: $h-height
+  width: 100%
+  background-color: $c-light
+  z-index: 100
+  &__container
+    display: flex
+    align-items: center
+    height: 100%
+
+  // Left
+  &__left
+    margin-right: 70px
+  &__logo
+    max-width: 200px
+
+  // Right
+  &__right
+    margin-left: auto
+  &__widgets
+    width: 100%
+    display: flex
+    align-items: center
+  &__widget
+    &:not(:last-child)
+      margin-right: 20px
