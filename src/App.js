@@ -3,6 +3,8 @@ import React from 'react';
 import Header from 'modules/header';
 // Pages
 import HomePage from 'pages/home-page';
+// Styles
+import './app.sass';
 
 const App = () => {
   return (
