@@ -1,5 +1,6 @@
 import React from 'react';
 // UI
+import Button from 'components/button';
 import BetSlips from 'modules/bet-slips';
 import OpenBets from 'modules/open-bets';
 // Styles
@@ -16,7 +17,7 @@ const openBets = [
 
 const Bets = () => {
 
-  const [selectedBet, setSelectedBet] = React.useState('openBets');
+  const [selectedBet, setSelectedBet] = React.useState('betSlips');
   const betActiveClass = name => selectedBet === name ? 'is-active' : '';
   const handleBet = bet => bet !== selectedBet && setSelectedBet(bet);
 
@@ -46,6 +47,11 @@ const Bets = () => {
         </div>
       </div>
       <div className="bets__footer">
+        {selectedBet === 'betSlips' ?
+          <Button variant="primary" size="xl" fluid>Place Bet</Button>
+          :
+          <Button variant="primary" size="xl" fluid>See all transactions</Button>
+        }
       </div>
     </div>
   );
