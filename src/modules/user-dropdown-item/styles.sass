@@ -1,0 +1,27 @@
+@import ~styles/abstract/mixins
+@import ~styles/abstract/variables
+
+.user-dropdown-item
+  display: flex
+  align-items: center
+  border-radius: $r-primary
+  transition: 0.2s
+  padding: 10px 15px
+  cursor: pointer
+  user-select: none
+  &:hover,
+  .is-active
+    background-color: $c-primary-1
+    .user-dropdown-item__title
+      color: $c-light
+    .user-dropdown-item__icon path
+      fill: $c-light
+  &__icon
+    margin-right: 20px
+    transition: 0.2s
+  &__title
+    font-size: rem(14px)
+    font-weight: 700
+    line-height: 1
+    color: $c-dark-3
+    transition: 0.2s

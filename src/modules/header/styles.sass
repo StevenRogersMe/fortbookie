@@ -10,7 +10,7 @@
   height: $h-height
   width: 100%
   background-color: $c-light
-  z-index: 100
+  z-index: 200
   &__container
     display: flex
     align-items: center
@@ -32,3 +32,12 @@
   &__widget
     &:not(:last-child)
       margin-right: 20px
+    &-text
+      font-size: rem(14px)
+      line-height: 1
+      font-weight: 700
+      cursor: pointer
+      color: $c-dark-3
+      transition: 0.2s
+      &:hover
+        color: $c-dark-1

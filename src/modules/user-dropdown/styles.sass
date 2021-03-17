@@ -1,0 +1,66 @@
+@import ~styles/abstract/mixins
+@import ~styles/abstract/variables
+
+.user-dropdown
+  // Overlay
+  &-overlay
+    position: fixed
+    top: $h-height
+    left: 0
+    bottom: 0
+    right: 0
+    z-index: 100
+    background-color: rgba(#ccc, 0.5)
+    opacity: 0
+    visibility: hidden
+    transition: 0.2s
+    pointer-events: none
+    &.is-active
+      opacity: 1
+      visibility: visible
+
+  // Header
+  &__header
+    padding-left: 10px
+    border-left: 1px solid $c-gray-2
+    display: flex
+    align-items: center
+  // Avatar
+  &__avatar
+    width: 45px
+    height: 45px
+    margin-right: 15px
+  // Data
+  &__data
+    padding-right: 15px
+  &__name
+    margin-bottom: 3px
+    display: block
+  &__name,
+  &__pending
+    font-size: rem(12px)
+    line-height: 1
+    font-weight: 600
+    color: $c-dark-3
+  &__balance
+    font-size: rem(14px)
+    font-weight: 500
+    line-height: 1
+    color: $c-dark-1
+    margin-right: 10px
+  &__icon
+    transition: 0.2s
+    &.is-active
+      transform: rotate(180deg)
+
+  // Box
+  &__box
+    min-width: 300px
+    margin-top: 40px
+    padding: 20px
+    z-index: 101
+  &__item
+    &:last-child
+      margin-top: 15px
+      padding-top: 15px
+      border-top: 1px solid $c-gray-2

@@ -14,7 +14,7 @@ import './app.sass';
 const App = () => {
   return (
     <div className="app">
-      <Header />
+      <Header isSigned={true} />
       <div className="app__wrap">
         <ScrollToTop>
           <Switch>

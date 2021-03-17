@@ -4,12 +4,13 @@ import { withRouter, Link } from 'react-router-dom';
 import Container from 'components/container';
 import Button from 'components/button';
 import Regions from 'modules/regions';
+import UserDropdown from 'modules/user-dropdown';
 // Assets
 import { ReactComponent as Logo } from 'assets/images/logo.svg';
 // Styles
 import './styles.sass';
 
-const Header = ({ history }) => {
+const Header = ({ history, isSigned }) => {
   return (
     <Fragment>
       <div className="header-spacer"></div>
@@ -24,14 +25,28 @@ const Header = ({ history }) => {
             <Regions />
           </div>
           <div className="header__right">
-            <div className="header__widgets">
-              <div className="header__widget">
-                <Button size="lg" variant="accent" onClick={() => history.push('/sign-up')}>Sign Up</Button>
+            {isSigned ?
+              <div className="header__widgets">
+                <div className="header__widget">
+                  <div className="header__widget-text">Withdraw</div>
+                </div>
+                <div className="header__widget">
+                  <Button size="lg" variant="accent">Deposit</Button>
+                </div>
+                <div className="header__widget">
+                  <UserDropdown />
+                </div>
               </div>
-              <div className="header__widget">
-                <Button size="lg" variant="primary" onClick={() => history.push('/sign-in')}>Sign In</Button>
+              :
+              <div className="header__widgets">
+                <div className="header__widget">
+                  <Button size="lg" variant="accent" onClick={() => history.push('/sign-up')}>Sign Up</Button>
+                </div>
+                <div className="header__widget">
+                  <Button size="lg" variant="primary" onClick={() => history.push('/sign-in')}>Sign In</Button>
+                </div>
               </div>
-            </div>
+            }
           </div>
         </Container>
       </header>
