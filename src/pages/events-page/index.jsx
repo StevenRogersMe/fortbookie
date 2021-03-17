@@ -1,16 +1,26 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+// Redux
+import { eventsRequested } from 'redux/events/actions';
+import { selectEvents } from 'redux/events/selectors';
 // UI
 import Layout from 'modules/layout';
 import EventsFilters from 'modules/events-filters';
 import Bets from 'modules/bets';
 import Accordion from 'components/accordion';
 import List from 'components/list';
+import ErrorIndicator from 'components/error-indicator';
+import Spinner from 'components/spinner';
 // Styles
 import './styles.sass';
-import { data } from './data';
 
-const EventsPage = () => {
+const EventsPage = ({ eventsRequested, events: { loading, data, error } }) => {
   const [selectedBets, setSelectedBets] = React.useState([]);
+
+  React.useLayoutEffect(() => {
+    eventsRequested();
+  }, [eventsRequested]);
 
   const handleSelectBet = (id) => {
     setSelectedBets(selected => {
@@ -20,7 +30,7 @@ const EventsPage = () => {
       } else {
         newArray = selected.filter(item => item !== id);
       }
-      return newArray
+      return newArray;
     })
   };
 
@@ -32,14 +42,20 @@ const EventsPage = () => {
         </div>
         <div className="events-page__preview">
           <div className="events-page__list">
-            {data.map(({ id, title, date, time, games }, idx) => (
-              <Accordion expanded={idx === 0} className="events-page__list-item" key={id}>
-                <Accordion.Tab title={title} date={date} time={time} />
-                <Accordion.Content>
-                  <List header="Winner" items={games} handleSelect={handleSelectBet} selected={selectedBets} />
-                </Accordion.Content>
-              </Accordion>
-            ))}
+            {error && <ErrorIndicator retry={eventsRequested} />}
+            {(!error && loading) && <Spinner boxed />}
+            {(!error && !loading && data) &&
+              <Fragment>
+                {data.map(({ id, title, date, time, games }, idx) => (
+                  <Accordion expanded={idx === 0} className="events-page__list-item" key={id}>
+                    <Accordion.Tab title={title} date={date} time={time} />
+                    <Accordion.Content>
+                      <List header="Winner" items={games} handleSelect={handleSelectBet} selected={selectedBets} />
+                    </Accordion.Content>
+                  </Accordion>
+                ))}
+              </Fragment>
+            }
           </div>
           <div className="events-page__bets">
             <Bets />
@@ -50,4 +66,11 @@ const EventsPage = () => {
   );
 };
 
-export default EventsPage;
+const mapStateToProps = createStructuredSelector({
+  events: selectEvents
+});
+const mapDispatchToProps = {
+  eventsRequested
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(EventsPage);
