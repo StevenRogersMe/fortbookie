@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 // UI
 import Dropdown from 'components/dropdown';
 import UserDropdownItem from 'modules/user-dropdown-item';
@@ -15,6 +16,8 @@ import { ReactComponent as Rewards } from 'assets/images/user/reward.svg';
 import { ReactComponent as Settings } from 'assets/images/user/settings.svg';
 import { ReactComponent as Support } from 'assets/images/user/support.svg';
 import { ReactComponent as LogOut } from 'assets/images/user/logout.svg';
+// Context
+import { signInContext } from '../../app';
 
 const items = [
   { title: 'Transactions', icon: Transaction },
@@ -26,8 +29,9 @@ const items = [
   { title: 'Help', icon: Support },
 ];
 
-const UserDropdown = () => {
+const UserDropdown = ({ history }) => {
   const [isActive, setIsActive] = React.useState(false);
+  const { handleSignOut } = React.useContext(signInContext);
   const handleDropdown = () => setIsActive(isActive => !isActive);
 
   return (
@@ -56,7 +60,10 @@ const UserDropdown = () => {
             </div>
           ))}
           <div className="user-dropdown__item">
-            <UserDropdownItem title="Log Out" icon={LogOut} />
+            <UserDropdownItem title="Log Out" icon={LogOut} onClick={() => {
+              handleSignOut();
+              history.push('/');
+            }} />
           </div>
         </Dropdown.Box>
       </Dropdown>
@@ -64,4 +71,4 @@ const UserDropdown = () => {
   );
 };
 
-export default UserDropdown;
+export default withRouter(UserDropdown);

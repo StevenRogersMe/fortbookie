@@ -10,11 +10,16 @@ import Checkbox from 'components/checkbox';
 import Button from 'components/button';
 // Styles
 import './styles.sass';
+// Context
+import { signInContext } from '../../app';
 
 const SignIn = ({ history }) => {
+  const { handleSignIn } = React.useContext(signInContext);
+
   const handleSubmit = e => {
     e.preventDefault()
   };
+
   return (
     <SignContainer>
       <Form onSubmit={handleSubmit}>
@@ -29,7 +34,10 @@ const SignIn = ({ history }) => {
           <Checkbox label="Remember me" checked={true} />
         </FormGroup>
         <FormGroup>
-          <Button type="submit" variant="primary" size="xl" onClick={() => history.push('/events')}>Sign In</Button>
+          <Button type="submit" variant="primary" size="xl" onClick={() => {
+            handleSignIn();
+            history.push('/events');
+          }}>Sign In</Button>
         </FormGroup>
         <Link to="/sign-up">
           <span className="sign-in__create">Create a new account</span>

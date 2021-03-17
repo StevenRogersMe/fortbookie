@@ -11,21 +11,29 @@ import EventsPage from 'pages/events-page';
 // Styles
 import './app.sass';
 
+export const signInContext = React.createContext();
+
 const App = () => {
+  const [isSigned, setIsSigned] = React.useState(false);
+  const handleSignIn = () => setIsSigned(true);
+  const handleSignOut = () => setIsSigned(false);
+
   return (
     <div className="app">
-      <Header isSigned={true} />
-      <div className="app__wrap">
-        <ScrollToTop>
-          <Switch>
-            <Route path="/" exact component={HomePage} />
-            <Route path="/sign-in" exact component={SignInPage} />
-            <Route path="/sign-up" exact component={SignUpPage} />
-            <Route path="/events" exact component={EventsPage} />
-            <Redirect to="/" />
-          </Switch>
-        </ScrollToTop>
-      </div>
+      <signInContext.Provider value={{ isSigned, handleSignIn, handleSignOut }}>
+        <Header isSigned={isSigned} />
+        <div className="app__wrap">
+          <ScrollToTop>
+            <Switch>
+              <Route path="/" exact component={HomePage} />
+              <Route path="/sign-in" exact component={SignInPage} />
+              <Route path="/sign-up" exact component={SignUpPage} />
+              <Route path="/events" exact component={EventsPage} />
+              <Redirect to="/" />
+            </Switch>
+          </ScrollToTop>
+        </div>
+      </signInContext.Provider>
     </div>
   );
 };
