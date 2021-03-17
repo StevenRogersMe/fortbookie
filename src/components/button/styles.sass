@@ -8,18 +8,6 @@
   &:focus
     background: lighten($color, 25%)
 
-button
-  border: none
-  padding: 0
-  margin: 0
-  background-color: transparent
-  cursor: pointer
-  font-family: inherit
-  &:focus
-    outline: none
-button::-moz-focus-inner
-  border: 0
-
 .button
   position: relative
   display: inline-flex
@@ -35,20 +23,13 @@ button::-moz-focus-inner
   border-radius: $r-primary
   color: $c-light
   margin-bottom: 5px
-  &--fluid
-    width: 100%
 
   // Variants
   &--primary
     +b-variant($c-primary-1)
   &--accent
     +b-variant($c-accent-1)
-    color: $c-dark
-
-  // States
-  &--disabled
-    opacity: 0.6
-    pointer-events: none
+    color: $c-dark-1
 
   // Sizes
   &--xl
@@ -57,3 +38,13 @@ button::-moz-focus-inner
     font-size: rem(16px)
   &--lg
     min-width: 175px
+
+  // States
+  &--disabled
+    opacity: 0.6
+    pointer-events: none
+  &--no-shadow
+    box-shadow: none
+    margin-bottom: 0
+  &--fluid
+    min-width: 100%

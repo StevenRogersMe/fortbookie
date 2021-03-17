@@ -2,6 +2,7 @@ import React from 'react';
 // UI
 import Layout from 'modules/layout';
 import EventsFilters from 'modules/events-filters';
+import Bets from 'modules/bets';
 import Accordion from 'components/accordion';
 import List from 'components/list';
 // Styles
@@ -41,6 +42,7 @@ const EventsPage = () => {
             ))}
           </div>
           <div className="events-page__bets">
+            <Bets />
           </div>
         </div>
       </Layout>

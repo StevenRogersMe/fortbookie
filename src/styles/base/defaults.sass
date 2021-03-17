@@ -8,7 +8,7 @@ html, body
   font-size: $base-font-size
   font-weight: 400
   text-align: left
-  color: $c-dark
+  color: $c-dark-1
   height: 100%
 body
   position: relative
@@ -34,3 +34,33 @@ h1, h2, h3, h4, h5, h6, p
 img
   display: block
   max-width: 100%
+
+button
+  border: none
+  padding: 0
+  margin: 0
+  background-color: transparent
+  cursor: pointer
+  font-family: inherit
+  &:focus
+    outline: none
+button::-moz-focus-inner
+  border: 0
+
+input
+  outline: none
+  border: none
+  box-shadow: none
+  margin: 0
+  display: block
+  font-family: inherit
+  &::-ms-clear
+    display: none
+    height: 0
+    width: 0
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+  &[type=number]
+    -moz-appearance: textfield

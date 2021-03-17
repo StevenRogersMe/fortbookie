@@ -1,0 +1,52 @@
+@import ~styles/abstract/mixins
+@import ~styles/abstract/variables
+
+.open-bet
+  padding: 15px 0
+  border-bottom: 1px solid $c-gray-2
+  // Row
+  &__row
+    display: flex
+    justify-content: space-between
+    &:not(:last-child)
+      margin-bottom: 15px
+
+  // Meta
+  &__meta
+    &-item
+      font-size: rem(12px)
+      line-height: 1.5
+      font-weight: 500
+      color: $c-dark-3
+      &-accent
+        font-weight: 700
+      &:last-child
+        text-align: right
+
+  // Placed
+  &__placed
+    &-title,
+    &-price
+      font-size: rem(12px)
+      line-height: 1
+      font-weight: 700
+      color: $c-dark-1
+    &-price
+      color: $c-accent-2
+
+  // Details
+  &__details
+    &-title,
+    &-price
+      font-size: rem(12px)
+      line-height: 1
+      font-weight: 700
+      color: $c-dark-1
+
+  // Footer
+  &__footer
+    &-title
+      font-size: rem(12px)
+      line-height: 1
+      font-weight: 500
+      color: $c-dark-3

@@ -1,0 +1,46 @@
+@import ~styles/abstract/mixins
+@import ~styles/abstract/variables
+
+.open-bets
+  &__empty
+    padding: 150px 0
+    text-align: center
+    &-title
+      margin-bottom: 10px
+    &-message
+      font-size: rem(16px)
+      font-weight: 400
+      line-height: 1
+      color: $c-dark-3
+    &-link
+      font-weight: 600
+      color: $c-primary-1
+
+  // Content
+  &__content
+    padding-top: 15px
+  &__header
+    position: relative
+    display: flex
+    justify-content: space-between
+    padding: 10px 0
+    z-index: 1
+    &::after
+      position: absolute
+      content: ''
+      top: 0
+      left: -20px
+      width: calc( 100% + 40px )
+      height: 100%
+      background-color: $c-gray-2
+      z-index: -1
+    &-item
+      font-size: rem(12px)
+      line-height: 1.5
+      font-weight: 500
+      color: $c-dark-3
+      &-accent
+        font-weight: 700
+      &:last-child
+        text-align: right
+

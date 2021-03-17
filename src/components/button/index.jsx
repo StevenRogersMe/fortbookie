@@ -3,13 +3,14 @@ import classNames from 'classnames';
 // Styles
 import './styles.sass';
 
-const Button = ({ children, href, className, variant, size, disabled, onClick, fluid, type, style }) => {
+const Button = ({ children, href, className, variant, size, disabled, onClick, fluid, noShadow, type, style }) => {
   const classes = classNames({
     'button': !disabled,
     'button--disabled': disabled,
+    'button--no-shadow': noShadow,
+    'button--fluid': fluid,
     [`button--${variant}`]: variant,
     [`button--${size}`]: size,
-    [`button--${fluid}`]: fluid,
     [className]: className
   });
 
