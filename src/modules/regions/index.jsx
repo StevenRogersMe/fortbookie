@@ -16,6 +16,7 @@ const Regions = () => {
       {regions.map(({ id, name }) => (
         <li key={id} className={`regions__item ${id === 1 ? 'is-active' : ''}`}>{name}</li>
       ))}
+      <li className="regions__item regions__item--alt">• LIVE</li>
     </ul>
   );
 };
