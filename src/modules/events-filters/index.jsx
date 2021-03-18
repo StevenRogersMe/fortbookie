@@ -25,21 +25,6 @@ const EventsFilters = () => {
           </div>
         </div>
         <div className="event-filters__item">
-          <div className="event-filters__item-title">Sports</div>
-          <div className="event-filters__item-select">
-            <Select
-              defaultValue={{ label: "All", value: 'All' }}
-              options={[
-                { value: 'All', label: 'All' },
-                { value: 'football', label: 'Football' },
-                { value: 'hockey', label: 'Hockey' },
-                { value: 'baseball', label: 'Baseball' },
-                { value: 'cricket', label: 'Cricket' },
-              ]}
-            />
-          </div>
-        </div>
-        <div className="event-filters__item">
           <div className="event-filters__item-title">Event</div>
           <div className="event-filters__item-select">
             <Select
