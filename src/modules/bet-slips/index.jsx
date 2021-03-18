@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 // Redux
-import { selectBetSlips } from 'redux/bet-slips/selectors';
+import { selectBetSlips, selectTotalBetSlips, selectTotalBetSlipsRisk, selectTotalBetSlipsWinnings } from 'redux/bet-slips/selectors';
 // Redux
 import { removeBetSlip } from 'redux/bet-slips/actions';
 // UI
@@ -12,7 +12,7 @@ import Scrollbar from 'components/scrollbar';
 // Styles
 import './styles.sass';
 
-const BetSlips = ({ betSlips, removeBetSlip }) => {
+const BetSlips = ({ betSlips, totalBetSlips, removeBetSlip, totalBetSlipsRisk, totalBetSlipsWinnings }) => {
   return (
     <div className="bet-slips">
       <div className="bet-slips__container">
@@ -39,16 +39,16 @@ const BetSlips = ({ betSlips, removeBetSlip }) => {
         <div className="bet-slips__totals">
           <div className="bet-slips__total">
             <div className="bet-slips__total-title">Total Bets</div>
-            <div className="bet-slips__total-value">0</div>
+            <div className="bet-slips__total-value">{totalBetSlips}</div>
           </div>
           <div className="bet-slips__total">
             <div className="bet-slips__total-title">Total Risk</div>
-            <div className="bet-slips__total-value bet-slips__total-value--alt">0</div>
+            <div className="bet-slips__total-value bet-slips__total-value--alt">{totalBetSlipsRisk}</div>
           </div>
         </div>
         <div className="bet-slips__winnings">
           <div className="bet-slips__winnings-title">Possible winnings</div>
-          <div className="bet-slips__winnings-value">0$</div>
+          <div className="bet-slips__winnings-value">{totalBetSlipsWinnings}$</div>
         </div>
       </div>
     </div>
@@ -56,7 +56,10 @@ const BetSlips = ({ betSlips, removeBetSlip }) => {
 };
 
 const mapStateToProps = createStructuredSelector({
-  betSlips: selectBetSlips
+  betSlips: selectBetSlips,
+  totalBetSlips: selectTotalBetSlips,
+  totalBetSlipsRisk: selectTotalBetSlipsRisk,
+  totalBetSlipsWinnings: selectTotalBetSlipsWinnings,
 });
 
 const mapDispatchToProps = {
