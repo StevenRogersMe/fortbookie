@@ -2,6 +2,7 @@ import React from 'react';
 // UI
 import OpenBet from 'modules/open-bet';
 import Typography from 'components/typography';
+import Scrollbar from 'components/scrollbar';
 // Styles
 import './styles.sass';
 
@@ -29,21 +30,23 @@ const OpenBets = ({ bets }) => {
               </p>
             </div>
             <div className="open-bets__items">
-              {bets.map(({ id, date, time, betAmount, remainingBalance, placed, placedPrice, game, gamePrice, title }) => (
-                <div key={id} className="open-bets__item">
-                  <OpenBet
-                    date={date}
-                    time={time}
-                    betAmount={betAmount}
-                    remainingBalance={remainingBalance}
-                    placed={placed}
-                    placedPrice={placedPrice}
-                    game={game}
-                    gamePrice={gamePrice}
-                    title={title}
-                  />
-                </div>
-              ))}
+              <Scrollbar className="open-bets__items-scroll">
+                {bets.map(({ id, date, time, betAmount, remainingBalance, placed, placedPrice, game, gamePrice, title }) => (
+                  <div key={id} className="open-bets__item">
+                    <OpenBet
+                      date={date}
+                      time={time}
+                      betAmount={betAmount}
+                      remainingBalance={remainingBalance}
+                      placed={placed}
+                      placedPrice={placedPrice}
+                      game={game}
+                      gamePrice={gamePrice}
+                      title={title}
+                    />
+                  </div>
+                ))}
+              </Scrollbar>
             </div>
           </div>
         }
