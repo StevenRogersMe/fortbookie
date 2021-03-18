@@ -1,17 +1,17 @@
 import { takeLatest, put } from 'redux-saga/effects';
-import { openBetsRequested, openBetsLoaded, openBetsError } from './actions';
+import { fetchOpenBetsRequest, fetchOpenBetsSuccess, fetchOpenBetsFailure } from './actions';
 import OpenBetsService from 'services/open-bets-service';
 const openBetsService = new OpenBetsService();
 
 function* fetchOpenBetsDataWorker() {
   try {
     const data = yield openBetsService.getOpenBets();
-    yield put(openBetsLoaded(data));
+    yield put(fetchOpenBetsSuccess(data));
   } catch ({ message }) {
-    yield put(openBetsError(message));
+    yield put(fetchOpenBetsFailure(message));
   }
 }
 
 export function* fetchOpenBetsData() {
-  yield takeLatest(openBetsRequested().type, fetchOpenBetsDataWorker);
+  yield takeLatest(fetchOpenBetsRequest().type, fetchOpenBetsDataWorker);
 }
