@@ -1,39 +1,9 @@
 @import ~styles/abstract/variables
 @import ~styles/abstract/mixins
 
-.list
-  border: 1px solid $c-gray-4
-  border-radius: $r-primary
-  &__header
-    font-size: rem(12px)
-    font-weight: 600
-    line-height: 1
-    color: $c-dark-3
-    padding: 15px 30px
-    background-color: $c-gray-1
-  &__items
-    display: flex
-    flex-wrap: wrap
-  &__item
-    width: 50%
-    display: flex
-    justify-content: space-between
-    align-items: center
-    padding: 12px 30px
-    cursor: pointer
-    background-color: $c-light
-    border: 1px solid $c-gray-1
-    border-bottom: 0
-    transition: 0.2s
-    &.is-active
-      background: rgba($c-primary-1, 0.1)
-    &:nth-child(odd)
-      border-right: 0
-    &-game
-      font-size: rem(12px)
-      font-weight: 500
-      line-height: 1
-    &-price
-      font-size: rem(16px)
-      font-weight: 700
-      line-height: 1
+.custom-scroll
+  .simplebar-scrollbar:before
+    background: $c-dark-3
+    right: 0
+    left: auto
+    width: 5px
