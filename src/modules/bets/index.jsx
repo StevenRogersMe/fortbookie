@@ -9,7 +9,7 @@ import OpenBets from 'modules/open-bets';
 // Styles
 import './styles.sass';
 
-const Bets = ({ betSlips, removeAllBetSlips }) => {
+const Bets = ({ removeAllBetSlips }) => {
 
   const [selectedTab, setSelectedTab] = React.useState('betSlips');
   const tabActiveClass = name => selectedTab === name ? 'is-active' : '';
@@ -34,7 +34,7 @@ const Bets = ({ betSlips, removeAllBetSlips }) => {
         </div>
         <div className="bets__content">
           {selectedTab === 'betSlips' ?
-            <BetSlips slips={betSlips} />
+            <BetSlips />
             :
             <OpenBets />
           }
