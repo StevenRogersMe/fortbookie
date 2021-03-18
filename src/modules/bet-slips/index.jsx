@@ -5,6 +5,7 @@ import { removeBetSlip } from 'redux/bet-slips/actions';
 // UI
 import BetSlip from 'modules/bet-slip';
 import Typography from 'components/typography';
+import Scrollbar from 'components/scrollbar';
 // Styles
 import './styles.sass';
 
@@ -21,11 +22,13 @@ const BetSlips = ({ slips, removeBetSlip }) => {
           </div>
           :
           <div className="bet-slips__items">
-            {slips.map(({ id, title, game, price, risk, toWin }) => (
-              <div key={id} className="bet-slips__item">
-                <BetSlip title={title} game={game} price={price} risk={risk} toWin={toWin} removeBetSlip={() => removeBetSlip(id)} />
-              </div>
-            ))}
+            <Scrollbar className="bet-slips__items-scroll">
+              {slips.map(({ id, title, game, price, risk, toWin }) => (
+                <div key={id} className="bet-slips__item">
+                  <BetSlip title={title} game={game} price={price} risk={risk} toWin={toWin} removeBetSlip={() => removeBetSlip(id)} />
+                </div>
+              ))}
+            </Scrollbar>
           </div>
         }
       </div>

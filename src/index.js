@@ -8,6 +8,7 @@ import App from './app';
 import { store } from 'redux/store';
 // Styles
 import './index.sass';
+import 'simplebar/dist/simplebar.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
