@@ -48,7 +48,7 @@ const EventsPage = ({ eventsRequested, events: { loading, data, error }, betSlip
             }
           </div>
           <div className="events-page__bets">
-            <Bets betSlips={betSlips} />
+            <Bets />
           </div>
         </div>
       </Layout>

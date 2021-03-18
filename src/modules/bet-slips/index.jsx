@@ -1,5 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+// Redux
+import { selectBetSlips } from 'redux/bet-slips/selectors';
 // Redux
 import { removeBetSlip } from 'redux/bet-slips/actions';
 // UI
@@ -9,11 +12,11 @@ import Scrollbar from 'components/scrollbar';
 // Styles
 import './styles.sass';
 
-const BetSlips = ({ slips, removeBetSlip }) => {
+const BetSlips = ({ betSlips, removeBetSlip }) => {
   return (
     <div className="bet-slips">
       <div className="bet-slips__container">
-        {slips.length === 0 ?
+        {betSlips.length === 0 ?
           <div className="bet-slips__empty">
             <Typography component="h3" className="bet-slips__empty-title">Bet Slip is Empty</Typography>
             <p className="bet-slips__empty-message">
@@ -23,7 +26,7 @@ const BetSlips = ({ slips, removeBetSlip }) => {
           :
           <div className="bet-slips__items">
             <Scrollbar className="bet-slips__items-scroll">
-              {slips.map(({ id, title, game, price, risk, toWin }) => (
+              {betSlips.map(({ id, title, game, price, risk, toWin }) => (
                 <div key={id} className="bet-slips__item">
                   <BetSlip title={title} game={game} price={price} risk={risk} toWin={toWin} removeBetSlip={() => removeBetSlip(id)} />
                 </div>
@@ -52,8 +55,12 @@ const BetSlips = ({ slips, removeBetSlip }) => {
   );
 };
 
+const mapStateToProps = createStructuredSelector({
+  betSlips: selectBetSlips
+});
+
 const mapDispatchToProps = {
   removeBetSlip
 };
 
-export default connect(null, mapDispatchToProps)(BetSlips);
+export default connect(mapStateToProps, mapDispatchToProps)(BetSlips);

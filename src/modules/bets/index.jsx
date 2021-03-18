@@ -9,11 +9,6 @@ import OpenBets from 'modules/open-bets';
 // Styles
 import './styles.sass';
 
-const openBets = [
-  { id: 1, date: "2/21/21", time: "6:21 PM", betAmount: '-$10.00', remainingBalance: '$100.00', placed: 'Single To Win', placedPrice: '$100.00', game: 'NRG СІіх, SEN BUGHA 父, FаZe Bizzle', gamePrice: '$100.00', title: 'Season 5 Trio FNCS Finals: Winner' },
-  { id: 2, date: "2/21/21", time: "6:21 PM", betAmount: '-$10.00', remainingBalance: '$100.00', placed: 'Single To Win', placedPrice: '$100.00', game: 'BBG Haz, Scoped on SARMS, ENDLESS TRAGIX', gamePrice: '$100', title: 'Season 5 Trio FNCS Finals: Winner' },
-];
-
 const Bets = ({ betSlips, removeAllBetSlips }) => {
 
   const [selectedTab, setSelectedTab] = React.useState('betSlips');
@@ -41,7 +36,7 @@ const Bets = ({ betSlips, removeAllBetSlips }) => {
           {selectedTab === 'betSlips' ?
             <BetSlips slips={betSlips} />
             :
-            <OpenBets bets={openBets} />
+            <OpenBets />
           }
         </div>
       </div>
