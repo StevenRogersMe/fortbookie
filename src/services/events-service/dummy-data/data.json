@@ -7,43 +7,59 @@
     "games": [
       {
         "id": "a1",
-        "name": "LG Slackes, 1P Acornski, G2 Jаhq",
-        "price": "+400"
+        "game": "LG Slackes, 1P Acornski, G2 Jаhq",
+        "price": "+400",
+        "risk": "",
+        "toWin": ""
       },
       {
         "id": "a2",
-        "name": "LG PAMPER, C9 nosh, EP PAMPER",
-        "price": "+500"
+        "game": "LG PAMPER, C9 nosh, EP PAMPER",
+        "price": "+500",
+        "risk": "10",
+        "toWin": "100"
       },
       {
         "id": "a3",
-        "name": "BBG Bucke, BBG Khanasty, MackWood1x.",
-        "price": "+300"
+        "game": "BBG Bucke, BBG Khanasty, MackWood1x.",
+        "price": "+300",
+        "risk": "",
+        "toWin": ""
       },
       {
         "id": "a4",
-        "name": "Kn1pher, XPRT Xccept, Spayde OT",
-        "price": "+600"
+        "game": "Kn1pher, XPRT Xccept, Spayde OT",
+        "price": "+600",
+        "risk": "",
+        "toWin": ""
       },
       {
         "id": "a5",
-        "name": "LG Slackes, 1P Acornski, G2 Jаhq",
-        "price": "+400"
+        "game": "LG Slackes, 1P Acornski, G2 Jаhq",
+        "price": "+400",
+        "risk": "",
+        "toWin": ""
       },
       {
         "id": "a6",
-        "name": "LG PAMPER, C9 nosh, EP PAMPER",
-        "price": "+500"
+        "game": "LG PAMPER, C9 nosh, EP PAMPER",
+        "price": "+500",
+        "risk": "",
+        "toWin": ""
       },
       {
         "id": "a7",
-        "name": "BBG Bucke, BBG Khanasty, MackWood1x.",
-        "price": "+300"
+        "game": "BBG Bucke, BBG Khanasty, MackWood1x.",
+        "price": "+300",
+        "risk": "10",
+        "toWin": "100"
       },
       {
         "id": "a8",
-        "name": "Kn1pher, XPRT Xccept, Spayde OT",
-        "price": "+600"
+        "game": "Kn1pher, XPRT Xccept, Spayde OT",
+        "price": "+600",
+        "risk": "",
+        "toWin": ""
       }
     ]
   },
@@ -55,43 +71,59 @@
     "games": [
       {
         "id": "b1",
-        "name": "LG Slackes, 1P Acornski, G2 Jаhq",
-        "price": "+400"
+        "game": "LG Slackes, 1P Acornski, G2 Jаhq",
+        "price": "+400",
+        "risk": "",
+        "toWin": ""
       },
       {
         "id": "b2",
-        "name": "LG PAMPER, C9 nosh, EP PAMPER",
-        "price": "+500"
+        "game": "LG PAMPER, C9 nosh, EP PAMPER",
+        "price": "+500",
+        "risk": "10",
+        "toWin": "100"
       },
       {
         "id": "b3",
-        "name": "BBG Bucke, BBG Khanasty, MackWood1x.",
-        "price": "+300"
+        "game": "BBG Bucke, BBG Khanasty, MackWood1x.",
+        "price": "+300",
+        "risk": "",
+        "toWin": ""
       },
       {
         "id": "b4",
-        "name": "Kn1pher, XPRT Xccept, Spayde OT",
-        "price": "+600"
+        "game": "Kn1pher, XPRT Xccept, Spayde OT",
+        "price": "+600",
+        "risk": "",
+        "toWin": ""
       },
       {
         "id": "b5",
-        "name": "LG Slackes, 1P Acornski, G2 Jаhq",
-        "price": "+400"
+        "game": "LG Slackes, 1P Acornski, G2 Jаhq",
+        "price": "+400",
+        "risk": "10",
+        "toWin": "100"
       },
       {
         "id": "b6",
-        "name": "LG PAMPER, C9 nosh, EP PAMPER",
-        "price": "+500"
+        "game": "LG PAMPER, C9 nosh, EP PAMPER",
+        "price": "+500",
+        "risk": "",
+        "toWin": ""
       },
       {
         "id": "b7",
-        "name": "BBG Bucke, BBG Khanasty, MackWood1x.",
-        "price": "+300"
+        "game": "BBG Bucke, BBG Khanasty, MackWood1x.",
+        "price": "+300",
+        "risk": "",
+        "toWin": ""
       },
       {
         "id": "b8",
-        "name": "Kn1pher, XPRT Xccept, Spayde OT",
-        "price": "+600"
+        "game": "Kn1pher, XPRT Xccept, Spayde OT",
+        "price": "+600",
+        "risk": "",
+        "toWin": ""
       }
     ]
   },
@@ -103,43 +135,59 @@
     "games": [
       {
         "id": "c1",
-        "name": "LG Slackes, 1P Acornski, G2 Jаhq",
-        "price": "+400"
+        "game": "LG Slackes, 1P Acornski, G2 Jаhq",
+        "price": "+400",
+        "risk": "",
+        "toWin": ""
       },
       {
         "id": "c2",
-        "name": "LG PAMPER, C9 nosh, EP PAMPER",
-        "price": "+500"
+        "game": "LG PAMPER, C9 nosh, EP PAMPER",
+        "price": "+500",
+        "risk": "10",
+        "toWin": "100"
       },
       {
         "id": "c3",
-        "name": "BBG Bucke, BBG Khanasty, MackWood1x.",
-        "price": "+300"
+        "game": "BBG Bucke, BBG Khanasty, MackWood1x.",
+        "price": "+300",
+        "risk": "",
+        "toWin": ""
       },
       {
         "id": "c4",
-        "name": "Kn1pher, XPRT Xccept, Spayde OT",
-        "price": "+600"
+        "game": "Kn1pher, XPRT Xccept, Spayde OT",
+        "price": "+600",
+        "risk": "",
+        "toWin": ""
       },
       {
         "id": "c5",
-        "name": "LG Slackes, 1P Acornski, G2 Jаhq",
-        "price": "+400"
+        "game": "LG Slackes, 1P Acornski, G2 Jаhq",
+        "price": "+400",
+        "risk": "",
+        "toWin": ""
       },
       {
         "id": "c6",
-        "name": "LG PAMPER, C9 nosh, EP PAMPER",
-        "price": "+500"
+        "game": "LG PAMPER, C9 nosh, EP PAMPER",
+        "price": "+500",
+        "risk": "",
+        "toWin": ""
       },
       {
         "id": "c7",
-        "name": "BBG Bucke, BBG Khanasty, MackWood1x.",
-        "price": "+300"
+        "game": "BBG Bucke, BBG Khanasty, MackWood1x.",
+        "price": "+300",
+        "risk": "10",
+        "toWin": "100"
       },
       {
         "id": "c8",
-        "name": "Kn1pher, XPRT Xccept, Spayde OT",
-        "price": "+600"
+        "game": "Kn1pher, XPRT Xccept, Spayde OT",
+        "price": "+600",
+        "risk": "",
+        "toWin": ""
       }
     ]
   }

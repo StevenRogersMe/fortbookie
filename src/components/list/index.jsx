@@ -4,7 +4,7 @@ import './styles.sass';
 
 const List = ({ header, items, handleSelect, selected }) => {
 
-  const isActive = currentId => selected.some(id => id === currentId);
+  const isActive = currentId => selected.some(({ id }) => id === currentId);
 
   return (
     <div className="list">
@@ -12,9 +12,9 @@ const List = ({ header, items, handleSelect, selected }) => {
         {header}
       </div>
       <div className="list__items">
-        {items.map(({ id, name, price }) => (
+        {items.map(({ id, game, price }) => (
           <div key={id} className={`list__item ${isActive(id) ? 'is-active' : ''}`} onClick={() => { handleSelect(id) }}>
-            <div className="list__item-name">{name}</div>
+            <div className="list__item-game">{game}</div>
             <div className="list__item-price">{price}</div>
           </div>
         ))}

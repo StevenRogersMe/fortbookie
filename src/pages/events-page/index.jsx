@@ -4,6 +4,8 @@ import { createStructuredSelector } from 'reselect';
 // Redux
 import { eventsRequested } from 'redux/events/actions';
 import { selectEvents } from 'redux/events/selectors';
+import { selectBetSlips } from 'redux/bet-slips/selectors';
+import { toggleBetSlip } from 'redux/bet-slips/actions';
 // UI
 import Layout from 'modules/layout';
 import EventsFilters from 'modules/events-filters';
@@ -15,24 +17,12 @@ import Spinner from 'components/spinner';
 // Styles
 import './styles.sass';
 
-const EventsPage = ({ eventsRequested, events: { loading, data, error } }) => {
-  const [selectedBets, setSelectedBets] = React.useState([]);
-
+const EventsPage = ({ eventsRequested, events: { loading, data, error }, betSlips, toggleBetSlip }) => {
   React.useLayoutEffect(() => {
     eventsRequested();
   }, [eventsRequested]);
 
-  const handleSelectBet = (id) => {
-    setSelectedBets(selected => {
-      let newArray;
-      if (selectedBets.indexOf(id) === -1) {
-        newArray = [...selected, id];
-      } else {
-        newArray = selected.filter(item => item !== id);
-      }
-      return newArray;
-    })
-  };
+  const handleSelectBet = (eventIdx, betId) => toggleBetSlip({ eventIdx, betId });
 
   return (
     <div className="events-page">
@@ -46,11 +36,11 @@ const EventsPage = ({ eventsRequested, events: { loading, data, error } }) => {
             {(!error && loading) && <Spinner boxed />}
             {(!error && !loading && data) &&
               <Fragment>
-                {data.map(({ id, title, date, time, games }, idx) => (
-                  <Accordion expanded={idx === 0} className="events-page__list-item" key={id}>
+                {data.map(({ id, title, date, time, games }, eventIdx) => (
+                  <Accordion expanded={eventIdx === 0} className="events-page__list-item" key={id}>
                     <Accordion.Tab title={title} date={date} time={time} />
                     <Accordion.Content>
-                      <List header="Winner" items={games} handleSelect={handleSelectBet} selected={selectedBets} />
+                      <List header="Winner" items={games} handleSelect={betId => handleSelectBet(eventIdx, betId)} selected={betSlips} />
                     </Accordion.Content>
                   </Accordion>
                 ))}
@@ -58,7 +48,7 @@ const EventsPage = ({ eventsRequested, events: { loading, data, error } }) => {
             }
           </div>
           <div className="events-page__bets">
-            <Bets />
+            <Bets betSlips={betSlips} />
           </div>
         </div>
       </Layout>
@@ -67,10 +57,13 @@ const EventsPage = ({ eventsRequested, events: { loading, data, error } }) => {
 };
 
 const mapStateToProps = createStructuredSelector({
-  events: selectEvents
+  events: selectEvents,
+  betSlips: selectBetSlips
 });
+
 const mapDispatchToProps = {
-  eventsRequested
+  eventsRequested,
+  toggleBetSlip
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventsPage);

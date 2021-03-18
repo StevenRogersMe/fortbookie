@@ -3,7 +3,7 @@ import { EventsTypes } from './types';
 
 const INITIAL_STATE = fetchState('initial');
 
-const weeklyFiguresReducer = (state = INITIAL_STATE, action) => {
+const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case EventsTypes.FETCH_EVENTS_REQUEST:
       return fetchState('request');
@@ -16,4 +16,4 @@ const weeklyFiguresReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default weeklyFiguresReducer;
+export default reducer;

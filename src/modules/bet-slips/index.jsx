@@ -1,11 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
+// Redux
+import { removeBetSlip } from 'redux/bet-slips/actions';
 // UI
 import BetSlip from 'modules/bet-slip';
 import Typography from 'components/typography';
 // Styles
 import './styles.sass';
 
-const BetSlips = ({ slips }) => {
+const BetSlips = ({ slips, removeBetSlip }) => {
   return (
     <div className="bet-slips">
       <div className="bet-slips__container">
@@ -20,7 +23,7 @@ const BetSlips = ({ slips }) => {
           <div className="bet-slips__items">
             {slips.map(({ id, title, game, price, risk, toWin }) => (
               <div key={id} className="bet-slips__item">
-                <BetSlip title={title} game={game} price={price} risk={risk} toWin={toWin} />
+                <BetSlip title={title} game={game} price={price} risk={risk} toWin={toWin} removeBetSlip={() => removeBetSlip(id)} />
               </div>
             ))}
           </div>
@@ -46,4 +49,8 @@ const BetSlips = ({ slips }) => {
   );
 };
 
-export default BetSlips;
+const mapDispatchToProps = {
+  removeBetSlip
+};
+
+export default connect(null, mapDispatchToProps)(BetSlips);
