@@ -8,8 +8,6 @@ export const toggleBetSlip = ({ eventIdx, betId }) => (dispatch, getState) => {
     title: event.title,
     game: selectedBetSlip.game,
     price: selectedBetSlip.price,
-    risk: selectedBetSlip.risk,
-    toWin: selectedBetSlip.toWin,
   };
   dispatch({
     type: BetSlipsTypes.TOGGLE_BET_SLIP,

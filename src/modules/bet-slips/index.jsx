@@ -26,9 +26,9 @@ const BetSlips = ({ betSlips, totalBetSlips, removeBetSlip, totalBetSlipsRisk, t
           :
           <div className="bet-slips__items">
             <Scrollbar className="bet-slips__items-scroll">
-              {betSlips.map(({ id, title, game, price, risk, toWin }) => (
+              {betSlips.map(({ id, title, game, price }) => (
                 <div key={id} className="bet-slips__item">
-                  <BetSlip title={title} game={game} price={price} risk={risk} toWin={toWin} removeBetSlip={() => removeBetSlip(id)} />
+                  <BetSlip title={title} game={game} price={price} removeBetSlip={() => removeBetSlip(id)} />
                 </div>
               ))}
             </Scrollbar>

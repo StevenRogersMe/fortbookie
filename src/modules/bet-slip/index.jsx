@@ -5,7 +5,7 @@ import Close from 'components/close';
 // Styles
 import './styles.sass';
 
-const BetSlip = ({ title, game, price, risk, toWin, removeBetSlip }) => {
+const BetSlip = ({ title, game, price, removeBetSlip }) => {
   return (
     <div className="bet-slip">
       <div className="bet-slip__header">
@@ -18,10 +18,10 @@ const BetSlip = ({ title, game, price, risk, toWin, removeBetSlip }) => {
       </div>
       <div className="bet-slip__control">
         <div className="bet-slip__control-input">
-          <Input type="number" placeholder="Risk" value={risk} onChange={() => { }} />
+          <Input type="number" placeholder="Risk" value="" onChange={() => { }} />
         </div>
         <div className="bet-slip__control-input">
-          <Input type="number" placeholder="To Win" value={toWin} onChange={() => { }} />
+          <Input type="number" placeholder="To Win" value="" onChange={() => { }} />
         </div>
       </div>
     </div>
