@@ -12,14 +12,15 @@ const Table = ({ content, loading, data, error, retry, equal, bordered }) => {
     'table': true,
     'table--bordered': bordered,
   });
+  const equalWidth = equal && { width: `${100 / columns}%` };
 
   return (
     <div className={classnames}>
       <table className="table__table">
         <thead className="table__head">
           <tr>
-            {content.map(({ title }, idx) => (
-              <th key={idx} style={equal && { width: `${100 / columns}%` }}>{title}</th>
+            {content.map(({ title, styles }, idx) => (
+              <th key={idx} style={{ ...equalWidth, ...styles }}>{title}</th>
             ))}
           </tr>
         </thead>
@@ -40,8 +41,8 @@ const Table = ({ content, loading, data, error, retry, equal, bordered }) => {
           }
           {data && data.map((item, idx) => (
             <tr key={idx}>
-              {content.map(({ render }, tdIdx) => (
-                <td key={tdIdx}>{render(item, idx)}</td>
+              {content.map(({ render, styles }, tdIdx) => (
+                <td key={tdIdx} style={styles}>{render(item, idx)}</td>
               ))}
             </tr>
           ))}
