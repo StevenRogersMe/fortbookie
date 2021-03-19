@@ -1,17 +1,15 @@
 import React from 'react';
 // UI
-import Layout from 'modules/layout';
+import PageLayout from 'modules/page-layout';
 import Transactions from 'modules/transactions';
 // Styles
 import './styles.sass';
 
 const TransactionsPage = () => {
   return (
-    <div className="transactions-page">
-      <Layout>
-        <Transactions />
-      </Layout>
-    </div>
+    <PageLayout className="transactions-page">
+      <Transactions />
+    </PageLayout>
   );
 };
 
