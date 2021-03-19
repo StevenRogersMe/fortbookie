@@ -1,13 +1,13 @@
 import React from 'react';
 // UI
-import Layout from 'modules/layout';
+import PageLayout from 'modules/page-layout';
 import SignIn from 'modules/sign-in';
 
 const SignInPage = () => {
   return (
-    <Layout>
+    <PageLayout>
       <SignIn />
-    </Layout>
+    </PageLayout>
   );
 };
 
