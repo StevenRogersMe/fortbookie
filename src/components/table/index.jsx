@@ -5,8 +5,8 @@ import ErrorIndicator from 'components/error-indicator';
 // Styles
 import './index.sass';
 
-const Table = ({ content, loading, data, error, retry }) => {
-  const colSpan = content.length;
+const Table = ({ content, loading, data, error, retry, equal }) => {
+  const columns = content.length;
 
   return (
     <div className="table">
@@ -14,21 +14,21 @@ const Table = ({ content, loading, data, error, retry }) => {
         <thead className="table__head">
           <tr>
             {content.map(({ title }, idx) => (
-              <th key={idx}>{title}</th>
+              <th key={idx} style={equal && { width: `${100 / columns}%` }}>{title}</th>
             ))}
           </tr>
         </thead>
         <tbody className="table__body">
           {error &&
             <tr>
-              <th colSpan={colSpan}>
+              <th colSpan={columns}>
                 <ErrorIndicator retry={retry} />
               </th>
             </tr>
           }
           {loading &&
             <tr>
-              <th colSpan={colSpan}>
+              <th colSpan={columns}>
                 <Spinner boxed light />
               </th>
             </tr>
