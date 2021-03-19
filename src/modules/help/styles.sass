@@ -1,0 +1,39 @@
+@import ~styles/abstract/mixins
+@import ~styles/abstract/variables
+
+.help
+  &__email
+    margin-top: 40px
+    margin-bottom: 40px
+    &-title
+      margin-bottom: 15px
+    &-link
+      color: $c-accent-1
+      font-size: rem(14px)
+      line-height: 1
+      font-weight: 600
+  &__topics
+    &-title
+      margin-bottom: 15px
+    &-wrap
+      border: 1px solid $c-gray-2
+      border-radius: $r-primary
+      display: flex
+      flex-wrap: wrap
+      align-items: center
+      padding: 20px
+  &__topic
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-direction: column
+    flex: 1 1 200px
+    padding: 20px
+    &-icon
+      margin-bottom: 15px
+    &-title
+      font-size: rem(16px)
+      line-height: 1
+      font-weight: 700
+      color: $c-dark-3
+      text-align: center
