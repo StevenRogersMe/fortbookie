@@ -1,14 +1,16 @@
 import { all, call } from 'redux-saga/effects';
 // Sagas
-import { fetchEventsData } from './events/sagas';
-import { fetchOpenBetsData } from './open-bets/sagas';
-import { fetchTransactionsData } from './transactions/sagas';
+import { fetchEventsData } from 'redux/events/sagas';
+import { fetchOpenBetsData } from 'redux/open-bets/sagas';
+import { fetchTransactionsData } from 'redux/transactions/sagas';
+import { fetchLiveEventsData } from 'redux/live-events/sagas';
 
 function* rootSaga() {
   yield all([
     call(fetchEventsData),
     call(fetchOpenBetsData),
     call(fetchTransactionsData),
+    call(fetchLiveEventsData),
   ]);
 }
 
