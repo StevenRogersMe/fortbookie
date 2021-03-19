@@ -1,14 +1,16 @@
 import React from 'react';
 // UI
-import Container from 'components/container';
-import Typography from 'components/typography';
-import Button from 'components/button';
+import Layout from 'modules/layout';
+import Transactions from 'modules/transactions';
 // Styles
 import './styles.sass';
 
 const TransactionsPage = () => {
   return (
     <div className="transactions-page">
+      <Layout>
+        <Transactions />
+      </Layout>
     </div>
   );
 };
