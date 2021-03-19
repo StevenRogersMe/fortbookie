@@ -1,0 +1,34 @@
+@import ~styles/abstract/variables
+@import ~styles/abstract/mixins
+
+.table
+  border-radius: $r-primary
+  border-radius: 10px
+  border: 1px solid $c-gray-4
+  background-color: $c-light
+  width: 100%
+  overflow: auto
+  +media-max($bp-xl)
+    white-space: nowrap
+  &__table
+    width: 100%
+    border-collapse: collapse
+  &__head
+    background-color: $c-gray-5
+    th
+      font-size: rem(12px)
+      line-height: 1
+      font-weight: 600
+      color: $c-dark-3
+      padding: 20px
+  &__body
+    tr
+      border-bottom: 1px solid $c-gray-4
+      &:last-child
+        border-bottom: 0
+    td
+      font-size: rem(12px)
+      font-weight: 700
+      line-height: 1
+      color: $c-dark-2
+      padding: 15px 20px
