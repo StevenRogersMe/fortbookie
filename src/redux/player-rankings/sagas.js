@@ -1,11 +1,11 @@
 import { takeLatest, put } from 'redux-saga/effects';
 import { fetchPlayerRankingsRequest, fetchPlayerRankingsSuccess, fetchPlayerRankingsFailure } from './actions';
-import TransactionsService from 'services/transactions-service';
-const transactionsService = new TransactionsService();
+import PlayerRankingsService from 'services/player-rankings-service';
+const playerRankingsService = new PlayerRankingsService();
 
 function* fetchPlayerRankingsDataWorker() {
   try {
-    const data = yield transactionsService.getTransactions();
+    const data = yield playerRankingsService.getPlayerRankings();
     yield put(fetchPlayerRankingsSuccess(data));
   } catch ({ message }) {
     yield put(fetchPlayerRankingsFailure(message));

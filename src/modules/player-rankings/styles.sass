@@ -1,0 +1,42 @@
+@import ~styles/abstract/mixins
+@import ~styles/abstract/variables
+
+.player-rankings
+  &__header
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    justify-content: space-between
+    // Left
+    &-left
+      display: flex
+      align-items: center
+    &-title
+      margin-right: 50px
+    &-balance
+      font-size: rem(14px)
+      line-height: 1
+      font-weight: 400
+      color: $c-dark-3
+      white-space: nowrap
+      margin-right: 30px
+      span
+        font-weight: 700
+        color: $c-dark-1
+    // Right
+    &-right
+      display: flex
+      align-items: center
+      justify-content: flex-end
+    &-select
+      width: 200px
+      &:not(:last-child)
+        margin-right: 30px
+
+  // Line
+  &__line
+    display: flex
+    align-items: center
+    &>*
+      &:first-child
+        margin-right: 15px
