@@ -11,6 +11,7 @@ import EventsPage from 'pages/events-page';
 import TransactionsPage from 'pages/transactions-page';
 import RewardsPage from 'pages/rewards-page';
 import LiveEventsPage from 'pages/live-events-page';
+import PlayerRankingsPage from 'pages/player-rankings-page';
 // Styles
 import './app.sass';
 
@@ -34,6 +35,7 @@ const App = () => {
               <Route path="/events" exact component={EventsPage} />
               <Route path="/live-events" exact component={LiveEventsPage} />
               <Route path="/transactions" exact component={TransactionsPage} />
+              <Route path="/player-rankings" exact component={PlayerRankingsPage} />
               <Route path="/rewards" exact component={RewardsPage} />
               <Redirect to="/" />
             </Switch>

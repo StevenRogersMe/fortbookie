@@ -22,7 +22,7 @@ import { signInContext } from '../../app';
 const items = [
   { title: 'Transactions', icon: Transaction, path: '/transactions' },
   { title: 'Player Transfer', icon: Transfer, path: '/' },
-  { title: 'Player Rankings', icon: Rankings, path: '/' },
+  { title: 'Player Rankings', icon: Rankings, path: '/player-rankings' },
   { title: 'Refer a friend', icon: Referal, path: '/' },
   { title: 'Rewards', icon: Rewards, path: '/' },
   { title: 'Profile Settings', icon: Settings, path: '/' },
