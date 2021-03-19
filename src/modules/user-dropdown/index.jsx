@@ -26,7 +26,7 @@ const items = [
   { title: 'Refer a friend', icon: Referal, path: '/' },
   { title: 'Rewards', icon: Rewards, path: '/' },
   { title: 'Profile Settings', icon: Settings, path: '/' },
-  { title: 'Help', icon: Support, path: '/' },
+  { title: 'Help', icon: Support, path: '/help' },
 ];
 
 const UserDropdown = ({ history }) => {
