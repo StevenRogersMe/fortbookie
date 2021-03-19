@@ -1,24 +1,32 @@
 import React, { Fragment } from 'react';
-// Components
-import Typography from 'components/typography';
 
 export const tableContent = () => {
   return [
     {
+      styles: {
+        width: '70px',
+        textAlign: 'center'
+      },
       title: 'ID',
-      render: ({ date }) => <Fragment>{date}</Fragment>
+      render: (_, idx) => <Fragment>{idx + 1}</Fragment>
     },
     {
       title: 'Player Name',
-      render: ({ time }) => <Fragment>{time}</Fragment>
+      render: ({ playerName }) => <Fragment>{playerName}</Fragment>
     },
     {
+      styles: {
+        textAlign: 'center'
+      },
       title: 'PR Points',
-      render: ({ amount }) => <Fragment>{amount}</Fragment>
+      render: ({ prPoints }) => <Fragment>{prPoints}</Fragment>
     },
     {
+      styles: {
+        textAlign: 'right'
+      },
       title: 'Earnings',
-      render: ({ }) => <Fragment>$</Fragment>
+      render: ({ earnings }) => <Fragment>${earnings}</Fragment>
     },
   ]
 };

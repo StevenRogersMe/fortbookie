@@ -48,6 +48,7 @@ const PlayerRankings = ({ fetchPlayerRankingsRequest, playerRankings: { loading,
           data={data}
           error={error}
           retry={fetchPlayerRankingsRequest}
+          bordered
         />
       </ContentBox.Body>
     </ContentBox>
