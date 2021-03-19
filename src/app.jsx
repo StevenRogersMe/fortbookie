@@ -9,6 +9,7 @@ import SignInPage from 'pages/sign-in-page';
 import SignUpPage from 'pages/sign-up-page';
 import EventsPage from 'pages/events-page';
 import TransactionsPage from 'pages/transactions-page';
+import RewardsPage from 'pages/rewards-page';
 // Styles
 import './app.sass';
 
@@ -31,6 +32,7 @@ const App = () => {
               <Route path="/sign-up" exact component={SignUpPage} />
               <Route path="/events" exact component={EventsPage} />
               <Route path="/transactions" exact component={TransactionsPage} />
+              <Route path="/rewards" exact component={RewardsPage} />
               <Redirect to="/" />
             </Switch>
           </ScrollToTop>
