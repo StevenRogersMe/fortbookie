@@ -1,17 +1,17 @@
 import { takeLatest, put } from 'redux-saga/effects';
-import { eventsRequested, eventsLoaded, eventsError } from './actions';
+import { fetchEventsRequest, fetchEventsSuccess, fetchEventsFailure } from './actions';
 import EventsService from 'services/events-service';
 const eventsService = new EventsService();
 
 function* fetchEventsDataWorker() {
   try {
     const data = yield eventsService.getEvents();
-    yield put(eventsLoaded(data));
+    yield put(fetchEventsSuccess(data));
   } catch ({ message }) {
-    yield put(eventsError(message));
+    yield put(fetchEventsFailure(message));
   }
 }
 
 export function* fetchEventsData() {
-  yield takeLatest(eventsRequested().type, fetchEventsDataWorker);
+  yield takeLatest(fetchEventsRequest().type, fetchEventsDataWorker);
 }

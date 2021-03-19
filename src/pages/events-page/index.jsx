@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 // Redux
-import { eventsRequested } from 'redux/events/actions';
+import { fetchEventsRequest } from 'redux/events/actions';
 import { selectEvents } from 'redux/events/selectors';
 import { selectBetSlips } from 'redux/bet-slips/selectors';
 import { toggleBetSlip } from 'redux/bet-slips/actions';
@@ -17,10 +17,10 @@ import Spinner from 'components/spinner';
 // Styles
 import './styles.sass';
 
-const EventsPage = ({ eventsRequested, events: { loading, data, error }, betSlips, toggleBetSlip }) => {
+const EventsPage = ({ fetchEventsRequest, events: { loading, data, error }, betSlips, toggleBetSlip }) => {
   React.useLayoutEffect(() => {
-    eventsRequested();
-  }, [eventsRequested]);
+    fetchEventsRequest();
+  }, [fetchEventsRequest]);
 
   const handleSelectBet = (eventIdx, betId) => toggleBetSlip({ eventIdx, betId });
 
@@ -31,7 +31,7 @@ const EventsPage = ({ eventsRequested, events: { loading, data, error }, betSlip
       </div>
       <div className="events-page__preview">
         <div className="events-page__list">
-          {error && <ErrorIndicator retry={eventsRequested} />}
+          {error && <ErrorIndicator retry={fetchEventsRequest} />}
           {(!error && loading) && <Spinner boxed />}
           {(!error && !loading && data) &&
             <Fragment>
@@ -60,7 +60,7 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = {
-  eventsRequested,
+  fetchEventsRequest,
   toggleBetSlip
 };
 
