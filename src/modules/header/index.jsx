@@ -3,7 +3,7 @@ import { withRouter, Link } from 'react-router-dom';
 // UI
 import Container from 'components/container';
 import Button from 'components/button';
-import Regions from 'modules/regions';
+import Regions from 'modules/events-list';
 import UserDropdown from 'modules/user-dropdown';
 // Assets
 import { ReactComponent as Logo } from 'assets/images/logo.svg';
