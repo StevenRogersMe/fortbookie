@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "playerName": "Sen Bugha",
+    "prPoints": "PR Points",
+    "Earnings": "162,717"
+  },
+  {
+    "id": "2",
+    "playerName": "G2 Jahq",
+    "prPoints": "225,545",
+    "Earnings": "137,952"
+  },
+  {
+    "id": "3",
+    "playerName": "1P Acornski",
+    "prPoints": "216,363",
+    "Earnings": "108,153"
+  },
+  {
+    "id": "4",
+    "playerName": "LG Slackes",
+    "prPoints": "215,728",
+    "Earnings": "114,502"
+  },
+  {
+    "id": "5",
+    "playerName": "NRG Clix",
+    "prPoints": "208,780",
+    "Earnings": "121,705"
+  }
+]
