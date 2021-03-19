@@ -21,7 +21,7 @@ const EventsList = ({ history }) => {
           onClick={() => history.push(path)}
         >{name}</li>
       ))}
-      <li className="events-list__item events-list__item--alt" onClick={() => history.push('/live')}>• LIVE</li>
+      <li className="events-list__item events-list__item--alt" onClick={() => history.push('/live-events')}>• LIVE</li>
     </ul>
   );
 };
