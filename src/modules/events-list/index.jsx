@@ -1,24 +1,29 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 // Styles
 import './styles.sass';
 
 const events = [
-  { id: 1, name: 'NAE' },
-  { id: 2, name: 'NAW' },
-  { id: 3, name: 'EU' },
-  { id: 4, name: 'BR' },
-  { id: 5, name: 'OCE' }
+  { id: 1, name: 'NAE', path: '/events' },
+  { id: 2, name: 'NAW', path: '/events' },
+  { id: 3, name: 'EU', path: '/events' },
+  { id: 4, name: 'BR', path: '/events' },
+  { id: 5, name: 'OCE', path: '/events' }
 ];
 
-const EventsList = () => {
+const EventsList = ({ history }) => {
   return (
     <ul className="events-list">
-      {events.map(({ id, name }) => (
-        <li key={id} className={`events-list__item ${id === 1 ? 'is-active' : ''}`}>{name}</li>
+      {events.map(({ id, name, path }) => (
+        <li
+          key={id}
+          className={`events-list__item ${id === 1 ? 'is-active' : ''}`}
+          onClick={() => history.push(path)}
+        >{name}</li>
       ))}
-      <li className="events-list__item events-list__item--alt">• LIVE</li>
+      <li className="events-list__item events-list__item--alt" onClick={() => history.push('/live')}>• LIVE</li>
     </ul>
   );
 };
 
-export default EventsList;
+export default withRouter(EventsList);
