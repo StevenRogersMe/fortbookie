@@ -6,6 +6,19 @@ import Close from 'components/close';
 import './styles.sass';
 
 const BetSlip = ({ title, game, price, removeBetSlip }) => {
+
+  const [state, setState] = React.useState({
+    risk: '',
+    toWin: ''
+  });
+
+  const inputHandler = ({ target: { name, value } }) => {
+    setState(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
   return (
     <div className="bet-slip">
       <div className="bet-slip__header">
@@ -18,10 +31,10 @@ const BetSlip = ({ title, game, price, removeBetSlip }) => {
       </div>
       <div className="bet-slip__control">
         <div className="bet-slip__control-input">
-          <Input type="number" placeholder="Risk" value="" onChange={() => { }} />
+          <Input type="number" placeholder="Risk" value={state.risk} name="risk" onChange={inputHandler} />
         </div>
         <div className="bet-slip__control-input">
-          <Input type="number" placeholder="To Win" value="" onChange={() => { }} />
+          <Input type="number" placeholder="To Win" value={state.toWin} name="toWin" onChange={inputHandler} />
         </div>
       </div>
     </div>
