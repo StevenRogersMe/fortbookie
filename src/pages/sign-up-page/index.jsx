@@ -1,6 +1,6 @@
 import React from 'react';
 // UI
-import PageLayout from 'modules/page-layout';
+import PageLayout from 'components/page-layout';
 import SignUp from 'modules/sign-up';
 
 const SignUpPage = () => {

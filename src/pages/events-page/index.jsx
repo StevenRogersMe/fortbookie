@@ -7,7 +7,7 @@ import { selectEvents } from 'redux/events/selectors';
 import { selectBetSlips } from 'redux/bet-slips/selectors';
 import { toggleBetSlip } from 'redux/bet-slips/actions';
 // UI
-import PageLayout from 'modules/page-layout';
+import PageLayout from 'components/page-layout';
 import EventsFilters from 'modules/events-filters';
 import Bets from 'modules/bets';
 import Accordion from 'components/accordion';
