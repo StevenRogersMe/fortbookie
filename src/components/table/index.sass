@@ -10,6 +10,10 @@
   overflow: auto
   +media-max($bp-xl)
     white-space: nowrap
+  &--bordered
+    .table__body
+      td:not(:last-child)
+        border-right: 1px solid $c-gray-1
   &__table
     width: 100%
     border-collapse: collapse
@@ -25,7 +29,7 @@
       padding: 20px
   &__body
     tr
-      border-bottom: 1px solid $c-gray-4
+      border-bottom: 1px solid $c-gray-1
       &:last-child
         border-bottom: 0
     td

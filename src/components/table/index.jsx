@@ -1,15 +1,20 @@
 import React from 'react';
+import classNames from 'classnames';
 // UI
 import Spinner from 'components/spinner';
 import ErrorIndicator from 'components/error-indicator';
 // Styles
 import './index.sass';
 
-const Table = ({ content, loading, data, error, retry, equal }) => {
+const Table = ({ content, loading, data, error, retry, equal, bordered }) => {
   const columns = content.length;
+  const classnames = classNames({
+    'table': true,
+    'table--bordered': bordered,
+  });
 
   return (
-    <div className="table">
+    <div className={classnames}>
       <table className="table__table">
         <thead className="table__head">
           <tr>
