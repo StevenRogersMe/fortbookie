@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 // Styles
 import './styles.sass';
 
-const events = [
+const regions = [
   { id: 1, name: 'NAE', path: '/events' },
   { id: 2, name: 'NAW', path: '/events' },
   { id: 3, name: 'EU', path: '/events' },
@@ -11,19 +11,19 @@ const events = [
   { id: 5, name: 'OCE', path: '/events' }
 ];
 
-const EventsList = ({ history }) => {
+const Regions = ({ history }) => {
   return (
-    <ul className="events-list">
-      {events.map(({ id, name, path }) => (
+    <ul className="regions">
+      {regions.map(({ id, name, path }) => (
         <li
           key={id}
-          className={`events-list__item ${id === 1 ? 'is-active' : ''}`}
+          className={`regions__item ${id === 1 ? 'is-active' : ''}`}
           onClick={() => history.push(path)}
         >{name}</li>
       ))}
-      <li className="events-list__item events-list__item--alt" onClick={() => history.push('/live-events')}>• LIVE</li>
+      <li className="regions__item regions__item--alt" onClick={() => history.push('/live-events')}>• LIVE</li>
     </ul>
   );
 };
 
-export default withRouter(EventsList);
+export default withRouter(Regions);
