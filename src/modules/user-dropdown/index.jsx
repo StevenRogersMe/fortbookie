@@ -20,13 +20,13 @@ import { ReactComponent as LogOut } from 'assets/images/user/logout.svg';
 import { signInContext } from '../../app';
 
 const items = [
-  { title: 'Transactions', icon: Transaction },
-  { title: 'Player Transfer', icon: Transfer },
-  { title: 'Player Rankings', icon: Rankings },
-  { title: 'Refer a friend', icon: Referal },
-  { title: 'Rewards', icon: Rewards },
-  { title: 'Profile Settings', icon: Settings },
-  { title: 'Help', icon: Support },
+  { title: 'Transactions', icon: Transaction, path: '/transactions' },
+  { title: 'Player Transfer', icon: Transfer, path: '/' },
+  { title: 'Player Rankings', icon: Rankings, path: '/' },
+  { title: 'Refer a friend', icon: Referal, path: '/' },
+  { title: 'Rewards', icon: Rewards, path: '/' },
+  { title: 'Profile Settings', icon: Settings, path: '/' },
+  { title: 'Help', icon: Support, path: '/' },
 ];
 
 const UserDropdown = ({ history }) => {
@@ -54,9 +54,9 @@ const UserDropdown = ({ history }) => {
           <ArrowIcon className={`user-dropdown__icon ${isActive ? 'is-active' : ''}`} />
         </Dropdown.Header>
         <Dropdown.Box className="user-dropdown__box" onClick={handleDropdown}>
-          {items.map(({ title, icon }, idx) => (
+          {items.map(({ title, icon, path }, idx) => (
             <div key={idx} className="user-dropdown__item">
-              <UserDropdownItem title={title} icon={icon} />
+              <UserDropdownItem title={title} icon={icon} onClick={() => { history.push(path) }} />
             </div>
           ))}
           <div className="user-dropdown__item">
