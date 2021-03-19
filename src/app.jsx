@@ -13,6 +13,7 @@ import RewardsPage from 'pages/rewards-page';
 import LiveEventsPage from 'pages/live-events-page';
 import PlayerRankingsPage from 'pages/player-rankings-page';
 import HelpPage from 'pages/help-page';
+import WithdrawPage from 'pages/withdraw-page';
 // Styles
 import './app.sass';
 
@@ -39,6 +40,7 @@ const App = () => {
               <Route path="/player-rankings" exact component={PlayerRankingsPage} />
               <Route path="/help" exact component={HelpPage} />
               <Route path="/rewards" exact component={RewardsPage} />
+              <Route path="/withdraw" exact component={WithdrawPage} />
               <Redirect to="/" />
             </Switch>
           </ScrollToTop>

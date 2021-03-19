@@ -11,6 +11,9 @@ import { ReactComponent as Logo } from 'assets/images/logo.svg';
 import './styles.sass';
 
 const Header = ({ history, isSigned }) => {
+
+  const isCurrentPath = path => history.location.pathname === path;
+
   return (
     <Fragment>
       <div className="header-spacer"></div>
@@ -28,7 +31,10 @@ const Header = ({ history, isSigned }) => {
             {isSigned ?
               <div className="header__widgets">
                 <div className="header__widget">
-                  <div className="header__widget-text">Withdraw</div>
+                  <span
+                    className={`header__widget-text ${isCurrentPath('/withdraw') ? 'is-active' : ''}`}
+                    onClick={() => history.push('/withdraw')}
+                  >Withdraw</span>
                 </div>
                 <div className="header__widget">
                   <Button size="lg" variant="accent">Deposit</Button>
@@ -50,7 +56,7 @@ const Header = ({ history, isSigned }) => {
           </div>
         </Container>
       </header>
-    </Fragment >
+    </Fragment>
   );
 };
 
