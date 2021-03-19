@@ -36,7 +36,7 @@ const Table = ({ content, loading, data, error, retry, equal }) => {
           {data && data.map((item, idx) => (
             <tr key={idx}>
               {content.map(({ render }, tdIdx) => (
-                <td key={tdIdx}>{render(item)}</td>
+                <td key={tdIdx}>{render(item, idx)}</td>
               ))}
             </tr>
           ))}
