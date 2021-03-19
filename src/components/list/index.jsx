@@ -1,13 +1,18 @@
 import React from 'react';
+import classNames from 'classnames';
 // Styles
 import './styles.sass';
 
-const List = ({ header, items, handleSelect, selected }) => {
+const List = ({ header, items, handleSelect, selected, alt }) => {
+  const classnames = classNames({
+    'list': true,
+    'list--alt': alt,
+  });
 
   const isActive = currentId => selected.some(({ id }) => id === currentId);
 
   return (
-    <div className="list">
+    <div className={classnames}>
       <div className="list__header">
         {header}
       </div>

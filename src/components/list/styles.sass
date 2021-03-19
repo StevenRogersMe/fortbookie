@@ -4,12 +4,22 @@
 .list
   border: 1px solid $c-gray-4
   border-radius: $r-primary
+  &--alt
+    .list__header
+      background-color: #E2D7F0
+      color: $c-dark-1
+    .list__item
+      background-color: #f7f2fd
+      border: 1px solid #E5E0EB
+    &.is-active
+      background: #EFE5FB
+
   &__header
     font-size: rem(12px)
     font-weight: 600
     line-height: 1
     color: $c-dark-3
-    padding: 15px 30px
+    padding: 15px 20px
     background-color: $c-gray-1
   &__items
     display: flex
@@ -19,7 +29,7 @@
     display: flex
     justify-content: space-between
     align-items: center
-    padding: 12px 30px
+    padding: 12px 20px
     cursor: pointer
     background-color: $c-light
     border: 1px solid $c-gray-1
