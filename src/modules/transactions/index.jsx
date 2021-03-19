@@ -6,6 +6,7 @@ import { fetchTransactionsRequest } from 'redux/transactions/actions';
 import { selectTransactions } from 'redux/transactions/selectors';
 // UI
 import Table from 'components/table';
+import ContentBox from 'components/content-box';
 import Typography from 'components/typography';
 import Select from 'components/select';
 // Table content
@@ -19,8 +20,8 @@ const Transactions = ({ fetchTransactionsRequest, transactions: { loading, data,
   }, [fetchTransactionsRequest]);
 
   return (
-    <div className="transactions">
-      <div className="transactions__header">
+    <ContentBox className="transactions">
+      <ContentBox.Header className="transactions__header">
         <div className="transactions__header-left">
           <Typography component="h3" className="transactions__header-title">Transactions</Typography>
           <span className="transactions__header-balance">Balance: <span>$100.00</span></span>
@@ -51,8 +52,8 @@ const Transactions = ({ fetchTransactionsRequest, transactions: { loading, data,
             />
           </div>
         </div>
-      </div>
-      <div className="transactions__table">
+      </ContentBox.Header>
+      <ContentBox.Body>
         <Table
           content={tableContent()}
           loading={loading}
@@ -60,8 +61,8 @@ const Transactions = ({ fetchTransactionsRequest, transactions: { loading, data,
           error={error}
           retry={fetchTransactionsRequest}
         />
-      </div>
-    </div>
+      </ContentBox.Body>
+    </ContentBox>
   );
 };
 
