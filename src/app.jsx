@@ -14,6 +14,7 @@ import LiveEventsPage from 'pages/live-events-page';
 import PlayerRankingsPage from 'pages/player-rankings-page';
 import HelpPage from 'pages/help-page';
 import WithdrawPage from 'pages/withdraw-page';
+import DepositPage from 'pages/deposit-page';
 // Styles
 import './app.sass';
 
@@ -41,6 +42,7 @@ const App = () => {
               <Route path="/help" exact component={HelpPage} />
               <Route path="/rewards" exact component={RewardsPage} />
               <Route path="/withdraw" component={WithdrawPage} />
+              <Route path="/deposit" component={DepositPage} />
               <Redirect to="/" />
             </Switch>
           </ScrollToTop>
