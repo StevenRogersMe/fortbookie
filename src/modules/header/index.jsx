@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 // UI
 import Container from 'components/container';
 import Button from 'components/button';
@@ -10,7 +10,8 @@ import { ReactComponent as Logo } from 'assets/images/logo.svg';
 // Styles
 import './styles.sass';
 
-const Header = ({ history, isSigned }) => {
+const Header = ({ isSigned }) => {
+  let history = useHistory();
 
   const isCurrentPath = path => history.location.pathname === path;
 
@@ -60,4 +61,4 @@ const Header = ({ history, isSigned }) => {
   );
 };
 
-export default withRouter(Header);
+export default Header;
