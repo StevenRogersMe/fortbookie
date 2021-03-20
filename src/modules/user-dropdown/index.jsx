@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 // UI
 import Dropdown from 'components/dropdown';
 import UserDropdownItem from 'modules/user-dropdown-item';
@@ -29,7 +29,8 @@ const items = [
   { title: 'Help', icon: Support, path: '/help' },
 ];
 
-const UserDropdown = ({ history }) => {
+const UserDropdown = () => {
+  const history = useHistory();
   const [isActive, setIsActive] = React.useState(false);
   const { handleSignOut } = React.useContext(signInContext);
   const handleDropdown = () => setIsActive(isActive => !isActive);
@@ -71,4 +72,4 @@ const UserDropdown = ({ history }) => {
   );
 };
 
-export default withRouter(UserDropdown);
+export default UserDropdown;

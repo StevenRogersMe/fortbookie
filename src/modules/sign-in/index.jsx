@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 // UI
 import SignContainer from 'modules/sign-container';
 import Typography from 'components/typography';
@@ -13,7 +13,8 @@ import './styles.sass';
 // Context
 import { signInContext } from '../../app';
 
-const SignIn = ({ history }) => {
+const SignIn = () => {
+  const history = useHistory();
   const { handleSignIn } = React.useContext(signInContext);
 
   const handleSubmit = e => {
@@ -47,4 +48,4 @@ const SignIn = ({ history }) => {
   );
 };
 
-export default withRouter(SignIn);
+export default SignIn;

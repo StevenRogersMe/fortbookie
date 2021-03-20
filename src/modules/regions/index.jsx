@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { useHistory } from 'react-router';
 // Styles
 import './styles.sass';
 
@@ -11,7 +11,9 @@ const regions = [
   { id: 5, name: 'OCE', path: '/events' }
 ];
 
-const Regions = ({ history }) => {
+const Regions = () => {
+  const history = useHistory();
+
   return (
     <ul className="regions">
       {regions.map(({ id, name, path }) => (
@@ -26,4 +28,4 @@ const Regions = ({ history }) => {
   );
 };
 
-export default withRouter(Regions);
+export default Regions;
