@@ -1,12 +1,12 @@
 import React from 'react';
 // UI
 import PageLayout from 'components/page-layout';
-import Withdraw from 'modules/withdraw';
+import WithdrawDetails from 'modules/withdraw-details';
 
 const WithdrawPage = () => {
   return (
     <PageLayout>
-      <Withdraw />
+      <WithdrawDetails />
     </PageLayout>
   );
 };
