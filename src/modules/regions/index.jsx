@@ -3,7 +3,7 @@ import { useHistory, useLocation } from 'react-router';
 // Styles
 import './styles.sass';
 // Utils
-import { isCurrentPath } from 'utils';
+import { isMathcingPath } from 'utils';
 
 const regions = [
   { id: 1, name: 'NAE', path: '/events' },
@@ -26,7 +26,7 @@ const Regions = () => {
           onClick={() => history.push(path)}
         >{name}</li>
       ))}
-      <li className={`regions__item regions__item--alt ${isCurrentPath(location, '/live-events')}`} onClick={() => history.push('/live-events')}>• LIVE</li>
+      <li className={`regions__item regions__item--alt ${isMathcingPath(location, '/live-events')}`} onClick={() => history.push('/live-events')}>• LIVE</li>
     </ul>
   );
 };

@@ -8,7 +8,7 @@ import UserDropdown from 'modules/user-dropdown';
 // Assets
 import { ReactComponent as Logo } from 'assets/images/logo.svg';
 // Utils
-import { isCurrentPath } from 'utils';
+import { isMathcingPath } from 'utils';
 // Styles
 import './styles.sass';
 
@@ -34,7 +34,7 @@ const Header = ({ isSigned }) => {
               <div className="header__widgets">
                 <div className="header__widget">
                   <span
-                    className={`header__widget-text ${isCurrentPath(location, '/withdraw')}`}
+                    className={`header__widget-text ${isMathcingPath(location, '/withdraw')}`}
                     onClick={() => history.push('/withdraw')}
                   >Withdraw</span>
                 </div>
