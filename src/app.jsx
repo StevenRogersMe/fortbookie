@@ -3,22 +3,23 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 // UI
 import ScrollToTop from 'components/scroll-to-top';
 import Header from 'modules/header';
-// Pages
-import HomePage from 'pages/home-page';
-import SignInPage from 'pages/sign-in-page';
-import SignUpPage from 'pages/sign-up-page';
-import EventsPage from 'pages/events-page';
-import TransactionsPage from 'pages/transactions-page';
-import RewardsPage from 'pages/rewards-page';
-import LiveEventsPage from 'pages/live-events-page';
-import PlayerRankingsPage from 'pages/player-rankings-page';
-import HelpPage from 'pages/help-page';
-import WithdrawPage from 'pages/withdraw-page';
-import DepositPage from 'pages/deposit-page';
+// Routes
+import routes from './screens/routes';
 // Styles
 import './app.sass';
 
 export const signInContext = React.createContext();
+
+const RouteWithSubRoutes = route => {
+  return (
+    <Route
+      path={route.path}
+      render={props => (
+        <route.component {...props} routes={route.routes} />
+      )}
+    />
+  );
+};
 
 const App = () => {
   const [isSigned, setIsSigned] = React.useState(false);
@@ -32,6 +33,12 @@ const App = () => {
         <div className="app__wrap">
           <ScrollToTop>
             <Switch>
+              {routes.map((route, i) => (
+                <RouteWithSubRoutes key={i} {...route} />
+              ))}
+              <Redirect to="/" />
+            </Switch>
+            {/*
               <Route path="/" exact component={HomePage} />
               <Route path="/sign-in" exact component={SignInPage} />
               <Route path="/sign-up" exact component={SignUpPage} />
@@ -44,7 +51,7 @@ const App = () => {
               <Route path="/withdraw" component={WithdrawPage} />
               <Route path="/deposit" component={DepositPage} />
               <Redirect to="/" />
-            </Switch>
+          */}
           </ScrollToTop>
         </div>
       </signInContext.Provider>

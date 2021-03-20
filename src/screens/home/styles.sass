@@ -1,0 +1,27 @@
+@import ~styles/abstract/variables
+@import ~styles/abstract/mixins
+
+.home-screen
+  min-height: 100%
+  background:
+    color: $c-primary-2
+    image: url('~assets/images/home-screen/home-screen-bg.png')
+    size: 80%
+    position: right
+    repeat: no-repeat
+  display: flex
+  align-items: center
+  +media-max($bp-xl)
+    background:
+      size: cover
+      position: center
+  &__info
+    max-width: 50%
+    color: $c-light
+    padding: 80px 0
+    +media-max($bp-xl)
+      max-width: 100%
+  &__title
+    margin-bottom: 30px
+  &__text
+    margin-bottom: 60px
