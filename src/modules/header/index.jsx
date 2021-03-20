@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 // UI
 import Container from 'components/container';
 import Button from 'components/button';
@@ -7,13 +7,14 @@ import Regions from 'modules/regions';
 import UserDropdown from 'modules/user-dropdown';
 // Assets
 import { ReactComponent as Logo } from 'assets/images/logo.svg';
+// Utils
+import { isCurrentPath } from 'utils';
 // Styles
 import './styles.sass';
 
 const Header = ({ isSigned }) => {
-  let history = useHistory();
-
-  const isCurrentPath = path => history.location.pathname === path;
+  const history = useHistory();
+  const location = useLocation();
 
   return (
     <Fragment>
@@ -33,7 +34,7 @@ const Header = ({ isSigned }) => {
               <div className="header__widgets">
                 <div className="header__widget">
                   <span
-                    className={`header__widget-text ${isCurrentPath('/withdraw') ? 'is-active' : ''}`}
+                    className={`header__widget-text ${isCurrentPath(location, '/withdraw')}`}
                     onClick={() => history.push('/withdraw')}
                   >Withdraw</span>
                 </div>
