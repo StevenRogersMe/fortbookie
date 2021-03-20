@@ -9,18 +9,20 @@ import './styles.sass';
 import { ReactComponent as LitecoinIcon } from 'assets/images/coins/litecoin.svg';
 import { ReactComponent as BitcoinIcon } from 'assets/images/coins/bitcoin.svg';
 
-const FeeCalculator = ({ className }) => {
+const FeeCalculator = ({ className, type }) => {
   const classes = classNames({
     'fee-calculator': true,
     [className]: className
   });
+
+  const title = type === 'deposit' ? 'Deposit': 'Withdraw';
 
   return (
     <div className={classes}>
       <Typography className="fee-calculator__title" component="h4">Transaction Fee Calculator</Typography>
       <div className="fee-calculator__box">
         <div className="fee-calculator__item">
-          <Typography component="h5" className="fee-calculator__item-title">Withdraw Amount</Typography>
+          <Typography component="h5" className="fee-calculator__item-title">{title} Amount</Typography>
           <Input placeholder="$50.00" />
         </div>
         <div className="fee-calculator__item">
