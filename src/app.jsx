@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 // UI
 import ScrollToTop from 'components/scroll-to-top';
 import Header from 'modules/header';
@@ -40,7 +40,7 @@ const App = () => {
               <Route path="/player-rankings" exact component={PlayerRankingsPage} />
               <Route path="/help" exact component={HelpPage} />
               <Route path="/rewards" exact component={RewardsPage} />
-              <Route path="/withdraw" exact component={WithdrawPage} />
+              <Route path="/withdraw" component={WithdrawPage} />
               <Redirect to="/" />
             </Switch>
           </ScrollToTop>
@@ -50,4 +50,4 @@ const App = () => {
   );
 };
 
-export default withRouter(App);
+export default App;
