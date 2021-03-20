@@ -7,7 +7,7 @@ import Button from 'components/button';
 // Styles
 import './styles.sass';
 // Assets
-import { ReactComponent as LitecoinIcon } from 'assets/images/icons/litecoin-icon.svg';
+import { ReactComponent as LitecoinIcon } from 'assets/images/coins/litecoin.svg';
 
 const WithdrawDetails = () => {
   return (
@@ -17,21 +17,21 @@ const WithdrawDetails = () => {
       </ContentBox.Header>
       <ContentBox.Body>
         <div className="withdraw-details__content">
-          <LitecoinIcon className="withd-detailsraw__icon" />
-          <Typography component="p" className="text-medium withdr-detailsaw__title">
+          <LitecoinIcon className="withdraw-details__icon" />
+          <Typography component="p" className="text-medium withdr-details__title">
             Available to withdraw: <Typography component="span" className="text-bold">$100.00</Typography>
           </Typography>
-          <div className="with-detailsdraw__box">
-            <div className="with-detailsdraw__box-group">
-              <Typography component="h5" className="with-detailsdraw__box-title">Withdraw Amount:</Typography>
-              <Input className="with-detailsdraw__box-input" placeholder="$75.00" />
-              <Typography component="p" className="p-sm with-detailsdraw__box-fee">
+          <div className="withdraw-details__box">
+            <div className="withdraw-details__box-group">
+              <Typography component="h5" className="withdraw-details__box-title">Withdraw Amount:</Typography>
+              <Input className="withdraw-details__box-input" placeholder="$75.00" />
+              <Typography component="p" className="p-sm withdraw-details__box-fee">
                 Transaction Fee: <Typography component="span" className="text-bold">$0.15</Typography>
               </Typography>
             </div>
-            <div className="with-detailsdraw__box-group">
-              <Typography component="h5" className="with-detailsdraw__box-title">LTC Destination Address:</Typography>
-              <Input className="with-detailsdraw__box-input" placeholder="3DmdyMxDew8BJPpDGW3hFUzv3jh75sN1jW" />
+            <div className="withdraw-details__box-group">
+              <Typography component="h5" className="withdraw-details__box-title">LTC Destination Address:</Typography>
+              <Input className="withdraw-details__box-input" placeholder="3DmdyMxDew8BJPpDGW3hFUzv3jh75sN1jW" />
             </div>
           </div>
           <Button variant="primary" size="xl">Withdraw Funds</Button>
