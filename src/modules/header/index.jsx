@@ -38,7 +38,7 @@ const Header = ({ isSigned }) => {
                   >Withdraw</span>
                 </div>
                 <div className="header__widget">
-                  <Button size="lg" variant="accent">Deposit</Button>
+                  <Button size="lg" variant="accent" onClick={() => history.push('/deposit')}>Deposit</Button>
                 </div>
                 <div className="header__widget">
                   <UserDropdown />
