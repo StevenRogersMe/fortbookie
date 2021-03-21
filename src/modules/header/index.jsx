@@ -8,7 +8,7 @@ import UserDropdown from 'modules/user-dropdown';
 // Assets
 import { ReactComponent as Logo } from 'assets/images/logo.svg';
 // Utils
-import { isMathcingPath } from 'utils';
+import { isMathcingPath } from 'utils/router';
 // Styles
 import './styles.sass';
 

@@ -3,7 +3,7 @@ import { useHistory, useLocation } from 'react-router';
 // Styles
 import './styles.sass';
 // Utils
-import { isMathcingPath } from 'utils';
+import { isMathcingPath } from 'utils/router';
 
 const regions = [
   { id: 1, name: 'NAE', path: '/events' },

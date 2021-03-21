@@ -1,16 +1,17 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 // UI
 import ScreenLayout from 'components/screen-layout';
-import DepositPayment from 'screens/deposit/deposit-payment';
-import DepositDetails from 'screens/deposit/deposit-details';
+// Utils
+import { RouteWithSubRoutes } from 'utils/router';
 
-const DepositScreen = () => {
+const DepositScreen = ({ routes }) => {
   return (
     <ScreenLayout>
       <Switch>
-        <Route path="/deposit" exact component={DepositPayment} />
-        <Route path="/deposit/details" exact component={DepositDetails} />
+        {routes.map((route, idx) => (
+          <RouteWithSubRoutes key={idx} {...route} />
+        ))}
         <Redirect to="/deposit" />
       </Switch>
     </ScreenLayout>

@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom';
+import { Route, matchPath } from 'react-router-dom';
 
 export const RouteWithSubRoutes = route => {
   return (
@@ -9,4 +9,12 @@ export const RouteWithSubRoutes = route => {
       )}
     />
   );
+};
+
+export const isMathcingPath = (location, path, exact = false) => {
+  const match = matchPath(location.pathname, {
+    path,
+    exact
+  });
+  return match ? 'is-active' : '';
 };
