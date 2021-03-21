@@ -1,16 +1,16 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 // UI
 import ScreenLayout from 'components/screen-layout';
-import WithdrawPayment from 'screens/withdraw/withdraw-payment';
-import WithdrawDetails from 'screens/withdraw/withdraw-details';
+import { RouteWithSubRoutes } from 'utils/router';
 
-const WithdrawScreen = () => {
+const WithdrawScreen = ({ routes }) => {
   return (
     <ScreenLayout>
       <Switch>
-        <Route path="/withdraw" exact component={WithdrawPayment} />
-        <Route path="/withdraw/details" exact component={WithdrawDetails} />
+        {routes.map((route, idx) => (
+          <RouteWithSubRoutes key={idx} {...route} />
+        ))}
         <Redirect to="/withdraw" />
       </Switch>
     </ScreenLayout>
