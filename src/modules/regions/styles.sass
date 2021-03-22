@@ -17,8 +17,6 @@
     &.is-active
       cursor: default
     &:not(:last-child)
-      margin-right: 50px
-    &--alt
-      &.is-active,
-      &:hover
-        color: $c-accent-1
+      margin-right: 40px
+      +media-max($bp-xl)
+        margin-right: 30px

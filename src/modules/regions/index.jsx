@@ -1,5 +1,7 @@
 import React from 'react';
 import { useHistory, useLocation } from 'react-router';
+// UI
+import NavLink from 'components/nav-link';
 // Styles
 import './styles.sass';
 // Utils
@@ -20,13 +22,13 @@ const Regions = () => {
   return (
     <ul className="regions">
       {regions.map(({ id, name, path }) => (
-        <li
-          key={id}
-          className={`regions__item ${id === 1 ? 'is-active' : ''}`}
-          onClick={() => history.push(path)}
-        >{name}</li>
+        <li key={id} className="regions__item">
+          <NavLink isActive={id === 1} onClick={() => history.push(path)}>{name}</NavLink>
+        </li>
       ))}
-      <li className={`regions__item regions__item--alt ${isMathcingPath(location, '/live-events')}`} onClick={() => history.push('/live-events')}>• LIVE</li>
+      <li className="regions__item" onClick={() => history.push('/live-events')}>
+        <NavLink isActive={isMathcingPath(location, '/live-events')} onClick={() => history.push('/live-events')} accent>• LIVE</NavLink>
+      </li>
     </ul>
   );
 };
