@@ -4,7 +4,7 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 import ContentBox from 'components/content-box';
 import Typography from 'components/typography';
 import CoinPreview from 'components/coin-preview';
-import FeeCalculator from 'components/fee-calculator';
+import FeeCalculator from 'modules/fee-calculator';
 import Button from 'components/button';
 // Styles
 import './styles.sass';
