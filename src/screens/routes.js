@@ -8,6 +8,7 @@ import TransitionsRoutes from 'screens/transactions/route';
 import RewardsRoutes from 'screens/rewards/route';
 import DepositRoutes from 'screens/deposit/route';
 import WithdrawRoutes from 'screens/withdraw/route';
+import ReferralsRoutes from 'screens/referrals/route';
 
 const routes = [
   ...AuthRoutes,
@@ -19,7 +20,8 @@ const routes = [
   ...TransitionsRoutes,
   ...RewardsRoutes,
   ...DepositRoutes,
-  ...WithdrawRoutes
+  ...WithdrawRoutes,
+  ...ReferralsRoutes
 ];
 
 export default routes;
