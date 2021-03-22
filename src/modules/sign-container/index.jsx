@@ -7,8 +7,8 @@ import SignInImage from 'assets/images/sign-container/sign-container-image.jpg';
 const SignContainer = ({ children }) => {
   return (
     <div className="sign-container">
-      <div className="sign-container__image">
-        <img src={SignInImage} alt="sign" />
+      <div className="sign-container__image-wrap">
+        <figure className="sign-container__image" style={{backgroundImage: `url(${SignInImage})`}}></figure>
       </div>
       <div className="sign-container__content">
         {children}
