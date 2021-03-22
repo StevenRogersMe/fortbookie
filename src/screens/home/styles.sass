@@ -1,5 +1,6 @@
-@import ~styles/abstract/variables
+@import ~styles/abstract/grid
 @import ~styles/abstract/mixins
+@import ~styles/abstract/variables
 
 .home-screen
   min-height: 100%
@@ -15,12 +16,15 @@
     background:
       size: cover
       position: center
+  &__row
+    +row()
   &__info
-    max-width: 50%
     color: $c-light
-    padding: 80px 0
+    +col(6)
+    padding-top: 80px
+    padding-bottom: 80px
     +media-max($bp-xl)
-      max-width: 100%
+      +col(12)
   &__title
     margin-bottom: 30px
   &__text
