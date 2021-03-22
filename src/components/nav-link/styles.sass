@@ -1,0 +1,17 @@
+@import ~styles/abstract/mixins
+@import ~styles/abstract/variables
+
+.nav-link
+  font-size: rem(14px)
+  line-height: 1
+  font-weight: 700
+  cursor: pointer
+  color: $c-dark-3
+  transition: 0.2s
+  &:hover,
+  &.is-active
+      color: $c-dark-1
+  &--accent
+    &:hover,
+    &.is-active
+        color: $c-accent-1
