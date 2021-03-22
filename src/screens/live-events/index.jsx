@@ -17,7 +17,7 @@ import Spinner from 'components/spinner';
 // Styles
 import './styles.sass';
 
-const LiveEventsPage = ({ fetchLiveEventsRequest, events: { loading, data, error }, betSlips, toggleBetSlip }) => {
+const LiveEventsScreen = ({ fetchLiveEventsRequest, events: { loading, data, error }, betSlips, toggleBetSlip }) => {
   React.useLayoutEffect(() => {
     fetchLiveEventsRequest();
   }, [fetchLiveEventsRequest]);
@@ -25,18 +25,18 @@ const LiveEventsPage = ({ fetchLiveEventsRequest, events: { loading, data, error
   const handleSelectBet = (eventIdx, betId) => toggleBetSlip({ eventIdx, betId });
 
   return (
-    <ScreenLayout className="events-page">
-      <div className="events-page__filters">
+    <ScreenLayout className="live-events-screen">
+      <div className="live-events-screen__filters">
         <EventsFilters />
       </div>
-      <div className="events-page__preview">
-        <div className="events-page__list">
+      <div className="live-events-screen__preview">
+        <div className="live-events-screen__list">
           {error && <ErrorIndicator retry={fetchLiveEventsRequest} />}
           {(!error && loading) && <Spinner boxed />}
           {(!error && !loading && data) &&
             <Fragment>
               {data.map(({ id, title, date, time, games }, eventIdx) => (
-                <Accordion expanded={eventIdx === 0} className="events-page__list-item" key={id}>
+                <Accordion expanded={eventIdx === 0} className="live-events-screen__list-item" key={id}>
                   <Accordion.Tab title={title} date={date} time={time} />
                   <Accordion.Content>
                     <List header="Winner" items={games} handleSelect={(betId => handleSelectBet(eventIdx, betId))} selected={betSlips} alt />
@@ -46,7 +46,7 @@ const LiveEventsPage = ({ fetchLiveEventsRequest, events: { loading, data, error
             </Fragment>
           }
         </div>
-        <div className="events-page__bets">
+        <div className="live-events-screen__bets">
           <Bets />
         </div>
       </div>
@@ -64,4 +64,4 @@ const mapDispatchToProps = {
   toggleBetSlip
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LiveEventsPage);
+export default connect(mapStateToProps, mapDispatchToProps)(LiveEventsScreen);

@@ -24,7 +24,7 @@ const items = [
   { title: 'Player Transfer', icon: Transfer, path: '/' },
   { title: 'Player Rankings', icon: Rankings, path: '/player-rankings' },
   { title: 'Refer a friend', icon: Referal, path: '/' },
-  { title: 'Rewards', icon: Rewards, path: '/' },
+  { title: 'Rewards', icon: Rewards, path: '/rewards' },
   { title: 'Profile Settings', icon: Settings, path: '/' },
   { title: 'Help', icon: Support, path: '/help' },
 ];

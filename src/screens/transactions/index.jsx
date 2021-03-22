@@ -15,23 +15,23 @@ import { tableContent } from './table-content';
 // Styles
 import './styles.sass';
 
-const Transactions = ({ fetchTransactionsRequest, transactions: { loading, data, error } }) => {
+const TransactionsScreen = ({ fetchTransactionsRequest, transactions: { loading, data, error } }) => {
   React.useLayoutEffect(() => {
     fetchTransactionsRequest();
   }, [fetchTransactionsRequest]);
 
   return (
     <ScreenLayout>
-      <ContentBox className="transactions">
-        <ContentBox.Header className="transactions__header">
-          <div className="transactions__header-left">
-            <Typography component="h3" className="transactions__header-title">Transactions</Typography>
-            <span className="transactions__header-balance">Balance: <span>$100.00</span></span>
-            <span className="transactions__header-balance">Pending: <span>$10.00</span></span>
-            <span className="transactions__header-balance">Free play: <span>$5.00</span></span>
+      <ContentBox className="transactions-screen">
+        <ContentBox.Header className="transactions-screen__header">
+          <div className="transactions-screen__header-left">
+            <Typography component="h3" className="transactions-screen__header-title">Transactions</Typography>
+            <span className="transactions-screen__header-balance">Balance: <span>$100.00</span></span>
+            <span className="transactions-screen__header-balance">Pending: <span>$10.00</span></span>
+            <span className="transactions-screen__header-balance">Free play: <span>$5.00</span></span>
           </div>
-          <div className="transactions__header-right">
-            <div className="transactions__header-select">
+          <div className="transactions-screen__header-right">
+            <div className="transactions-screen__header-select">
               <Select
                 defaultValue={{ label: "24 Hours", value: '24 Hours' }}
                 options={[
@@ -40,7 +40,7 @@ const Transactions = ({ fetchTransactionsRequest, transactions: { loading, data,
                 ]}
               />
             </div>
-            <div className="transactions__header-select">
+            <div className="transactions-screen__header-select">
               <Select
                 defaultValue={{ label: "All", value: 'All' }}
                 options={[
@@ -77,4 +77,4 @@ const mapDispatchToProps = {
   fetchTransactionsRequest
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Transactions);
+export default connect(mapStateToProps, mapDispatchToProps)(TransactionsScreen);

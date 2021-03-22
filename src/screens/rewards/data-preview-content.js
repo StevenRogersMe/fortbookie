@@ -16,14 +16,14 @@ export const dataPreviewContent = () => {
         </RowGroup>
       ),
       body: () => (
-        <div className="rewards__content">
-          <Typography component="h3" className="rewards__content-title">Level 1</Typography>
-          <Typography component="p" className="rewards__content-text text-dark-3">Level up to increase lossback and rakeback from the month prior</Typography>
-          <ProgressBar className="rewards__content-bar" fill="50" />
-          <Typography component="p" className="rewards__content-info text-bold">
+        <div className="rewards-screen__content">
+          <Typography component="h3" className="rewards-screen__content-title">Level 1</Typography>
+          <Typography component="p" className="rewards-screen__content-text text-dark-3">Level up to increase lossback and rakeback from the month prior</Typography>
+          <ProgressBar className="rewards-screen__content-bar" fill="50" />
+          <Typography component="p" className="rewards-screen__content-info text-bold">
             Wager <Typography component="span" className="text-accent-1">$25.00</Typography> for next level
           </Typography>
-          <Timer className="rewards__content-button" time="5:20:12:35" />
+          <Timer className="rewards-screen__content-button" time="5:20:12:35" />
         </div>
       ),
     },
@@ -35,14 +35,14 @@ export const dataPreviewContent = () => {
         </RowGroup>
       ),
       body: () => (
-        <div className="rewards__content">
-          <Typography component="h3" className="rewards__content-title">Level 2</Typography>
-          <Typography component="p" className="rewards__content-text text-dark-3">Level up to increase lossback and rakeback from the month prior</Typography>
-          <ProgressBar className="rewards__content-bar" fill="100" />
-          <Typography component="p" className="rewards__content-info text-bold">
+        <div className="rewards-screen__content">
+          <Typography component="h3" className="rewards-screen__content-title">Level 2</Typography>
+          <Typography component="p" className="rewards-screen__content-text text-dark-3">Level up to increase lossback and rakeback from the month prior</Typography>
+          <ProgressBar className="rewards-screen__content-bar" fill="100" />
+          <Typography component="p" className="rewards-screen__content-info text-bold">
             Wager <Typography component="span" className="text-accent-1">$25.00</Typography> for next level
           </Typography>
-          <Button variant="primary" size="xl" className="rewards__content-button">Request cashback</Button>
+          <Button variant="primary" size="xl" className="rewards-screen__content-button">Request cashback</Button>
         </div>
       ),
     },

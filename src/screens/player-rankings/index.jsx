@@ -15,7 +15,7 @@ import { tableContent } from './table-content';
 // Styles
 import './styles.sass';
 
-const PlayerRankings = ({ fetchPlayerRankingsRequest, playerRankings: { loading, data, error } }) => {
+const PlayerRankingsScreen = ({ fetchPlayerRankingsRequest, playerRankings: { loading, data, error } }) => {
   React.useLayoutEffect(() => {
     fetchPlayerRankingsRequest();
   }, [fetchPlayerRankingsRequest]);
@@ -66,4 +66,4 @@ const mapDispatchToProps = {
   fetchPlayerRankingsRequest
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlayerRankings);
+export default connect(mapStateToProps, mapDispatchToProps)(PlayerRankingsScreen);

@@ -9,7 +9,7 @@ import './styles.sass';
 // Data preview
 import { dataPreviewContent } from './data-preview-content';
 
-const Rewards = () => {
+const RewardsScreen = () => {
   return (
     <ScreenLayout>
       <ContentBox className="rewards">
@@ -24,4 +24,4 @@ const Rewards = () => {
   );
 };
 
-export default Rewards;
+export default RewardsScreen;

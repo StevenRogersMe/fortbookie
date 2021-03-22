@@ -17,7 +17,7 @@ import Spinner from 'components/spinner';
 // Styles
 import './styles.sass';
 
-const EventsPage = ({ fetchEventsRequest, events: { loading, data, error }, betSlips, toggleBetSlip }) => {
+const EventsScreen = ({ fetchEventsRequest, events: { loading, data, error }, betSlips, toggleBetSlip }) => {
   React.useLayoutEffect(() => {
     fetchEventsRequest();
   }, [fetchEventsRequest]);
@@ -64,4 +64,4 @@ const mapDispatchToProps = {
   toggleBetSlip
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EventsPage);
+export default connect(mapStateToProps, mapDispatchToProps)(EventsScreen);

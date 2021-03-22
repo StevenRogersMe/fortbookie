@@ -6,7 +6,7 @@ import Button from 'components/button';
 // Styles
 import './styles.sass';
 
-const HomePage = () => {
+const HomeScreen = () => {
   return (
     <div className="home-screen">
       <Container>
@@ -20,4 +20,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default HomeScreen;

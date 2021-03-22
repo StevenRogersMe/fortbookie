@@ -22,25 +22,25 @@ const topics = [
   { title: 'Rewards', Icon: RewardIcon },
 ];
 
-const Help = () => {
+const HelpScreen = () => {
   return (
     <ScreenLayout>
-      <ContentBox className="help">
+      <ContentBox className="help-screen">
         <ContentBox.Header>
           <Typography component="h3">Help</Typography>
         </ContentBox.Header>
         <ContentBox.Body>
-          <div className="help__email">
-            <Typography component="h3" className="help__email-title">E-mail</Typography>
-            <a href="mailto:fortbookiesupport@gmail.com" className="help__email-link">fortbookiesupport@gmail.com</a>
+          <div className="help-screen__email">
+            <Typography component="h3" className="help-screen__email-title">E-mail</Typography>
+            <a href="mailto:fortbookiesupport@gmail.com" className="help-screen__email-link">fortbookiesupport@gmail.com</a>
           </div>
-          <div className="help__topics">
-            <Typography component="h3" className="help__topics-title">Browse By Topics</Typography>
-            <div className="help__topics-wrap">
+          <div className="help-screen__topics">
+            <Typography component="h3" className="help-screen__topics-title">Browse By Topics</Typography>
+            <div className="help-screen__topics-wrap">
               {topics.map(({ title, Icon }, idx) => (
-                <div key={idx} className="help__topic">
-                  <Icon className="help__topic-icon" />
-                  <span className="help__topic-title">{title}</span>
+                <div key={idx} className="help-screen__topic">
+                  <Icon className="help-screen__topic-icon" />
+                  <span className="help-screen__topic-title">{title}</span>
                 </div>
               ))}
             </div>
@@ -51,4 +51,4 @@ const Help = () => {
   );
 };
 
-export default Help;
+export default HelpScreen;
