@@ -25,29 +25,31 @@ const EventsScreen = ({ fetchEventsRequest, events: { loading, data, error }, be
   const handleSelectBet = (eventIdx, betId) => toggleBetSlip({ eventIdx, betId });
 
   return (
-    <ScreenLayout className="events-screen">
-      <div className="events-screen__filters">
-        <EventsFilters />
-      </div>
-      <div className="events-screen__preview">
-        <div className="events-screen__list">
-          {error && <ErrorIndicator retry={fetchEventsRequest} />}
-          {(!error && loading) && <Spinner boxed />}
-          {(!error && !loading && data) &&
-            <Fragment>
-              {data.map(({ id, title, date, time, games }, eventIdx) => (
-                <Accordion expanded={eventIdx === 0} className="events-screen__list-item" key={id}>
-                  <Accordion.Tab title={title} date={date} time={time} />
-                  <Accordion.Content>
-                    <List header="Winner" items={games} handleSelect={betId => handleSelectBet(eventIdx, betId)} selected={betSlips} />
-                  </Accordion.Content>
-                </Accordion>
-              ))}
-            </Fragment>
-          }
+    <ScreenLayout>
+      <div className="events-screen">
+        <div className="events-screen__filters">
+          <EventsFilters />
         </div>
-        <div className="events-screen__bets">
-          <Bets />
+        <div className="events-screen__preview">
+          <div className="events-screen__list">
+            {error && <ErrorIndicator retry={fetchEventsRequest} />}
+            {(!error && loading) && <Spinner boxed />}
+            {(!error && !loading && data) &&
+              <Fragment>
+                {data.map(({ id, title, date, time, games }, eventIdx) => (
+                  <Accordion expanded={eventIdx === 0} className="events-screen__list-item" key={id}>
+                    <Accordion.Tab title={title} date={date} time={time} />
+                    <Accordion.Content>
+                      <List header="Winner" items={games} handleSelect={betId => handleSelectBet(eventIdx, betId)} selected={betSlips} />
+                    </Accordion.Content>
+                  </Accordion>
+                ))}
+              </Fragment>
+            }
+          </div>
+          <div className="events-screen__bets">
+            <Bets />
+          </div>
         </div>
       </div>
     </ScreenLayout>
