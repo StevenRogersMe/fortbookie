@@ -1,9 +1,9 @@
-import Transitions from './index';
+import Transactions from './index';
 
 const routes = [
   {
-    path: '/transitions',
-    component: Transitions,
+    path: '/transactions',
+    component: Transactions,
     exact: true,
   }
 ];
