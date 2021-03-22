@@ -1,12 +1,12 @@
 @import ~styles/abstract/variables
 
-$b-width: 25px
+$b-size: 25px
 
 .burger
   position: relative
   display: block
-  height: 40px
-  width: 40px
+  height: $b-size
+  width: $b-size
   cursor: pointer
   display: flex
   justify-content: center
@@ -15,14 +15,14 @@ $b-width: 25px
     span
   &--no-border
     border: none
-    height: $b-width
-    width: $b-width
+    height: $b-size
+    width: $b-size
   span
     position: absolute
     top: 50%
     transform: translateY(-50%)
     display: block
-    width: $b-width
+    width: $b-size
     height: 1px
     background-color: $c-dark-1
     transition: 0.2s
@@ -31,7 +31,7 @@ $b-width: 25px
       position: absolute
       content: ''
       left: 0
-      width: $b-width
+      width: $b-size
       height: 1px
       background-color: $c-dark-1
     &:before
