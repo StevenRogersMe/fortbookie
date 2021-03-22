@@ -47,7 +47,7 @@ const Header = ({ isSigned, breakpoints, currentBreakpoint }) => {
                 {!isMobile &&
                   <Fragment>
                     <div className="header__widget">
-                      <NavLink isActive={isMathcingPath(location, '/withdraw')}>Withdraw</NavLink>
+                      <NavLink isActive={isMathcingPath(location, '/withdraw')} onClick={() => history.push('/withdraw')}>Withdraw</NavLink>
                     </div>
                     <div className="header__widget">
                       <Button size="lg" variant="accent" onClick={() => history.push('/deposit')}>Deposit</Button>
@@ -83,8 +83,6 @@ const Header = ({ isSigned, breakpoints, currentBreakpoint }) => {
               </div>
             }
           </div>
-          {/* <div className="header__burger">
-          </div> */}
         </Container>
       </header>
     </Fragment>
