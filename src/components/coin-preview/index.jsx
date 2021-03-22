@@ -1,5 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
+// UI
+import Box from 'components/box';
 // Styles
 import './styles.sass';
 
@@ -11,9 +13,9 @@ const CoinPreview = ({ icon: Icon, isActive, onClick, className }) => {
   });
 
   return (
-    <div className={classes} onClick={onClick}>
+    <Box className={classes} onClick={onClick}>
       <Icon className="coin-preview__icon" />
-    </div>
+    </Box>
   );
 };
 

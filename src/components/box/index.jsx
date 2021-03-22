@@ -3,15 +3,14 @@ import classNames from 'classnames';
 // Styles
 import './styles.sass';
 
-const Box = ({ children, isActive, onClick, className }) => {
+const Box = ({ children, className, ...otherProps }) => {
   const classes = classNames({
     'box': true,
-    'is-active': isActive,
     [className]: className
   });
 
   return (
-    <div className={classes} onClick={onClick} style={onClick && {'cursor': 'pointer'}}>
+    <div className={classes} {...otherProps}>
       {children}
     </div>
   );
