@@ -1,6 +1,7 @@
 import React from 'react';
 // UI
 import ScreenLayout from 'components/screen-layout';
+import Box from 'components/box';
 import ContentBox from 'components/content-box';
 import Typography from 'components/typography';
 // Styles
@@ -36,14 +37,14 @@ const HelpScreen = () => {
           </div>
           <div className="help-screen__topics">
             <Typography component="h3" className="help-screen__topics-title">Browse By Topics</Typography>
-            <div className="help-screen__topics-wrap">
+            <Box className="help-screen__topics-wrap">
               {topics.map(({ title, Icon }, idx) => (
                 <div key={idx} className="help-screen__topic">
                   <Icon className="help-screen__topic-icon" />
                   <span className="help-screen__topic-title">{title}</span>
                 </div>
               ))}
-            </div>
+            </Box>
           </div>
         </ContentBox.Body>
       </ContentBox>
