@@ -23,7 +23,7 @@ const items = [
   { title: 'Transactions', icon: Transaction, path: '/transactions' },
   { title: 'Player Transfer', icon: Transfer, path: '/' },
   { title: 'Player Rankings', icon: Rankings, path: '/player-rankings' },
-  { title: 'Refer a friend', icon: Referal, path: '/' },
+  { title: 'Refer a friend', icon: Referal, path: '/referrals' },
   { title: 'Rewards', icon: Rewards, path: '/rewards' },
   { title: 'Profile Settings', icon: Settings, path: '/' },
   { title: 'Help', icon: Support, path: '/help' },
