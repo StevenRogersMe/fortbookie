@@ -12,9 +12,9 @@ import { dataPreviewContent } from './data-preview-content';
 const RewardsScreen = () => {
   return (
     <ScreenLayout>
-      <ContentBox className="rewards">
+      <ContentBox className="rewards-screen">
         <ContentBox.Header>
-          <Typography component="h3" className="transactions__header-title">Rewards</Typography>
+          <Typography component="h3" className="rewards-screen__header-title">Rewards</Typography>
         </ContentBox.Header>
         <ContentBox.Body>
           <DataPreview content={dataPreviewContent()} />
