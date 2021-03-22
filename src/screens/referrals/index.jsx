@@ -2,6 +2,7 @@ import React from 'react';
 // UI
 import ScreenLayout from 'components/screen-layout';
 import ContentBox from 'components/content-box';
+import Box from 'components/box';
 import Typography from 'components/typography';
 import DataPreview from 'components/data-preview';
 import Input from 'components/input';
@@ -21,20 +22,20 @@ const ReferralsScreen = () => {
         <ContentBox.Body>
           <div className="referrals-screen__control">
             <div className="referrals-screen__control-items">
-              <div className="referrals-screen__box">
+              <Box className="referrals-screen__box">
                 <Typography component="h5" className="referrals-screen__box-title">Your Referral Link</Typography>
                 <div className="referrals-screen__box-form">
                   <Input className="referrals-screen__box-input" placeholder="https://fortbookie.com/?ref=fortbettor" />
                   <Button variant="primary" size="lg">Copy</Button>
                 </div>
-              </div>
-              <div className="referrals-screen__box">
+              </Box>
+              <Box className="referrals-screen__box">
                 <Typography component="h5" className="referrals-screen__box-title">Availible Earnings</Typography>
                 <div className="referrals-screen__box-form">
                   <Input className="referrals-screen__box-input" placeholder="$18.24" />
                   <Button variant="accent" size="lg">Claim</Button>
                 </div>
-              </div>
+              </Box>
             </div>
             <div className="referrals-screen__control-text">
               <Typography component="h5">Share the link above or have friends use the promo code <Typography component="span" className="text-accent-1">“fortbettor”</Typography>.<br />
