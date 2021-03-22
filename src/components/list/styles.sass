@@ -10,7 +10,8 @@
       color: $c-dark-1
     .list__item
       background-color: #f7f2fd
-      border: 1px solid #E5E0EB
+      border-top: 1px solid #E5E0EB
+      border-right: 1px solid #E5E0EB
     &.is-active
       background: #EFE5FB
 
@@ -21,6 +22,8 @@
     color: $c-dark-3
     padding: 15px 20px
     background-color: $c-gray-1
+    +media-max($bp-sm)
+      padding: 15px
   &__items
     display: flex
     flex-wrap: wrap
@@ -32,18 +35,17 @@
     padding: 12px 20px
     cursor: pointer
     background-color: $c-light
-    border: 1px solid $c-gray-1
-    border-bottom: 0
+    border-top: 1px solid $c-gray-1
+    border-right: 1px solid $c-gray-1
     transition: 0.2s
+    +media-max($bp-sm)
+      padding: 12px 15px
+    +media-max($bp-xs)
+      width: 100%
+      border-right: 0 !important
     &.is-active
       background: rgba($c-primary-1, 0.1)
-    &:nth-child(odd)
+    &:nth-child(even)
       border-right: 0
     &-game
-      font-size: rem(14px)
-      font-weight: 500
-      line-height: 1
-    &-price
-      font-size: rem(16px)
-      font-weight: 700
-      line-height: 1
+      margin-right: 10px

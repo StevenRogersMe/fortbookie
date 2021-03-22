@@ -1,5 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
+// UI
+import Typography from 'components/typography';
 // Styles
 import './styles.sass';
 
@@ -19,8 +21,8 @@ const List = ({ header, items, handleSelect, selected, alt }) => {
       <div className="list__items">
         {items.map(({ id, game, price }) => (
           <div key={id} className={`list__item ${isActive(id) ? 'is-active' : ''}`} onClick={() => { handleSelect(id) }}>
-            <div className="list__item-game">{game}</div>
-            <div className="list__item-price">{price}</div>
+            <Typography component="p" className="p-sm text-medium list__item-game">{game}</Typography>
+            <Typography component="h5">{price}</Typography>
           </div>
         ))}
       </div>
