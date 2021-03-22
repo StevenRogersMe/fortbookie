@@ -2,20 +2,6 @@
 @import ~styles/abstract/variables
 
 .open-bets
-  &__empty
-    padding: 150px 0
-    text-align: center
-    &-title
-      margin-bottom: 10px
-    &-message
-      font-size: rem(16px)
-      font-weight: 400
-      line-height: 1
-      color: $c-dark-3
-    &-link
-      font-weight: 600
-      color: $c-primary-1
-
   // Content
   &__content
     padding-top: 15px
@@ -34,20 +20,11 @@
       height: 100%
       background-color: $c-gray-2
       z-index: -1
-    &-item
-      font-size: rem(14px)
-      line-height: 1.5
-      font-weight: 500
-      color: $c-dark-3
-      &-accent
-        font-weight: 700
-      &:last-child
-        text-align: right
 
   // Items
   &__items
     width: calc( 100% + 40px )
     margin-left: -20px
     &-scroll
-      max-height: 296px
+      max-height: 295px
       padding: 0 20px

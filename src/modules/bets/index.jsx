@@ -6,6 +6,7 @@ import { removeAllBetSlips } from 'redux/bet-slips/actions';
 import Button from 'components/button';
 import BetSlips from 'modules/bet-slips';
 import OpenBets from 'modules/open-bets';
+import Typography from 'components/typography';
 // Styles
 import './styles.sass';
 
@@ -29,8 +30,8 @@ const Bets = ({ removeAllBetSlips }) => {
           >Open Bets</button>
         </div>
         <div className="bets__balance">
-          <span className="bets__balance-current">Balance: 100$</span>
-          <span className="bets__balance-pending">Pending : $10.00</span>
+          <Typography component="span" variant="h5" className="bets__balance-current">Balance: 100$</Typography>
+          <Typography component="span" variant="p" className="text-medium text-dark-3 bets__balance-pending">Pending : $10.00</Typography>
         </div>
         <div className="bets__content">
           {selectedTab === 'betSlips' ?

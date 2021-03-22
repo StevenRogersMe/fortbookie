@@ -10,7 +10,7 @@ const EventsFilters = () => {
     <div className="event-filters">
       <div className="event-filters__wrap">
         <div className="event-filters__item">
-          <Typography component="h6" className="event-filters__item-title">Region</Typography>
+          <Typography component="span" variant="h6" className="event-filters__item-title">Region</Typography>
           <div className="event-filters__item-select">
             <Select
               defaultValue={{ label: "All", value: 'All' }}
@@ -26,7 +26,7 @@ const EventsFilters = () => {
           </div>
         </div>
         <div className="event-filters__item">
-          <Typography component="h6" className="event-filters__item-title">Event</Typography>
+          <Typography component="span" variant="h6" className="event-filters__item-title">Event</Typography>
           <div className="event-filters__item-select">
             <Select
               defaultValue={{ label: "All", value: 'All' }}
@@ -42,7 +42,7 @@ const EventsFilters = () => {
           </div>
         </div>
         <div className="event-filters__item">
-          <Typography component="h6" className="event-filters__item-title">Bet type</Typography>
+          <Typography component="span" variant="h6" className="event-filters__item-title">Bet type</Typography>
           <div className="event-filters__item-select">
             <Select
               defaultValue={{ label: "All", value: 'All' }}

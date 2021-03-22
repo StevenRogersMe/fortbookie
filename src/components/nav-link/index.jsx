@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import Typography from 'components/typography';
 // Styles
 import './styles.sass';
 
@@ -12,9 +13,9 @@ const NavLink = ({ children, className, isActive, accent, ...otherProps }) => {
   });
 
   return (
-    <span className={classes} {...otherProps}>
+    <Typography component="span" variant="h5" className={classes} {...otherProps}>
       {children}
-    </span>
+    </Typography>
   );
 };
 

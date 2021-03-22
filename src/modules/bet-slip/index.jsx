@@ -2,6 +2,7 @@ import React from 'react';
 // UI
 import Input from 'components/input';
 import Close from 'components/close';
+import Typography from 'components/typography';
 // Styles
 import './styles.sass';
 
@@ -22,12 +23,12 @@ const BetSlip = ({ title, game, price, removeBetSlip }) => {
   return (
     <div className="bet-slip">
       <div className="bet-slip__header">
-        <span className="bet-slip__header-title">{title}</span>
+        <Typography component="span" variant="p-sm" className="text-dark-3 bet-slip__header-title">{title}</Typography>
         <Close onClick={removeBetSlip} />
       </div>
       <div className="bet-slip__details">
-        <span className="bet-slip__details-name">{game}</span>
-        <span className="bet-slip__details-price">{price}</span>
+        <Typography component="span" variant="h5" className="bet-slip__details-name">{game}</Typography>
+        <Typography component="span" variant="h5" className="text-accent-2 bet-slip__details-price">{price}</Typography>
       </div>
       <div className="bet-slip__control">
         <div className="bet-slip__control-input">

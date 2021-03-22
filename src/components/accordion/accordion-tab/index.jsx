@@ -17,12 +17,8 @@ const AccordionTab = ({ title, date, time, handleAccordion, isExpanded }) => {
         <Typography component="h3">{title}</Typography>
       </div>
       <div className="accordion-tab__meta">
-        <div className="accordion-tab__meta-item">
-          {date}
-        </div>
-        <div className="accordion-tab__meta-item">
-          {time}
-        </div>
+        <Typography component="span" variant="p" className="text-medium accordion-tab__meta-item">{date}</Typography>
+        <Typography component="span" variant="p" className="text-medium accordion-tab__meta-item">{time}</Typography>
       </div>
       <div className="accordion-tab__icon">
         <div className="accordion-tab__icon-circle">

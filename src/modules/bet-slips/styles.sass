@@ -2,20 +2,6 @@
 @import ~styles/abstract/variables
 
 .bet-slips
-  &__empty
-    padding: 85px 0
-    text-align: center
-    &-title
-      margin-bottom: 10px
-    &-message
-      font-size: rem(16px)
-      font-weight: 400
-      line-height: 1
-      color: $c-dark-3
-    &-link
-      font-weight: 600
-      color: $c-primary-1
-
   // Container
   &__container
     border-bottom: 1px dashed $c-dark-3
@@ -41,10 +27,6 @@
     flex-direction: column
     margin-right: 20px
     &-title
-      font-size: rem(14px)
-      line-height: 1
-      font-weight: 700
-      color: $c-dark-1
       margin-bottom: 10px
     &-value
       border-radius: $r-primary
@@ -58,14 +40,8 @@
         color: $c-danger
         background-color: rgba($c-danger, 0.1)
   &__winnings
+    display: flex
+    flex-direction: column
     &-title
-      font-size: rem(14px)
-      line-height: 1
-      font-weight: 700
-      color: $c-dark-1
+      display: inline-block
       margin-bottom: 17px
-    &-value
-      font-size: rem(18px)
-      line-height: 1
-      font-weight: 600
-      color: $c-accent-2

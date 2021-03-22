@@ -6,6 +6,7 @@ import { fetchOpenBetsRequest } from 'redux/open-bets/actions';
 import { selectOpenBets } from 'redux/open-bets/selectors';
 // UI
 import OpenBet from 'modules/open-bet';
+import BetsEmpty from 'modules/bets-empty';
 import Typography from 'components/typography';
 import Scrollbar from 'components/scrollbar';
 import Spinner from 'components/spinner';
@@ -25,22 +26,20 @@ const OpenBets = ({ fetchOpenBetsRequest, openBets: { loading, data, error } }) 
         {loading && <Spinner boxed />}
 
         {data && data.length === 0 &&
-          <div className="open-bets__empty">
-            <Typography component="h3" className="open-bets__empty-title">Open Bets is Empty</Typography>
-            <p className="open-bets__empty-message">
-              Learn how to place bets <a href="http://example.com" className="open-bets__empty-link">here</a>
-            </p>
-          </div>
+          <BetsEmpty title="Open Bets" />
         }
 
         {data && data.length > 0 &&
           <div className="open-bets__content">
             <div className="open-bets__header">
-              <p className="open-bets__header-item">
-                <span className="open-bets__header-item-accent">Date</span><br />Time</p>
-              <p className="open-bets__header-item">
-                <span className="open-bets__header-item-accent">Bet Amount</span><br />Remaining Balance
-              </p>
+              <Typography component="span" variant="p" className="text-dark-3">
+                <Typography component="span" className="text-bold">Date</Typography><br />
+                Time
+              </Typography>
+              <Typography component="span" variant="p" className="text-dark-3 text-right">
+                <Typography component="span" className="text-bold">Bet Amount</Typography><br />
+                Remaining Balance
+              </Typography>
             </div>
             <div className="open-bets__items">
               <Scrollbar className="open-bets__items-scroll">

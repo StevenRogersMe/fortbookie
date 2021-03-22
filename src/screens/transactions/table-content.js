@@ -18,15 +18,15 @@ export const tableContent = () => {
         return (
           <Fragment>
             <div className="transactions-screen__line">
-              <Typography component="p" className="p-sm text-bold">Placed - {placed}</Typography>
-              <Typography component="p" className="p-sm text-bold text-accent-2">${placedPrice}</Typography>
+              <Typography component="span" variant="p-sm" className="text-bold">Placed - {placed}</Typography>
+              <Typography component="span" variant="p-sm" className="text-bold text-accent-2">${placedPrice}</Typography>
             </div>
             <div className="transactions-screen__line">
-              <Typography component="p" className="p-sm text-bold">{game}</Typography>
-              <Typography component="p" className="p-sm text-bold">{price}</Typography>
+              <Typography component="span" variant="p-sm" className="text-bold">{game}</Typography>
+              <Typography component="span" variant="p-sm" className="text-bold">{price}</Typography>
             </div>
             <div className="transactions-screen__line">
-              <Typography component="p" className="p-sm text-medium text-dark-3">{title}</Typography>
+              <Typography component="span" variant="p-sm" className="text-medium text-dark-3">{title}</Typography>
             </div>
           </Fragment>
         )

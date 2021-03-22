@@ -15,13 +15,11 @@ const List = ({ header, items, handleSelect, selected, alt }) => {
 
   return (
     <div className={classnames}>
-      <div className="list__header">
-        {header}
-      </div>
+      <Typography component="h6" className="text-dark-3 list__header">{header}</Typography>
       <div className="list__items">
         {items.map(({ id, game, price }) => (
           <div key={id} className={`list__item ${isActive(id) ? 'is-active' : ''}`} onClick={() => { handleSelect(id) }}>
-            <Typography component="p" className="p-sm text-medium list__item-game">{game}</Typography>
+            <Typography component="span" variant="p-sm" className="text-medium list__item-game">{game}</Typography>
             <Typography component="h5">{price}</Typography>
           </div>
         ))}

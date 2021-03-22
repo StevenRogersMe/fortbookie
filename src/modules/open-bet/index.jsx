@@ -1,4 +1,6 @@
 import React from 'react';
+// UI
+import Typography from 'components/typography';
 // Styles
 import './styles.sass';
 
@@ -6,25 +8,25 @@ const OpenBet = ({ date, time, betAmount, remainingBalance, placed, placedPrice,
   return (
     <div className="open-bet">
       <div className="open-bet__row">
-        <span className="open-bet__meta-item">
-          <span className="open-bet__meta-item-accent">{date}</span><br />
+        <Typography component="span" variant="p-sm" className="text-dark-3">
+          <Typography component="span" className="text-bold">{date}</Typography><br />
           {time}
-        </span>
-        <span className="open-bet__meta-item">
-          <span className="open-bet__meta-item-accent">{betAmount}</span><br />
+        </Typography>
+        <Typography component="span" variant="p-sm" className="text-dark-3 text-right">
+          <Typography component="span" className="text-bold">{betAmount}</Typography><br />
           {remainingBalance}
-        </span>
+        </Typography>
       </div>
       <div className="open-bet__row">
-        <span className="open-bet__placed-title">Placed - {placed}</span>
-        <span className="open-bet__placed-price">{placedPrice}</span>
+        <Typography component="span" variant="h5">Placed - {placed}</Typography>
+        <Typography component="span" variant="h5" className="text-accent-2 text-right">{placedPrice}</Typography>
       </div>
       <div className="open-bet__row">
-        <span className="open-bet__details-title">{game}</span>
-        <span className="open-bet__details-price">{gamePrice}</span>
+        <Typography component="span" variant="h5">{game}</Typography>
+        <Typography component="span" variant="h5" className="text-right">{gamePrice}</Typography>
       </div>
       <div className="open-bet__row">
-        <span className="open-bet__footer-title">{title}</span>
+        <Typography component="span" variant="p-sm" className="text-dark-3">{title}</Typography>
       </div>
     </div>
   );
