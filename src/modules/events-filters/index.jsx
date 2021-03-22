@@ -1,6 +1,7 @@
 import React from 'react';
 // UI
 import Select from 'components/select';
+import Typography from 'components/typography';
 // Styles
 import './styles.sass';
 
@@ -9,7 +10,7 @@ const EventsFilters = () => {
     <div className="event-filters">
       <div className="event-filters__wrap">
         <div className="event-filters__item">
-          <div className="event-filters__item-title">Region</div>
+          <Typography component="h6" className="event-filters__item-title">Region</Typography>
           <div className="event-filters__item-select">
             <Select
               defaultValue={{ label: "All", value: 'All' }}
@@ -25,7 +26,7 @@ const EventsFilters = () => {
           </div>
         </div>
         <div className="event-filters__item">
-          <div className="event-filters__item-title">Event</div>
+          <Typography component="h6" className="event-filters__item-title">Event</Typography>
           <div className="event-filters__item-select">
             <Select
               defaultValue={{ label: "All", value: 'All' }}
@@ -41,7 +42,7 @@ const EventsFilters = () => {
           </div>
         </div>
         <div className="event-filters__item">
-          <div className="event-filters__item-title">Bet type</div>
+          <Typography component="h6" className="event-filters__item-title">Bet type</Typography>
           <div className="event-filters__item-select">
             <Select
               defaultValue={{ label: "All", value: 'All' }}

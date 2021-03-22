@@ -1,26 +1,36 @@
+@import ~styles/abstract/grid
 @import ~styles/abstract/variables
 @import ~styles/abstract/mixins
 
 .event-filters
   background-color: $c-light
   border-radius: $r-primary
-  padding: 20px
+  padding: 20px 30px
+  +media-max($bp-lg)
+    padding: 20px
+  +media-max($bp-sm)
+    padding: 20px 15px
   &__wrap
-    display: flex
-    align-items: center
-    flex-wrap: wrap
-    margin: 0 -20px
+    +row()
   &__item
     display: flex
     align-items: center
-    width: 25%
-    padding: 0 20px
+    +col(3)
+    +media-max($bp-xl)
+      +col(4)
+    +media-max($bp-md)
+      +col(6)
+      flex-direction: column
+      align-items: flex-start
+      &:not(:last-child)
+        margin-bottom: 15px
+    +media-max($bp-sm)
+      +col(12)
     &-title
       margin-right: 15px
-      font-size: rem(14px)
-      line-height: 1
-      font-weight: 700
       white-space: nowrap
+      +media-max($bp-md)
+        margin-bottom: 10px
     &-select
       width: 100%
       max-width: 100%
