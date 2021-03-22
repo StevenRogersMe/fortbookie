@@ -12,11 +12,11 @@ import Button from 'components/button';
 // Styles
 import './styles.sass';
 // Context
-import { signInContext } from '../../../app';
+import { SignInContext } from '../../../app-context';
 
 const SignIn = () => {
   const history = useHistory();
-  const { handleSignIn } = React.useContext(signInContext);
+  const { handleSignIn } = React.useContext(SignInContext);
 
   const handleSubmit = e => {
     e.preventDefault()

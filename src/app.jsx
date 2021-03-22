@@ -8,8 +8,8 @@ import { RouteWithSubRoutes } from 'utils/router';
 import routes from './screens/routes';
 // Styles
 import './app.sass';
-
-export const signInContext = React.createContext();
+// Context
+import { SignInContext } from './app-context';
 
 const App = () => {
   const [isSigned, setIsSigned] = React.useState(false);
@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <signInContext.Provider value={{ isSigned, handleSignIn, handleSignOut }}>
+      <SignInContext.Provider value={{ isSigned, handleSignIn, handleSignOut }}>
         <Header isSigned={isSigned} />
         <div className="app__wrap">
           <ScrollToTop>
@@ -30,7 +30,7 @@ const App = () => {
             </Switch>
           </ScrollToTop>
         </div>
-      </signInContext.Provider>
+      </SignInContext.Provider>
     </div>
   );
 };

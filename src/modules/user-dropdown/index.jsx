@@ -17,7 +17,7 @@ import { ReactComponent as Settings } from 'assets/images/user/settings.svg';
 import { ReactComponent as Support } from 'assets/images/user/support.svg';
 import { ReactComponent as LogOut } from 'assets/images/user/logout.svg';
 // Context
-import { signInContext } from '../../app';
+import { SignInContext } from '../../app-context';
 
 const items = [
   { title: 'Transactions', icon: Transaction, path: '/transactions' },
@@ -32,7 +32,7 @@ const items = [
 const UserDropdown = () => {
   const history = useHistory();
   const [isActive, setIsActive] = React.useState(false);
-  const { handleSignOut } = React.useContext(signInContext);
+  const { handleSignOut } = React.useContext(SignInContext);
   const handleDropdown = () => setIsActive(isActive => !isActive);
 
   return (

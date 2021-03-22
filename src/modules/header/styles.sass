@@ -19,8 +19,16 @@
   // Left
   &__left
     margin-right: 70px
+    +media-max($bp-xxl)
+      margin-right: 30px
+    +media-max($bp-md)
+      margin-right: 20px
   &__logo
     max-width: 200px
+    +media-max($bp-xxl)
+      max-width: 180px
+    +media-max($bp-xs)
+      max-width: 150px
 
   // Right
   &__right
@@ -32,13 +40,10 @@
   &__widget
     &:not(:last-child)
       margin-right: 20px
-    &-text
-      font-size: rem(14px)
-      line-height: 1
-      font-weight: 700
-      cursor: pointer
-      color: $c-dark-3
-      transition: 0.2s
-      &:hover,
-      &.is-active
-        color: $c-dark-1
+      +media-max($bp-xs)
+        margin-right: 15px
+  &__burger
+    padding-left: 20px
+    border-left: 1px solid $c-gray-2
+    +media-max($bp-xs)
+      padding-left: 15px
