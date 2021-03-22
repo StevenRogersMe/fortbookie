@@ -7,13 +7,13 @@ import './styles.sass';
 
 const ScreenLayout = ({ children, className }) => {
   const classes = classNames({
-    'page-layout': true,
+    'screen-layout': true,
     [className]: className
   });
 
   return (
     <div className={classes}>
-      <Container className="page-layout__container">
+      <Container className="screen-layout__container">
         {children}
       </Container>
     </div>
