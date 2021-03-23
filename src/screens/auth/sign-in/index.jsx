@@ -1,5 +1,10 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+// Redux
+import { selectUser } from 'redux/auth/selectors';
+import { signInStart } from 'redux/auth/sign-in/actions'
 // UI
 import ScreenLayout from 'components/screen-layout';
 import SignContainer from 'modules/sign-container';
@@ -11,15 +16,11 @@ import Checkbox from 'components/checkbox';
 import Button from 'components/button';
 // Styles
 import './styles.sass';
-// Context
-import { SignInContext } from '../../../app-context';
 
-const SignIn = () => {
-  const history = useHistory();
-  const { handleSignIn } = React.useContext(SignInContext);
-
+const SignIn = ({ signInStart, user: { loading } }) => {
   const handleSubmit = e => {
-    e.preventDefault()
+    e.preventDefault();
+    signInStart();
   };
 
   return (
@@ -34,13 +35,10 @@ const SignIn = () => {
             <Input placeholder="Password" />
           </FormGroup>
           <FormGroup>
-            <Checkbox label="Remember me" checked={true} />
+            <Checkbox label="Remember me" checked={true} onChange={() => { }} />
           </FormGroup>
           <FormGroup>
-            <Button type="submit" variant="primary" size="xl" onClick={() => {
-              handleSignIn();
-              history.push('/events');
-            }}>Sign In</Button>
+            <Button type="submit" variant="primary" size="xl" loading={loading}>Sign In</Button>
           </FormGroup>
           <Link to="/sign-up">
             <span className="sign-in__create">Create a new account</span>
@@ -51,4 +49,12 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+const mapStateToProps = createStructuredSelector({
+  user: selectUser
+});
+
+const mapDispatchToProps = {
+  signInStart
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

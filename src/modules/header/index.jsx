@@ -15,9 +15,10 @@ import { isMathcingPath } from 'utils/router';
 // Styles
 import './styles.sass';
 
-const Header = ({ isSigned, breakpoints, currentBreakpoint }) => {
+const Header = ({ breakpoints, currentBreakpoint }) => {
   const history = useHistory();
   const location = useLocation();
+  const isSigned = false
 
   const [isMobile, setIsMobile] = React.useState(false);
   React.useEffect(() => {
