@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 // Redux
@@ -17,11 +17,19 @@ import Button from 'components/button';
 // Styles
 import './styles.sass';
 
-const SignIn = ({ signInRequest, user: { loading } }) => {
+const SignIn = ({ signInRequest, user: { loading, userData } }) => {
+  const history = useHistory();
+
   const handleSubmit = e => {
     e.preventDefault();
     signInRequest();
   };
+
+  React.useEffect(() => {
+    if (userData) {
+      return history.push('/');
+    }
+  }, [userData, history]);
 
   return (
     <ScreenLayout>

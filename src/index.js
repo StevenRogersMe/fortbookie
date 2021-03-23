@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import ReactBreakpoints from 'react-breakpoints';
+// History
+import history from './history';
 // App
 import App from './app';
 // Store
@@ -23,7 +25,7 @@ const breakpoints = {
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
+      <Router history={history}>
         <ReactBreakpoints breakpoints={breakpoints} debounceResize={true} debounceDelay={50}>
           <App />
         </ReactBreakpoints>

@@ -15,7 +15,6 @@ function* fetchSignInWorker() {
     localStorage.setItem('user', JSON.stringify(user));
     // redirect to events
     history.push('/events');
-    window.location.reload();
   } catch ({ message }) {
     yield put(signInFailure(message));
   }

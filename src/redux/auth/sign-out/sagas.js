@@ -1,16 +1,13 @@
-import { takeLatest, put, delay } from 'redux-saga/effects';
+import { takeLatest, put } from 'redux-saga/effects';
 import { signOutRequest, signOutSuccess, signOutFailure } from './actions';
 import history from '../../../history';
 
 function* fetchSignOutWorker() {
   try {
     yield put(signOutSuccess());
-    yield delay(1000);
-    // remove user from the local storage
+    // remove user from the local storage and redirect to home
     localStorage.removeItem('user');
-    // redirect to home
     history.push('/');
-    window.location.reload();
   } catch ({ message }) {
     yield put(signOutFailure(message));
   }
