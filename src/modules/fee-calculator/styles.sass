@@ -11,13 +11,18 @@
     +col(6)
     &-title
       margin-bottom: 15px
+    +media-max($bp-md)
+      +col(12)
+      &:first-child
+        margin-bottom: 20px
   &__coins
     display: flex
     align-items: center
-    padding-top: 7px
+    flex-wrap: wrap
   &__coin
     display: flex
     align-items: center
+    padding-top: 7px
     &:not(:last-child)
       margin-right: 50px
     &-icon

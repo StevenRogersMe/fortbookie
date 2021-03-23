@@ -1,3 +1,4 @@
+@import ~styles/abstract/grid
 @import ~styles/abstract/mixins
 @import ~styles/abstract/variables
 
@@ -5,13 +6,13 @@
   &__title
     text-transform: capitalize
   &__method
-    display: flex
-    align-items: center
-    margin: 0 -15px
+    +row()
     margin-bottom: 40px
     &-item
-      width: 50%
-      padding: 0 15px
-
+      +col(6)
+      +media-max($bp-md)
+        +col(12)
+        &:not(:last-child)
+          margin-bottom: 20px
   &__calc
     margin-bottom: 40px
