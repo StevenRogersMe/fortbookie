@@ -1,6 +1,6 @@
 export const fetchState = (type, payload) => {
   const state = {
-    loading: true,
+    loading: false,
     data: null,
     error: null
   };
@@ -9,7 +9,10 @@ export const fetchState = (type, payload) => {
     case 'initial':
       return state;
     case 'request':
-      return state;
+      return {
+        ...state,
+        loading: true,
+      };
     case 'success':
       return {
         ...state,
