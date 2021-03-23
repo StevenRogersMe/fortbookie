@@ -26,9 +26,15 @@ const TransactionsScreen = ({ fetchTransactionsRequest, transactions: { loading,
         <ContentBox.Header className="transactions-screen__header">
           <div className="transactions-screen__header-left">
             <Typography component="h3" className="transactions-screen__header-title">Transactions</Typography>
-            <span className="transactions-screen__header-balance">Balance: <span>$100.00</span></span>
-            <span className="transactions-screen__header-balance">Pending: <span>$10.00</span></span>
-            <span className="transactions-screen__header-balance">Free play: <span>$5.00</span></span>
+            <Typography component="span" variant="p" className="text-dark-3 transactions-screen__header-balance">
+              Balance: <Typography component="span" className="text-dark-1 text-bold">$100.00</Typography>
+            </Typography>
+            <Typography component="span" variant="p" className="text-dark-3 transactions-screen__header-balance">
+              Pending: <Typography component="span" className="text-dark-1 text-bold">$10.00</Typography>
+            </Typography>
+            <Typography component="span" variant="p" className="text-dark-3 transactions-screen__header-balance">
+            Free play: <Typography component="span" className="text-dark-1 text-bold">$5.00</Typography>
+            </Typography>
           </div>
           <div className="transactions-screen__header-right">
             <div className="transactions-screen__header-select">
