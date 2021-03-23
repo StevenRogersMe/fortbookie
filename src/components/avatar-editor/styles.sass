@@ -5,27 +5,53 @@
 .avatar-editor
   &__box
     position: relative
-    width: 100px
-    height: 100px
+    width: 120px
+    height: 120px
     &-image
       width: 100%
-      height: 100%
       border-radius: 50%
+      height: 100%
       background:
         size: cover
         position: center
         repeat: no-repeat
+    &-overlay
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      border-radius: 50%
+      height: 100%
+      background-color: $overlay-bg-alt
+      display: flex
+      justify-content: center
+      align-items: center
+      opacity: 0
+      transition: 0.2s
+      z-index: 1
+      &:hover
+        opacity: 1
+    &-input
+      position: absolute
+      border-radius: 50%
+      top: 0
+      left: 0
+      height: 100%
+      width: 100%
+      opacity: 0
+      cursor: pointer
     &-btn
       position: absolute
       right: 0
       bottom: 0
-      width: 30px
-      height: 30px
+      width: 35px
+      height: 35px
       background-color: $c-light
       box-shadow: $s-alt
       border-radius: 50%
-      padding: 9px
+      padding: 10px
       cursor: pointer
+      z-index: 2
   &__cropper
     position: fixed
     overflow: auto
@@ -50,7 +76,7 @@
     &-buttons
       display: flex
       align-items: center
-      justify-content: center
+      justify-content: flex-end
     &-button
       &:not(:last-child)
         margin-right: 10px

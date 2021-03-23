@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactAvatarEditor from 'react-avatar-editor';
 // UI
-import UploadButton from 'components/upload-button';
 import Button from 'components/button';
 import Slider from 'components/slider';
+import Typography from 'components/typography';
 // Styles
 import './styles.sass';
 // Assets
@@ -11,14 +11,17 @@ import { ReactComponent as PencilIcon } from 'assets/images/icons/pencil.svg';
 
 const AvatarEditor = ({ image }) => {
   const editorRef = React.useRef(null);
-  const [showCropper, setShowCropper] = React.useState(true);
-  const [avatar, setAvatar] = React.useState(image);
+  const [defaultAvatar, setDefaultAvatar] = React.useState(image);
+  const [editedAvatar, setEditedAvatar] = React.useState(image);
+  const [showCropper, setShowCropper] = React.useState(false);
   const [zoom, setZoom] = React.useState(1);
 
-  const handleFileChange = e => {
+  const handleFileUpload = e => {
     window.URL = window.URL || window.webkitURL;
     let image = window.URL.createObjectURL(e.target.files[0]);
-    setAvatar(image);
+    setShowCropper(true);
+    setDefaultAvatar(image);
+    setEditedAvatar(image);
   };
 
   const handleZoomSlider = value => setZoom(value);
@@ -28,15 +31,20 @@ const AvatarEditor = ({ image }) => {
     if (editor) {
       const canvasScaled = editor.getImageScaledToCanvas();
       const croppedImg = canvasScaled.toDataURL();
-      setAvatar(croppedImg);
+      setEditedAvatar(croppedImg);
       setShowCropper(false);
+      setZoom(1);
     }
   };
 
   return (
     <div className="avatar-editor">
       <div className="avatar-editor__box">
-        <figure style={{ backgroundImage: `url(${avatar})` }} className="avatar-editor__box-image" />
+        <figure style={{ backgroundImage: `url(${editedAvatar})` }} className="avatar-editor__box-image" />
+        <div className="avatar-editor__box-overlay">
+          <input type="file" accept="image/*" onChange={handleFileUpload} className="avatar-editor__box-input" />
+          <Typography component="span" variant="p-sm" className="text-light">Upload an image</Typography>
+        </div>
         <div className="avatar-editor__box-btn" onClick={() => setShowCropper(true)}>
           <PencilIcon />
         </div>
@@ -50,7 +58,7 @@ const AvatarEditor = ({ image }) => {
                 width={250}
                 height={250}
                 borderRadius={250}
-                image={image}
+                image={defaultAvatar}
                 scale={zoom}
               />
             </div>
@@ -58,15 +66,8 @@ const AvatarEditor = ({ image }) => {
               <Slider min={1} max={10} step={0.1} value={zoom} onChange={handleZoomSlider} />
             </div>
             <div className="avatar-editor__cropper-buttons">
-              <div className="avatar-editor__cropper-button">
-                <UploadButton onChange={handleFileChange} text="Upload" />
-              </div>
-              <div className="avatar-editor__cropper-button">
-                <Button variant="primary" size="xs" onClick={handleSave}>Save</Button>
-              </div>
-              <div className="avatar-editor__cropper-button">
-                <Button variant="primary" size="xs" onClick={() => setShowCropper(false)}>Cancel</Button>
-              </div>
+              <Button variant="primary" size="xs" className="avatar-editor__cropper-button" onClick={handleSave}>Save</Button>
+              <Button variant="primary" size="xs" className="avatar-editor__cropper-button" onClick={() => setShowCropper(false)}>Cancel</Button>
             </div>
           </div>
         </div>
