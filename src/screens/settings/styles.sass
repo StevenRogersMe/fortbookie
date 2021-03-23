@@ -2,31 +2,10 @@
 @import ~styles/abstract/mixins
 @import ~styles/abstract/variables
 
-.referrals-screen
-  &__control
-    margin-bottom: 50px
-    &-items
-      +row()
-      align-items: center
-      margin-bottom: 20px
-  &__box
-    +col-mx(6)
-    +media-max($bp-xl)
-      +col-mx(12)
-      &:not(:last-child)
-        margin-bottom: 20px
+.settings-screen
+  &__body
+    max-width: 500px
+  &__item
+    margin-bottom: 25px
     &-title
       margin-bottom: 10px
-    &-form
-      display: flex
-      flex-wrap: wrap
-    &-input
-      flex: 1
-      margin-right: 20px
-      +media-max($bp-md)
-        flex: auto
-        width: 100%
-        margin-right: 0
-        margin-bottom: 10px
-  &__graphics
-    margin-bottom: 20px
