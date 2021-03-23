@@ -18,7 +18,7 @@ const WithdrawDetails = () => {
       <ContentBox.Body>
         <div className="withdraw-details__content">
           <LitecoinIcon className="withdraw-details__icon" />
-          <Typography component="p" className="text-medium withdr-details__title">
+          <Typography component="p" className="text-medium withdraw-details__title">
             Available to withdraw: <Typography component="span" className="text-bold">$100.00</Typography>
           </Typography>
           <div className="withdraw-details__box">
