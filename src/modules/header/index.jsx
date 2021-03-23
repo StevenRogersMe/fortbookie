@@ -1,6 +1,10 @@
 import React, { Fragment } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { withBreakpoints } from 'react-breakpoints'
+import { createStructuredSelector } from 'reselect';
+// Redux
+import { selectUser } from 'redux/auth/selectors';
 // UI
 import Container from 'components/container';
 import NavLink from 'components/nav-link';
@@ -15,10 +19,9 @@ import { isMathcingPath } from 'utils/router';
 // Styles
 import './styles.sass';
 
-const Header = ({ breakpoints, currentBreakpoint }) => {
+const Header = ({ user: { userData }, breakpoints, currentBreakpoint }) => {
   const history = useHistory();
   const location = useLocation();
-  const isSigned = false
 
   const [isMobile, setIsMobile] = React.useState(false);
   React.useEffect(() => {
@@ -39,11 +42,13 @@ const Header = ({ breakpoints, currentBreakpoint }) => {
               <Logo className="header__logo" />
             </Link>
           </div>
-          <div className="header__center">
-            <Regions />
-          </div>
+          {userData &&
+            <div className="header__center">
+              <Regions />
+            </div>
+          }
           <div className="header__right">
-            {isSigned ?
+            {userData ?
               <div className="header__widgets">
                 {!isMobile &&
                   <Fragment>
@@ -56,7 +61,7 @@ const Header = ({ breakpoints, currentBreakpoint }) => {
                   </Fragment>
                 }
                 <div className="header__widget">
-                  <UserDropdown />
+                  <UserDropdown userData={userData} />
                 </div>
                 {isMobile &&
                   <div className="header__widget header__burger">
@@ -90,4 +95,8 @@ const Header = ({ breakpoints, currentBreakpoint }) => {
   );
 };
 
-export default withBreakpoints(Header);
+const mapStateToProps = createStructuredSelector({
+  user: selectUser
+});
+
+export default connect(mapStateToProps)(withBreakpoints(Header));

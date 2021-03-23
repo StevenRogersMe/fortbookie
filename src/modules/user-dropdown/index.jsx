@@ -1,5 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
+// Redux
+import { signOutRequest } from 'redux/auth/sign-out/actions';
 // UI
 import Dropdown from 'components/dropdown';
 import UserDropdownItem from 'modules/user-dropdown-item';
@@ -16,8 +19,6 @@ import { ReactComponent as Rewards } from 'assets/images/user/reward.svg';
 import { ReactComponent as Settings } from 'assets/images/user/settings.svg';
 import { ReactComponent as Support } from 'assets/images/user/support.svg';
 import { ReactComponent as LogOut } from 'assets/images/user/logout.svg';
-// Context
-import { SignInContext } from '../../app-context';
 
 const items = [
   { title: 'Transactions', icon: Transaction, path: '/transactions' },
@@ -29,10 +30,9 @@ const items = [
   { title: 'Help', icon: Support, path: '/help' },
 ];
 
-const UserDropdown = () => {
+const UserDropdown = ({ userData, signOutRequest }) => {
   const history = useHistory();
   const [isActive, setIsActive] = React.useState(false);
-  const { handleSignOut } = React.useContext(SignInContext);
   const handleDropdown = () => setIsActive(isActive => !isActive);
 
   return (
@@ -45,11 +45,11 @@ const UserDropdown = () => {
           </div>
           <div className="user-dropdown__data">
             <div className="user-dropdown__data-top">
-              <span className="user-dropdown__name">Joanne Brown</span>
+              <span className="user-dropdown__name">{userData.name}</span>
             </div>
             <div className="user-dropdown__data-bottom">
-              <span className="user-dropdown__balance">1 925,45$</span>
-              <span className="user-dropdown__pending">95$ Pending</span>
+              <span className="user-dropdown__balance">{userData.balance}$</span>
+              <span className="user-dropdown__pending">{userData.pending}$ Pending</span>
             </div>
           </div>
           <ArrowIcon className={`user-dropdown__icon ${isActive ? 'is-active' : ''}`} />
@@ -61,10 +61,7 @@ const UserDropdown = () => {
             </div>
           ))}
           <div className="user-dropdown__item">
-            <UserDropdownItem title="Log Out" icon={LogOut} onClick={() => {
-              handleSignOut();
-              history.push('/');
-            }} />
+            <UserDropdownItem title="Log Out" icon={LogOut} onClick={signOutRequest} />
           </div>
         </Dropdown.Box>
       </Dropdown>
@@ -72,4 +69,8 @@ const UserDropdown = () => {
   );
 };
 
-export default UserDropdown;
+const mapDispatchToProps = {
+  signOutRequest
+};
+
+export default connect(null, mapDispatchToProps)(UserDropdown);

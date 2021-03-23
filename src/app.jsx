@@ -1,5 +1,8 @@
 import React from 'react';
 import { Switch, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+// Redux
+import { sessionCheckStart } from 'redux/auth/session-check/actions';
 // UI
 import ScrollToTop from 'components/scroll-to-top';
 import Header from 'modules/header';
@@ -9,7 +12,11 @@ import routes from './screens/routes';
 // Styles
 import './app.sass';
 
-const App = () => {
+const App = ({ sessionCheckStart }) => {
+  React.useEffect(() => {
+    sessionCheckStart();
+  }, [sessionCheckStart]);
+
   return (
     <div className="app">
       <Header />
@@ -27,4 +34,8 @@ const App = () => {
   );
 };
 
-export default App;
+const mapDispatchToProps = {
+  sessionCheckStart
+};
+
+export default connect(null, mapDispatchToProps)(App);

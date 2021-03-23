@@ -1,6 +1,6 @@
 import { SignInTypes } from './types';
 
-export const signInStart = () => ({
+export const signInRequest = () => ({
   type: SignInTypes.FETCH_SIGN_IN_REQUEST
 });
 export const signInSuccess = userData => ({

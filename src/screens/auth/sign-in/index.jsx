@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 // Redux
 import { selectUser } from 'redux/auth/selectors';
-import { signInStart } from 'redux/auth/sign-in/actions'
+import { signInRequest } from 'redux/auth/sign-in/actions'
 // UI
 import ScreenLayout from 'components/screen-layout';
 import SignContainer from 'modules/sign-container';
@@ -17,10 +17,10 @@ import Button from 'components/button';
 // Styles
 import './styles.sass';
 
-const SignIn = ({ signInStart, user: { loading } }) => {
+const SignIn = ({ signInRequest, user: { loading } }) => {
   const handleSubmit = e => {
     e.preventDefault();
-    signInStart();
+    signInRequest();
   };
 
   return (
@@ -54,7 +54,7 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = {
-  signInStart
+  signInRequest
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
