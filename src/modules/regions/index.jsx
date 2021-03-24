@@ -16,7 +16,7 @@ const regions = [
   { id: 3, name: 'eu', value: 'eu', path: '/events' },
   { id: 4, name: 'br', value: 'br', path: '/events' },
   { id: 5, name: 'oce', value: 'oce', path: '/events' },
-  { id: 6, name: '• live', value: 'live', path: '/live-events', accent: true }
+  { id: 6, name: '• live', value: 'live', path: '/events', accent: true }
 ];
 
 const Regions = ({ selectedRegion, setSelectedRegion }) => {
