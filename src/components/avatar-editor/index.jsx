@@ -22,6 +22,7 @@ const AvatarEditor = ({ image }) => {
     setShowCropper(true);
     setDefaultAvatar(image);
     setEditedAvatar(image);
+    setZoom(1);
   };
 
   const handleZoomSlider = value => setZoom(value);
@@ -33,7 +34,6 @@ const AvatarEditor = ({ image }) => {
       const croppedImg = canvasScaled.toDataURL();
       setEditedAvatar(croppedImg);
       setShowCropper(false);
-      setZoom(1);
     }
   };
 
@@ -52,16 +52,15 @@ const AvatarEditor = ({ image }) => {
       {showCropper &&
         <div className="avatar-editor__cropper">
           <div className="avatar-editor__cropper-box">
-            <div className="avatar-editor__cropper-editor">
-              <ReactAvatarEditor
-                ref={editorRef}
-                width={250}
-                height={250}
-                borderRadius={250}
-                image={defaultAvatar}
-                scale={zoom}
-              />
-            </div>
+            <ReactAvatarEditor
+              ref={editorRef}
+              width={250}
+              height={250}
+              borderRadius={250}
+              image={defaultAvatar}
+              scale={zoom}
+              className="avatar-editor__cropper-editor"
+            />
             <div className="avatar-editor__cropper-slider">
               <Slider min={1} max={10} step={0.1} value={zoom} onChange={handleZoomSlider} />
             </div>
