@@ -20,8 +20,8 @@ import Button from 'components/button';
 import './styles.sass';
 
 const validationSchema = Yup.object().shape({
-  user: Yup.string().min(2, 'Must have at least 2 characters').required(),
-  password: Yup.string().min(2, 'Must have at least 2 characters').required(),
+  user: Yup.string().required('Username is a required field'),
+  password: Yup.string().required('Password is a required field'),
 });
 
 const SignIn = ({ signInRequest, user: { loading, userData } }) => {
