@@ -3,8 +3,8 @@ import { useHistory, useLocation } from 'react-router';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 // Redux
-import { setSelectedEvent } from 'redux/selected-event/actions';
-import { selectSelectedEvent } from 'redux/selected-event/selectors';
+import { setSelectedRegion } from 'redux/selected-region/actions';
+import { selectSelectedRegion } from 'redux/selected-region/selectors';
 // UI
 import NavLink from 'components/nav-link';
 // Styles
@@ -19,7 +19,7 @@ const regions = [
   { id: 6, name: '• live', value: 'live', path: '/live-events', accent: true }
 ];
 
-const Regions = ({ selectedEvent, setSelectedEvent }) => {
+const Regions = ({ selectedRegion, setSelectedRegion }) => {
   const history = useHistory();
   const location = useLocation();
 
@@ -27,7 +27,7 @@ const Regions = ({ selectedEvent, setSelectedEvent }) => {
     if (location.pathname !== path) {
       history.push(path);
     }
-    setSelectedEvent(value);
+    setSelectedRegion(value);
   };
 
   return (
@@ -35,7 +35,7 @@ const Regions = ({ selectedEvent, setSelectedEvent }) => {
       {regions.map(({ id, name, value, path, accent }) => (
         <li key={id} className="regions__item">
           <NavLink
-            isActive={selectedEvent === value}
+            isActive={selectedRegion === value}
             onClick={() => handleNavLinkClick(path, value)}
             accent={accent}
           >
@@ -48,11 +48,11 @@ const Regions = ({ selectedEvent, setSelectedEvent }) => {
 };
 
 const mapStateToProps = createStructuredSelector({
-  selectedEvent: selectSelectedEvent
+  selectedRegion: selectSelectedRegion
 });
 
 const mapDispatchToProps = {
-  setSelectedEvent
+  setSelectedRegion
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Regions);

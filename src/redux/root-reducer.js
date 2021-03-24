@@ -7,7 +7,7 @@ import openBets from 'redux/open-bets/reducer';
 import transactions from 'redux/transactions/reducer';
 import liveEvents from 'redux/live-events/reducer';
 import playerRankings from 'redux/player-rankings/reducer';
-import selectedEvent from 'redux/selected-event/reducer';
+import selectedRegion from 'redux/selected-region/reducer';
 
 const rootReducer = combineReducers({
   user,
@@ -17,7 +17,7 @@ const rootReducer = combineReducers({
   transactions,
   liveEvents,
   playerRankings,
-  selectedEvent
+  selectedRegion
 });
 
 export default rootReducer;

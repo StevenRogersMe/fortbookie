@@ -1,10 +1,10 @@
-import { selectedEventTypes } from './types';
+import { SelectedRegionTypes } from './types';
 
-const INITIAL_STATE = 'nae'
+const INITIAL_STATE = 'nae';
 
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case selectedEventTypes.SET_SELECTED_EVENT:
+    case SelectedRegionTypes.SET_SELECTED_REGION:
       return action.payload
     default:
       return state;
