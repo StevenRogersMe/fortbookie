@@ -26,7 +26,7 @@ export const tableContent = () => {
               <Typography component="span" variant="p-sm" className="text-bold">{price}</Typography>
             </div>
             <div className="transactions-screen__line">
-              <Typography component="span" variant="p-sm" className="text-medium text-dark-3">{title}</Typography>
+              <Typography component="span" variant="p-sm" className="text-medium text-regent-gray">{title}</Typography>
             </div>
           </Fragment>
         )

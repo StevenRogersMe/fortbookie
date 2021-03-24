@@ -11,12 +11,12 @@ import NavLink from 'components/nav-link';
 import './styles.sass';
 
 const regions = [
-  { id: 1, name: 'nae', value: 'nae', path: '/events' },
-  { id: 2, name: 'naw', value: 'naw', path: '/events' },
-  { id: 3, name: 'eu', value: 'eu', path: '/events' },
-  { id: 4, name: 'br', value: 'br', path: '/events' },
-  { id: 5, name: 'oce', value: 'oce', path: '/events' },
-  { id: 6, name: '• live', value: 'live', path: '/events', accent: true }
+  { id: 1, name: 'NAE', value: 'nae', path: '/events' },
+  { id: 2, name: 'NAW', value: 'naw', path: '/events' },
+  { id: 3, name: 'EU', value: 'eu', path: '/events' },
+  { id: 4, name: 'BR', value: 'br', path: '/events' },
+  { id: 5, name: 'OCE', value: 'oce', path: '/events' },
+  { id: 6, name: '• LIVE', value: 'live', path: '/events', accent: true }
 ];
 
 const Regions = ({ selectedRegion, setSelectedRegion }) => {

@@ -7,7 +7,7 @@
     display: flex
     flex-wrap: wrap
     width: 100%
-    border: 1px solid $c-gray-4
+    border: 1px solid getColor('base')
     border-radius: 10px
     overflow: hidden
   &__item
@@ -16,9 +16,9 @@
       width: 100%
     &:not(:last-child)
       .data-preview__body
-        border-right: 1px solid $c-gray-5
+        border-right: 1px solid getColor('base')
   &__header
-    background-color: $c-gray-5
+    background-color: getColor('base')
     padding: 15px 20px
     +media-max($bp-sm)
       padding: 15px

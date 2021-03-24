@@ -7,7 +7,7 @@
   background-color: transparent
   border: 1px solid $c-gray-2
   border-radius: $r-primary
-  color: $c-dark-1
+  color: getColor('text-primary')
   padding: 14px 20px
   font-family: inherit
   font-weight: 500
@@ -15,9 +15,9 @@
   line-height: 1
   transition: 0.2s
   &::placeholder
-    color: $c-dark-3
+    color: $c-gray-3
   &:focus
-    border-color: $c-gray-3
+    box-shadow: $s-primary
   &--invalid
     border: 1px solid $c-danger !important
   &--center

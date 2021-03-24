@@ -3,13 +3,13 @@
 
 .nav-link
   cursor: pointer
-  color: $c-dark-3
+  color: getColor('text-gray')
+  // color: $c-gray-3
   transition: 0.2s
-  text-transform: uppercase
   &:hover,
   &.is-active
-      color: $c-dark-1
+    color: getColor('text-gray')
   &--accent
     &:hover,
     &.is-active
-        color: $c-accent-1
+      color: $c-accent-1

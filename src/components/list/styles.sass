@@ -2,22 +2,11 @@
 @import ~styles/abstract/mixins
 
 .list
-  border: 1px solid $c-gray-4
+  border: 1px solid getColor('base')
   border-radius: $r-primary
-  &--alt
-    .list__header
-      background-color: #E2D7F0
-      color: $c-dark-1
-    .list__item
-      background-color: #f7f2fd
-      border-top: 1px solid #E5E0EB
-      border-right: 1px solid #E5E0EB
-    &.is-active
-      background: #EFE5FB
-
   &__header
     padding: 15px 20px
-    background-color: $c-gray-1
+    background-color: getColor('base')
     +media-max($bp-sm)
       padding: 15px
   &__items
@@ -30,9 +19,8 @@
     align-items: center
     padding: 12px 20px 10px
     cursor: pointer
-    background-color: $c-light
-    border-top: 1px solid $c-gray-1
-    border-right: 1px solid $c-gray-1
+    border-top: 1px solid getColor('base')
+    border-right: 1px solid getColor('base')
     transition: 0.2s
     +media-max($bp-sm)
       padding: 12px 15px
@@ -40,7 +28,7 @@
       width: 100%
       border-right: 0 !important
     &.is-active
-      background: rgba($c-primary-1, 0.1)
+      background: rgba($c-primary-1, 0.2)
     &:nth-child(even)
       border-right: 0
     &-game

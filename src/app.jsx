@@ -17,6 +17,8 @@ const App = ({ sessionCheckStart }) => {
     sessionCheckStart();
   }, [sessionCheckStart]);
 
+  document.querySelector('body').classList.add('dark');
+
   return (
     <div className="app">
       <Header />

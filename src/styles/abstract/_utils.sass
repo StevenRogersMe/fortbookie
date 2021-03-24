@@ -3,8 +3,8 @@
   $remSize: $size / $base-font-size;
   @return #{$remSize}rem;
 
-@function getColor($color)
-  @return var(--c-#{$color});
+@function getColor($name)
+  @return var(--c-#{$name});
 
 // Crop line-height
 @mixin lh-crop($line-height, $capital-letter: 1)

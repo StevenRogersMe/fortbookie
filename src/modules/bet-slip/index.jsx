@@ -23,7 +23,7 @@ const BetSlip = ({ title, game, price, removeBetSlip }) => {
   return (
     <div className="bet-slip">
       <div className="bet-slip__header">
-        <Typography component="span" variant="p-sm" className="text-dark-3 bet-slip__header-title">{title}</Typography>
+        <Typography component="span" variant="p-sm" className="text-regent-gray bet-slip__header-title">{title}</Typography>
         <Close onClick={removeBetSlip} />
       </div>
       <div className="bet-slip__details">

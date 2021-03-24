@@ -8,11 +8,11 @@ const OpenBet = ({ date, time, betAmount, remainingBalance, placed, placedPrice,
   return (
     <div className="open-bet">
       <div className="open-bet__row">
-        <Typography component="span" variant="p-sm" className="text-dark-3">
+        <Typography component="span" variant="p-sm" className="text-regent-gray">
           <Typography component="span" className="text-bold">{date}</Typography><br />
           {time}
         </Typography>
-        <Typography component="span" variant="p-sm" className="text-dark-3 text-right">
+        <Typography component="span" variant="p-sm" className="text-regent-gray text-right">
           <Typography component="span" className="text-bold">{betAmount}</Typography><br />
           {remainingBalance}
         </Typography>
@@ -26,7 +26,7 @@ const OpenBet = ({ date, time, betAmount, remainingBalance, placed, placedPrice,
         <Typography component="span" variant="h5" className="text-right">{gamePrice}</Typography>
       </div>
       <div className="open-bet__row">
-        <Typography component="span" variant="p-sm" className="text-dark-3">{title}</Typography>
+        <Typography component="span" variant="p-sm" className="text-regent-gray">{title}</Typography>
       </div>
     </div>
   );

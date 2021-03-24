@@ -62,7 +62,7 @@ const AvatarEditor = ({ image }) => {
               className="avatar-editor__cropper-editor"
             />
             <div className="avatar-editor__cropper-slider">
-              <Slider min={1} max={10} step={0.1} value={zoom} onChange={handleZoomSlider} />
+              <Slider min={1} max={5} step={0.1} value={zoom} onChange={handleZoomSlider} />
             </div>
             <div className="avatar-editor__cropper-buttons">
               <Button variant="primary" size="xs" className="avatar-editor__cropper-button" onClick={handleSave}>Save</Button>
