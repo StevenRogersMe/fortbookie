@@ -15,8 +15,8 @@
     justify-content: space-between
     margin-bottom: 20px
   &__button
-    width: calc( 50% - 15px )
-    padding: 17px 20px
+    width: calc( 50% - 10px )
+    padding: 17px 5px
     text-align: center
     font-size: rem(14px)
     line-height: 1
@@ -42,3 +42,8 @@
     &-current,
     &-pending
       line-height: 1
+
+  // Footer
+  &__footer
+    +media-max($bp-lg)
+      padding: 0 20px 20px

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import { withBreakpoints } from 'react-breakpoints'
 // Redux
 import { fetchEventsRequest } from 'redux/events/actions';
 import { selectEvents } from 'redux/events/selectors';
@@ -14,15 +15,39 @@ import Accordion from 'components/accordion';
 import List from 'components/list';
 import ErrorIndicator from 'components/error-indicator';
 import Spinner from 'components/spinner';
+import FixedButton from 'components/fixed-button';
+// Hooks
+import useScrollBlock from 'hooks/use-scroll-block';
 // Styles
 import './styles.sass';
+// Assets
+import { ReactComponent as BettingsIcon } from 'assets/images/icons/betting.svg';
 
-const EventsScreen = ({ fetchEventsRequest, events: { loading, data, error }, betSlips, toggleBetSlip }) => {
+const EventsScreen = ({ fetchEventsRequest, events: { loading, data, error }, betSlips, toggleBetSlip, breakpoints, currentBreakpoint }) => {
+  const [showBets, setShowBets] = React.useState(false);
+  const [isMobile, setIsMobile] = React.useState(false);
+  const [blockScroll, allowScroll] = useScrollBlock();
+
   React.useLayoutEffect(() => {
     fetchEventsRequest();
   }, [fetchEventsRequest]);
 
+  React.useEffect(() => {
+    breakpoints[currentBreakpoint] < breakpoints.lg ? setIsMobile(true) : setIsMobile(false);
+  }, [breakpoints, currentBreakpoint]);
+
   const handleSelectBet = (eventIdx, betId) => toggleBetSlip({ eventIdx, betId });
+  const toggleShowBets = () => {
+    setShowBets(showBets => {
+      if (showBets) {
+        allowScroll();
+        return false;
+      } else {
+        blockScroll();
+        return true;
+      }
+    });
+  };
 
   return (
     <ScreenLayout>
@@ -47,11 +72,12 @@ const EventsScreen = ({ fetchEventsRequest, events: { loading, data, error }, be
               </Fragment>
             }
           </div>
-          <div className="events-screen__bets">
+          <div className={`events-screen__bets ${showBets ? 'is-active' : ''}`}>
             <Bets />
           </div>
         </div>
       </div>
+      {isMobile && <FixedButton icon={BettingsIcon} onClick={() => toggleShowBets()} />}
     </ScreenLayout>
   );
 };
@@ -66,4 +92,4 @@ const mapDispatchToProps = {
   toggleBetSlip
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EventsScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(withBreakpoints(EventsScreen));
