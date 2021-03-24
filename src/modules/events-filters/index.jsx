@@ -5,7 +5,19 @@ import Typography from 'components/typography';
 // Styles
 import './styles.sass';
 
-const EventsFilters = () => {
+const regions = [
+  { value: 'all', label: 'All' },
+  { value: 'nae', label: 'NAE' },
+  { value: 'naw', label: 'NAW' },
+  { value: 'eu', label: 'EU' },
+  { value: 'br', label: 'BR' },
+  { value: 'oce', label: 'OCE' },
+  { value: 'live', label: 'LIVE' },
+];
+
+const EventsFilters = ({ selectedRegion, setSelectedRegion }) => {
+  const handleRegionChange = ({ value }) => setSelectedRegion(value);
+
   return (
     <div className="event-filters">
       <div className="event-filters__wrap">
@@ -13,15 +25,10 @@ const EventsFilters = () => {
           <Typography component="span" variant="h6" className="event-filters__item-title">Region</Typography>
           <div className="event-filters__item-select">
             <Select
-              defaultValue={{ label: "All", value: 'All' }}
-              options={[
-                { value: 'All', label: 'All' },
-                { value: 'NAE', label: 'NAE' },
-                { value: 'NAW', label: 'NAW' },
-                { value: 'EU', label: 'EU' },
-                { value: 'BR', label: 'BR' },
-                { value: 'OCE', label: 'OCE' },
-              ]}
+              defaultValue={regions[0]}
+              options={regions}
+              value={regions.find(({ value }) => value === selectedRegion)}
+              onChange={handleRegionChange}
             />
           </div>
         </div>
@@ -29,7 +36,6 @@ const EventsFilters = () => {
           <Typography component="span" variant="h6" className="event-filters__item-title">Event</Typography>
           <div className="event-filters__item-select">
             <Select
-              defaultValue={{ label: "All", value: 'All' }}
               options={[
                 { value: 'All', label: 'All' },
                 { value: 'event 1', label: 'Event 1' },

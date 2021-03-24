@@ -7,6 +7,8 @@ import { fetchEventsRequest } from 'redux/events/actions';
 import { selectEvents } from 'redux/events/selectors';
 import { selectBetSlips } from 'redux/bet-slips/selectors';
 import { toggleBetSlip } from 'redux/bet-slips/actions';
+import { setSelectedRegion } from 'redux/selected-region/actions';
+import { selectSelectedRegion } from 'redux/selected-region/selectors';
 // UI
 import ScreenLayout from 'components/screen-layout';
 import EventsFilters from 'modules/events-filters';
@@ -23,7 +25,7 @@ import './styles.sass';
 // Assets
 import { ReactComponent as BettingsIcon } from 'assets/images/icons/betting.svg';
 
-const EventsScreen = ({ fetchEventsRequest, events: { loading, data, error }, betSlips, toggleBetSlip, breakpoints, currentBreakpoint }) => {
+const EventsScreen = ({ fetchEventsRequest, events: { loading, data, error }, betSlips, toggleBetSlip, breakpoints, currentBreakpoint, selectedRegion, setSelectedRegion }) => {
   const [showBets, setShowBets] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(false);
   const [blockScroll, allowScroll] = useScrollBlock();
@@ -53,7 +55,7 @@ const EventsScreen = ({ fetchEventsRequest, events: { loading, data, error }, be
     <ScreenLayout>
       <div className="events-screen">
         <div className="events-screen__filters">
-          <EventsFilters />
+          <EventsFilters selectedRegion={selectedRegion} setSelectedRegion={setSelectedRegion} />
         </div>
         <div className="events-screen__preview">
           <div className="events-screen__list">
@@ -84,12 +86,14 @@ const EventsScreen = ({ fetchEventsRequest, events: { loading, data, error }, be
 
 const mapStateToProps = createStructuredSelector({
   events: selectEvents,
-  betSlips: selectBetSlips
+  betSlips: selectBetSlips,
+  selectedRegion: selectSelectedRegion,
 });
 
 const mapDispatchToProps = {
   fetchEventsRequest,
-  toggleBetSlip
+  toggleBetSlip,
+  setSelectedRegion
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(withBreakpoints(EventsScreen));
