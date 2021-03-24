@@ -31,8 +31,8 @@ const EventsScreen = ({ fetchEventsRequest, events: { loading, data, error }, be
   const [blockScroll, allowScroll] = useScrollBlock();
 
   React.useLayoutEffect(() => {
-    fetchEventsRequest();
-  }, [fetchEventsRequest]);
+    fetchEventsRequest(selectedRegion);
+  }, [fetchEventsRequest, selectedRegion]);
 
   React.useEffect(() => {
     breakpoints[currentBreakpoint] < breakpoints.lg ? setIsMobile(true) : setIsMobile(false);
@@ -67,7 +67,13 @@ const EventsScreen = ({ fetchEventsRequest, events: { loading, data, error }, be
                   <Accordion expanded={eventIdx === 0} className="events-screen__list-item" key={id}>
                     <Accordion.Tab title={title} date={date} time={time} />
                     <Accordion.Content>
-                      <List header="Winner" items={games} handleSelect={betId => handleSelectBet(eventIdx, betId)} selected={betSlips} />
+                      <List
+                        header="Winner"
+                        items={games}
+                        handleSelect={betId => handleSelectBet(eventIdx, betId)}
+                        selected={betSlips}
+                        alt={selectedRegion === 'live'}
+                      />
                     </Accordion.Content>
                   </Accordion>
                 ))}
