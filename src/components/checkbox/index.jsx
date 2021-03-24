@@ -6,9 +6,10 @@ import Input from 'components/input';
 import './styles.sass';
 import { ReactComponent as Check } from 'assets/images/icons/check.svg';
 
-const Checkbox = ({ checked, className, label, onChange, name, ...otherProps }) => {
+const Checkbox = ({ checked, className, label, onChange, name, error, ...otherProps }) => {
   const classnames = classNames({
     'checkbox': true,
+    'checkbox--error': error,
     [className]: className,
   });
 
