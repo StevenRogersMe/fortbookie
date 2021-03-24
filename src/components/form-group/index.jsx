@@ -3,7 +3,7 @@ import classNames from 'classnames'
 // Styles
 import './styles.sass';
 
-const FormGroup = ({ children, label, errorMsg, className }) => {
+const FormGroup = ({ children, errorMsg, className }) => {
   const classes = classNames({
     'form-group': true,
     [className]: className
