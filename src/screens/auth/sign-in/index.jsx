@@ -27,6 +27,12 @@ const validationSchema = Yup.object().shape({
 const SignIn = ({ signInRequest, user: { loading, userData } }) => {
   const history = useHistory();
 
+  React.useEffect(() => {
+    if (userData) {
+      return history.push('/');
+    }
+  }, [userData, history]);
+
   const formik = useFormik({
     initialValues: {
       user: '',
@@ -35,7 +41,6 @@ const SignIn = ({ signInRequest, user: { loading, userData } }) => {
     },
     validationSchema,
     onSubmit: (values, { setSubmitting, resetForm }) => {
-      console.log('values:', values)
       setSubmitting(true);
       signInRequest(values);
       setSubmitting(false);
@@ -43,13 +48,7 @@ const SignIn = ({ signInRequest, user: { loading, userData } }) => {
     },
   });
 
-  const { handleSubmit, touched, errors, handleChange, handleBlur, values, isSubmitting } = formik;
-
-  React.useEffect(() => {
-    if (userData) {
-      return history.push('/');
-    }
-  }, [userData, history]);
+  const { handleSubmit, touched, errors, handleChange, handleBlur, values } = formik;
 
   return (
     <ScreenLayout>
