@@ -32,7 +32,7 @@ const SignUp = ({ user: { userData } }) => {
 
   React.useEffect(() => {
     if (userData) {
-      return history.push('/');
+      history.push('/events');
     }
   }, [userData, history]);
 
@@ -54,6 +54,10 @@ const SignUp = ({ user: { userData } }) => {
       }, 500);
     },
   });
+
+  if (userData) {
+    return <div />
+  }
 
   const { handleSubmit, touched, errors, handleChange, handleBlur, values, isSubmitting } = formik;
 
