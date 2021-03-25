@@ -6,6 +6,7 @@ import { signOutRequest } from 'redux/auth/sign-out/actions';
 // UI
 import Dropdown from 'components/dropdown';
 import UserDropdownItem from 'modules/user-dropdown-item';
+import ToggleTheme from 'modules/toggle-theme';
 // Styles
 import './styles.sass';
 // Assets
@@ -54,13 +55,16 @@ const UserDropdown = ({ userData, signOutRequest }) => {
           </div>
           <ArrowIcon className={`user-dropdown__icon ${isActive ? 'is-active' : ''}`} />
         </Dropdown.Header>
-        <Dropdown.Box className="user-dropdown__box" onClick={handleDropdown}>
+        <Dropdown.Box className="user-dropdown__box">
           {items.map(({ title, icon, path }, idx) => (
-            <div key={idx} className="user-dropdown__item">
+            <div key={idx} className="user-dropdown__item" onClick={handleDropdown}>
               <UserDropdownItem title={title} icon={icon} onClick={() => { history.push(path) }} />
             </div>
           ))}
           <div className="user-dropdown__item">
+            <ToggleTheme />
+          </div>
+          <div className="user-dropdown__item" onClick={handleDropdown}>
             <UserDropdownItem title="Log Out" icon={LogOut} onClick={signOutRequest} />
           </div>
         </Dropdown.Box>
