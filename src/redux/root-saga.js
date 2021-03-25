@@ -4,7 +4,6 @@ import authSagas from 'redux/auth/sagas';
 import { fetchEventsData } from 'redux/events/sagas';
 import { fetchOpenBetsData } from 'redux/open-bets/sagas';
 import { fetchTransactionsData } from 'redux/transactions/sagas';
-import { fetchLiveEventsData } from 'redux/live-events/sagas';
 import { fetchPlayerRankingsData } from 'redux/player-rankings/sagas';
 
 function* rootSaga() {
@@ -13,7 +12,6 @@ function* rootSaga() {
     call(fetchEventsData),
     call(fetchOpenBetsData),
     call(fetchTransactionsData),
-    call(fetchLiveEventsData),
     call(fetchPlayerRankingsData),
   ]);
 }
