@@ -1,9 +1,11 @@
 import React from 'react';
 import classNames from 'classnames'
+// UI
+import Typography from 'components/typography';
 // Styles
 import './styles.sass';
 
-const FormGroup = ({ children, errorMsg, className }) => {
+const FormGroup = ({ children, label, errorMsg, className }) => {
   const classes = classNames({
     'form-group': true,
     [className]: className
@@ -11,6 +13,9 @@ const FormGroup = ({ children, errorMsg, className }) => {
 
   return (
     <div className={classes}>
+      {label &&
+        <Typography component="label" variant="h4" className="form-group__label">{label}</Typography>
+      }
       {children}
       {errorMsg && <span className="form-group__error">{errorMsg}</span>}
     </div>
