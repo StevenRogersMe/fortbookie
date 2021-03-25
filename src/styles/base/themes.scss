@@ -1,20 +1,5 @@
 @import "~styles/abstract/variables";
 
-$theme: (
-  base        : $c-gray-1,
-  theme       : $c-light,
-  text-primary: $c-dark,
-  text-alt    : $c-light,
-  text-gray   : $c-gray-3,
-);
-$theme-dark: (
-  base        : #272121,
-  theme       : #3a3939,
-  text-primary: $c-light,
-  text-alt    : $c-dark,
-  text-gray   : $c-light,
-);
-
 :root{
   @each $name, $color in $theme{
     --c-#{$name}: #{$color};
