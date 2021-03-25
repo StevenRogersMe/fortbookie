@@ -1,17 +1,18 @@
 @import ~styles/abstract/mixins
 @import ~styles/abstract/variables
 
-.header-spacer
-  height: $h-height
 .header
-  position: fixed
-  top: 0
-  left: 0
-  height: $h-height
   width: 100%
-  background-color: getColor('theme')
-  z-index: 1000
-  box-shadow: $s-primary
+  height: $h-height
+  &__wrap
+    position: fixed
+    top: 0
+    left: 0
+    height: $h-height
+    width: 100%
+    background-color: getColor('theme')
+    z-index: 200
+    box-shadow: $s-primary
   &__container
     display: flex
     align-items: center
@@ -49,9 +50,7 @@
     +media-max($bp-xs)
       padding-left: 15px
 
-  .header__mobile
-    background-color: getColor('theme')
-    box-shadow: $s-primary
+  &__mobile
     position: fixed
     top: 0
     right: 0
@@ -59,9 +58,11 @@
     width: 100%
     max-width: 370px
     padding: 40px 20px
-    transition: 0.2s
+    background-color: getColor('theme')
+    box-shadow: $s-primary
     transform: translateX(100%)
-    z-index: 1001
+    transition: 0.2s
+    z-index: 1000
     &.is-active
       transform: translateX(0)
     &-line
