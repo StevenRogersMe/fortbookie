@@ -44,7 +44,7 @@ const Header = ({ user: { userData }, breakpoints, currentBreakpoint }) => {
     <header className="header">
       <div className="header__wrap">
         <Container className="header__container">
-          <Link className="header__logo" to="/">
+          <Link className="header__logo" to={userData ? '/events' : '/'}>
             {dark ?
               <LogoLight className="header__logo-icon" />
               :
