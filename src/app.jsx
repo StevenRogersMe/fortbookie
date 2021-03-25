@@ -9,6 +9,8 @@ import Header from 'modules/header';
 // Routes
 import { RouteWithSubRoutes } from 'utils/router';
 import routes from './screens/routes';
+// Context
+import { ThemeProvider } from 'context/theme-context';
 // Styles
 import './app.sass';
 
@@ -17,21 +19,21 @@ const App = ({ sessionCheckStart }) => {
     sessionCheckStart();
   }, [sessionCheckStart]);
 
-  document.querySelector('body').classList.add('dark');
-
   return (
     <div className="app">
-      <Header />
-      <div className="app__wrap">
-        <ScrollToTop>
-          <Switch>
-            {routes.map((route, idx) => (
-              <RouteWithSubRoutes key={idx} {...route} />
-            ))}
-            <Redirect to="/" />
-          </Switch>
-        </ScrollToTop>
-      </div>
+      <ThemeProvider>
+        <Header />
+        <div className="app__wrap">
+          <ScrollToTop>
+            <Switch>
+              {routes.map((route, idx) => (
+                <RouteWithSubRoutes key={idx} {...route} />
+              ))}
+              <Redirect to="/" />
+            </Switch>
+          </ScrollToTop>
+        </div>
+      </ThemeProvider>
     </div>
   );
 };
