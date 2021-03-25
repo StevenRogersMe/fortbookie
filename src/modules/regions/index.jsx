@@ -19,7 +19,7 @@ const regions = [
   { id: 6, name: '• LIVE', value: 'live', path: '/events', accent: true }
 ];
 
-const Regions = ({ selectedRegion, setSelectedRegion }) => {
+const Regions = ({ selectedRegion, setSelectedRegion, onItemClick }) => {
   const history = useHistory();
   const location = useLocation();
 
@@ -33,7 +33,7 @@ const Regions = ({ selectedRegion, setSelectedRegion }) => {
   return (
     <ul className="regions">
       {regions.map(({ id, name, value, path, accent }) => (
-        <li key={id} className="regions__item">
+        <li key={id} className="regions__item" onClick={onItemClick}>
           <NavLink
             isActive={location.pathname === path && selectedRegion === value}
             onClick={() => handleNavLinkClick(path, value)}

@@ -4,9 +4,10 @@
 .regions
   display: flex
   align-items: center
+  flex-wrap: wrap
+  +media-max($bp-xl)
+    justify-content: space-between
   &__item
-    +media-max($bp-xl)
-      display: none
     &.is-active,
     &:hover
       color: $c-dark
@@ -16,3 +17,5 @@
       margin-right: 40px
       +media-max($bp-xxl)
         margin-right: 30px
+      +media-max($bp-xl)
+        margin-right: 0
