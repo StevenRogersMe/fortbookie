@@ -1,3 +1,4 @@
+@import ~styles/abstract/mixins
 @import ~styles/abstract/variables
 
 $b-size: 25px
@@ -24,7 +25,7 @@ $b-size: 25px
     display: block
     width: $b-size
     height: 1px
-    background-color: $c-dark
+    background-color: getColor('text-gray')
     transition: 0.2s
     &:before,
     &:after,
@@ -33,7 +34,7 @@ $b-size: 25px
       left: 0
       width: $b-size
       height: 1px
-      background-color: $c-dark
+      background-color: getColor('text-gray')
     &:before
       top: -7px
       transform: rotate(0)
