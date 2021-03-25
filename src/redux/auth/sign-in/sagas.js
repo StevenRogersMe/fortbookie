@@ -1,6 +1,5 @@
 import { takeLatest, put, delay } from 'redux-saga/effects';
 import { signInRequest, signInSuccess, signInFailure } from './actions';
-import history from '../../../history';
 
 function* fetchSignInWorker() {
   try {
@@ -13,8 +12,6 @@ function* fetchSignInWorker() {
     yield put(signInSuccess(user));
     // write user to the local storage
     localStorage.setItem('user', JSON.stringify(user));
-    // redirect to events
-    history.push('/events');
   } catch ({ message }) {
     yield put(signInFailure(message));
   }

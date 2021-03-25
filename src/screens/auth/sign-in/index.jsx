@@ -29,7 +29,7 @@ const SignIn = ({ signInRequest, user: { loading, userData } }) => {
 
   React.useEffect(() => {
     if (userData) {
-      return history.push('/');
+      history.push('/events');
     }
   }, [userData, history]);
 
@@ -47,6 +47,10 @@ const SignIn = ({ signInRequest, user: { loading, userData } }) => {
       resetForm();
     },
   });
+
+  if (userData) {
+    return <div />
+  }
 
   const { handleSubmit, touched, errors, handleChange, handleBlur, values } = formik;
 
