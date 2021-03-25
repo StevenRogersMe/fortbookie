@@ -4,15 +4,17 @@ import classNames from 'classnames';
 // Styles
 import './styles.sass';
 
-const Overlay = ({ isActive, className, zIndex, style, ...otherProps }) => {
+const Overlay = ({ isActive, className, zIndex, style, fixed, ...otherProps }) => {
   const [container] = React.useState(document.createElement('div'));
 
   React.useEffect(() => {
-    document.body.appendChild(container);
-    return () => {
-      document.body.removeChild(container);
+    if (!fixed) {
+      document.body.appendChild(container);
+      return () => {
+        document.body.removeChild(container);
+      }
     }
-  }, [container]);
+  }, [container, fixed]);
 
   const classes = classNames({
     'overlay': true,
@@ -22,7 +24,11 @@ const Overlay = ({ isActive, className, zIndex, style, ...otherProps }) => {
 
   const overlay = <div className={classes} style={{ zIndex }}  {...otherProps} />;
 
-  return ReactDOM.createPortal(overlay, container);
+  if (fixed) {
+    return overlay;
+  } else {
+    return ReactDOM.createPortal(overlay, container);
+  }
 };
 
 Overlay.defaultProps = {
