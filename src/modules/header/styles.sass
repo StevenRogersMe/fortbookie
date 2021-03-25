@@ -10,7 +10,7 @@
   height: $h-height
   width: 100%
   background-color: getColor('theme')
-  z-index: 200
+  z-index: 1000
   &__container
     display: flex
     align-items: center
@@ -47,3 +47,22 @@
     border-left: 1px solid $c-gray-2
     +media-max($bp-xs)
       padding-left: 15px
+
+  .header__mobile
+    background-color: getColor('theme')
+    box-shadow: $s-primary
+    position: fixed
+    top: 0
+    right: 0
+    height: 100%
+    width: 100%
+    max-width: 370px
+    padding: 40px 20px
+    transition: 0.2s
+    transform: translateX(100%)
+    z-index: 1001
+    &.is-active
+      transform: translateX(0)
+    &-line
+      &:not(:last-child)
+        margin-bottom: 40px
