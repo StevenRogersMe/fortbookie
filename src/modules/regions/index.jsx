@@ -35,7 +35,7 @@ const Regions = ({ selectedRegion, setSelectedRegion }) => {
       {regions.map(({ id, name, value, path, accent }) => (
         <li key={id} className="regions__item">
           <NavLink
-            isActive={selectedRegion === value}
+            isActive={location.pathname === path && selectedRegion === value}
             onClick={() => handleNavLinkClick(path, value)}
             accent={accent}
           >
