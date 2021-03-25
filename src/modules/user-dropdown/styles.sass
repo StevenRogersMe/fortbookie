@@ -43,9 +43,6 @@
     padding-right: 15px
     +media-max($bp-md)
       display: none
-  &__name
-    margin-bottom: 3px
-    display: block
   &__name,
   &__pending
     color: getColor("text-gray")
@@ -55,7 +52,7 @@
   &__icon
     transition: 0.2s
     path
-      fill: $c-gray-3
+      fill: getColor("text-gray")
     +media-max($bp-sm)
       display: none
     &.is-active
