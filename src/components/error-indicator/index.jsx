@@ -8,7 +8,7 @@ import './styles.sass';
 // Assets
 import { ReactComponent as DangerIcon } from 'assets/images/icons/danger.svg';
 
-const ErrorIndicator = ({ className, light, retry }) => {
+const ErrorIndicator = ({ className, retry }) => {
   const classes = classNames({
     'error-indicator': true,
     [className]: className
@@ -17,8 +17,8 @@ const ErrorIndicator = ({ className, light, retry }) => {
   return (
     <div className={classes}>
       <DangerIcon className="error-indicator__icon" />
-      <Typography component="h3" className={`${light ? 'text-light' : 'text-dark'}`}>BOOM!</Typography>
-      <Typography component="p" className={`${light ? 'text-light' : 'text-dark'}`}> Something has gone terribly wrong</Typography>
+      <Typography component="span" variant="h3" className="error-indicator__title">BOOM!</Typography>
+      <Typography component="span" variant="p" className="error-indicator__text"> Something has gone terribly wrong</Typography>
       {retry && <Button className="error-indicator__button" variant="primary" size="md" onClick={retry}>Retry</Button>}
     </div>
   );
