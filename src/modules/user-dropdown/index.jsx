@@ -8,6 +8,7 @@ import Dropdown from 'components/dropdown';
 import UserDropdownItem from 'modules/user-dropdown-item';
 import Typography from 'components/typography';
 import ToggleTheme from 'modules/toggle-theme';
+import Overlay from 'components/overlay';
 // Styles
 import './styles.sass';
 // Assets
@@ -39,7 +40,7 @@ const UserDropdown = ({ userData, signOutRequest }) => {
 
   return (
     <React.Fragment>
-      <div className={`user-dropdown-overlay ${isActive ? 'is-active' : ''}`}></div>
+      <Overlay isActive={isActive} zIndex="100" />
       <Dropdown className="user-dropdown" isActive={isActive} onClickOutside={handleDropdown}>
         <Dropdown.Header className="user-dropdown__header" onClick={handleDropdown}>
           <div className="user-dropdown__avatar">
