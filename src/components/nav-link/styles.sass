@@ -4,11 +4,14 @@
 .nav-link
   cursor: pointer
   color: getColor('text-gray')
-  // color: $c-gray-3
   transition: 0.2s
   &:hover,
   &.is-active
-    color: getColor('text-gray')
+    color: $c-dark
+  &--dark
+    &:hover,
+    &.is-active
+      color: $c-gray-3
   &--accent
     &:hover,
     &.is-active
