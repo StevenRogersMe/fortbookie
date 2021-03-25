@@ -12,6 +12,12 @@
   height: 40px
   display: inline-block
   overflow: hidden
+  &.spinner--light
+    .spinner__inner
+      > div
+        border-color: $c-light transparent $c-light transparent
+        &:nth-child(2)
+          border-color: transparent $c-light transparent $c-light
   &__inner
     position: relative
     width: 100%
