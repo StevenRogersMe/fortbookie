@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withBreakpoints } from 'react-breakpoints'
 // Redux
@@ -39,6 +39,7 @@ const items = [
 
 const UserDropdown = ({ userData, signOutRequest, breakpoints, currentBreakpoint }) => {
   const history = useHistory();
+  const location = useLocation();
   const [isActive, setIsActive] = React.useState(false);
   const [blockScroll, allowScroll] = useScrollBlock();
   const [isMobile, setIsMobile] = React.useState(false);
@@ -80,9 +81,14 @@ const UserDropdown = ({ userData, signOutRequest, breakpoints, currentBreakpoint
         <Dropdown.Box className="user-dropdown__box">
           <Scrollbar className="user-dropdown__box-scroll">
             {items.map(({ title, icon, path }, idx) => (
-              <div key={idx} className="user-dropdown__item" onClick={handleDropdown}>
-                <UserDropdownItem title={title} icon={icon} onClick={() => { history.push(path) }} />
-              </div>
+              <UserDropdownItem
+                key={idx}
+                title={title}
+                icon={icon}
+                onClick={() => { handleDropdown(); history.push(path) }}
+                className="user-dropdown__item"
+                isActive={location.pathname === path}
+              />
             ))}
             <div className="user-dropdown__item">
               <ToggleTheme />
