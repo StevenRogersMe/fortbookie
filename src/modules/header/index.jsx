@@ -101,10 +101,10 @@ const Header = ({ user: { userData }, breakpoints, currentBreakpoint }) => {
 const UnsignedWidgets = ({ toggleMenu, history }) => (
   <Fragment>
     <div className="header__widget">
-      <Button size="lg" variant="accent" onClick={() => { toggleMenu(); history.push('/sign-up') }}>Sign Up</Button>
+      <Button size="lg" variant="accent" onClick={() => { toggleMenu && toggleMenu(); history.push('/sign-up') }}>Sign Up</Button>
     </div>
     <div className="header__widget">
-      <Button size="lg" variant="primary" onClick={() => { toggleMenu(); history.push('/sign-in') }}>Sign In</Button>
+      <Button size="lg" variant="primary" onClick={() => { toggleMenu && toggleMenu(); history.push('/sign-in') }}>Sign In</Button>
     </div>
   </Fragment>
 );
@@ -115,7 +115,7 @@ const SignedWidgets = ({ toggleMenu, location, history }) => (
       <NavLink isActive={isMathcingPath(location, '/withdraw')} onClick={() => history.push('/withdraw')}>Withdraw</NavLink>
     </div>
     <div className="header__widget">
-      <Button size="lg" variant="accent" onClick={() => { toggleMenu(); history.push('/deposit') }}>Deposit</Button>
+      <Button size="lg" variant="accent" onClick={() => { toggleMenu && toggleMenu(); history.push('/deposit') }}>Deposit</Button>
     </div>
   </Fragment>
 );
