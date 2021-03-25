@@ -5,6 +5,8 @@ import { withBreakpoints } from 'react-breakpoints'
 import { createStructuredSelector } from 'reselect';
 // Redux
 import { selectUser } from 'redux/auth/selectors';
+// Context
+import { useTheme } from 'context/theme-context';
 // UI
 import Container from 'components/container';
 import NavLink from 'components/nav-link';
@@ -15,6 +17,7 @@ import Burger from 'components/burger';
 import Overlay from 'components/overlay';
 // Assets
 import { ReactComponent as Logo } from 'assets/images/logo.svg';
+import { ReactComponent as LogoLight } from 'assets/images/logo-light.svg';
 // Utils
 import { isMathcingPath } from 'utils/router';
 // Styles
@@ -23,7 +26,7 @@ import './styles.sass';
 const Header = ({ user: { userData }, breakpoints, currentBreakpoint }) => {
   const history = useHistory();
   const location = useLocation();
-
+  const { dark } = useTheme();
   const [isMobile, setIsMobile] = React.useState(false);
   const [showMenu, setShowMenu] = React.useState(false);
 
@@ -41,8 +44,12 @@ const Header = ({ user: { userData }, breakpoints, currentBreakpoint }) => {
     <header className="header">
       <div className="header__wrap">
         <Container className="header__container">
-          <Link className="header__left" to="/">
-            <Logo className="header__logo" />
+          <Link className="header__logo" to="/">
+            {dark ?
+              <LogoLight className="header__logo-icon" />
+              :
+              <Logo className="header__logo-icon" />
+            }
           </Link>
 
           {(userData && !isMobile) && <Regions />}
