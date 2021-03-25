@@ -24,7 +24,6 @@ $c-dark  : #3c4146;
 $c-gray-1: #f3f4f7;
 $c-gray-2: #e7ecf2;
 $c-gray-3: #9099a6;
-
 $c-primary-1: #5e00d6;
 $c-primary-2: #44009a;
 $c-accent-1 : #ffc700;
@@ -40,8 +39,8 @@ $theme: (
   text-gray   : $c-gray-3,
 );
 $theme-dark: (
-  base        : #272121,
-  theme       : #3a3939,
+  base        : darken($c-dark, 8%),
+  theme       : $c-dark,
   text-primary: $c-light,
   text-alt    : $c-dark,
   text-gray   : $c-light,
