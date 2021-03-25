@@ -36,7 +36,6 @@
     +media-max($bp-md)
       width: 35px
       height: 35px
-    +media-max($bp-sm)
       margin-right: 0
   // Data
   &__data
@@ -53,7 +52,7 @@
     transition: 0.2s
     path
       fill: getColor("text-gray")
-    +media-max($bp-sm)
+    +media-max($bp-md)
       display: none
     &.is-active
       transform: rotate(180deg)
