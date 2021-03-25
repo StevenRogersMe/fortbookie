@@ -1,5 +1,9 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+// Redux
+import { selectUser } from 'redux/auth/selectors';
 // UI
 import Container from 'components/container';
 import Typography from 'components/typography';
@@ -7,8 +11,19 @@ import Button from 'components/button';
 // Styles
 import './styles.sass';
 
-const HomeScreen = () => {
+const HomeScreen = ({ user: { userData } }) => {
   const history = useHistory();
+
+  React.useEffect(() => {
+    if (userData) {
+      history.push('/events');
+    }
+  }, [userData, history]);
+
+  if (userData) {
+    return <div />
+  }
+
   return (
     <div className="home-screen">
       <Container>
@@ -24,4 +39,8 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+const mapStateToProps = createStructuredSelector({
+  user: selectUser
+});
+
+export default connect(mapStateToProps)(HomeScreen);
