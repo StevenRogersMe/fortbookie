@@ -6,6 +6,7 @@ import { signOutRequest } from 'redux/auth/sign-out/actions';
 // UI
 import Dropdown from 'components/dropdown';
 import UserDropdownItem from 'modules/user-dropdown-item';
+import Typography from 'components/typography';
 import ToggleTheme from 'modules/toggle-theme';
 // Styles
 import './styles.sass';
@@ -46,11 +47,11 @@ const UserDropdown = ({ userData, signOutRequest }) => {
           </div>
           <div className="user-dropdown__data">
             <div className="user-dropdown__data-top">
-              <span className="user-dropdown__name">{userData.name}</span>
+              <Typography component="span" variant="p" className="text-medium user-dropdown__name">{userData.name}</Typography>
             </div>
             <div className="user-dropdown__data-bottom">
-              <span className="user-dropdown__balance">{userData.balance}$</span>
-              <span className="user-dropdown__pending">{userData.pending}$ Pending</span>
+              <Typography component="span" variant="p" className="text-semibold user-dropdown__balance">{userData.balance}$</Typography>
+              <Typography component="span" variant="p" className="text-medium user-dropdown__pending">{userData.pending}$ Pending</Typography>
             </div>
           </div>
           <ArrowIcon className={`user-dropdown__icon ${isActive ? 'is-active' : ''}`} />
