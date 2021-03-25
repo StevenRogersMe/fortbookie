@@ -58,11 +58,26 @@
       transform: rotate(180deg)
   // Box
   &__box
-    min-width: 300px
+    display: flex
+    flex-direction: column
+    width: 300px
     margin-top: 40px
-    padding: 20px
-    z-index: 101
+    max-height: calc( 100vh - 120px )
+    min-height: 200px
     background-color: getColor('theme')
+    z-index: 101
+    &-scroll
+      padding: 20px
+      min-height: 0
+    +media-max($bp-sm)
+      position: fixed
+      top: $h-height
+      left: 0
+      margin-top: 0
+      max-height: 100%
+      height: calc( 100vh - #{$h-height} )
+      width: 100%
+      border-radius: 0
   &__item
     &:last-child
       margin-top: 15px

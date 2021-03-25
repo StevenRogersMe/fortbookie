@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { withBreakpoints } from 'react-breakpoints'
 // Redux
 import { signOutRequest } from 'redux/auth/sign-out/actions';
 // UI
@@ -9,6 +10,9 @@ import UserDropdownItem from 'modules/user-dropdown-item';
 import Typography from 'components/typography';
 import ToggleTheme from 'modules/toggle-theme';
 import Overlay from 'components/overlay';
+import Scrollbar from 'components/scrollbar';
+// Hooks
+import useScrollBlock from 'hooks/use-scroll-block';
 // Styles
 import './styles.sass';
 // Assets
@@ -33,10 +37,26 @@ const items = [
   { title: 'Help', icon: Support, path: '/help' },
 ];
 
-const UserDropdown = ({ userData, signOutRequest }) => {
+const UserDropdown = ({ userData, signOutRequest, breakpoints, currentBreakpoint }) => {
   const history = useHistory();
   const [isActive, setIsActive] = React.useState(false);
-  const handleDropdown = () => setIsActive(isActive => !isActive);
+  const [blockScroll, allowScroll] = useScrollBlock();
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    if (breakpoints[currentBreakpoint] < breakpoints.sm) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, [breakpoints, currentBreakpoint]);
+
+  const handleDropdown = () => {
+    if (isMobile) {
+      isActive ? allowScroll() : blockScroll();
+    }
+    setIsActive(isActive => !isActive);
+  };
 
   return (
     <React.Fragment>
@@ -58,17 +78,19 @@ const UserDropdown = ({ userData, signOutRequest }) => {
           <ArrowIcon className={`user-dropdown__icon ${isActive ? 'is-active' : ''}`} />
         </Dropdown.Header>
         <Dropdown.Box className="user-dropdown__box">
-          {items.map(({ title, icon, path }, idx) => (
-            <div key={idx} className="user-dropdown__item" onClick={handleDropdown}>
-              <UserDropdownItem title={title} icon={icon} onClick={() => { history.push(path) }} />
+          <Scrollbar className="user-dropdown__box-scroll">
+            {items.map(({ title, icon, path }, idx) => (
+              <div key={idx} className="user-dropdown__item" onClick={handleDropdown}>
+                <UserDropdownItem title={title} icon={icon} onClick={() => { history.push(path) }} />
+              </div>
+            ))}
+            <div className="user-dropdown__item">
+              <ToggleTheme />
             </div>
-          ))}
-          <div className="user-dropdown__item">
-            <ToggleTheme />
-          </div>
-          <div className="user-dropdown__item" onClick={handleDropdown}>
-            <UserDropdownItem title="Log Out" icon={LogOut} onClick={signOutRequest} />
-          </div>
+            <div className="user-dropdown__item" onClick={handleDropdown}>
+              <UserDropdownItem title="Log Out" icon={LogOut} onClick={signOutRequest} />
+            </div>
+          </Scrollbar>
         </Dropdown.Box>
       </Dropdown>
     </React.Fragment>
@@ -79,4 +101,4 @@ const mapDispatchToProps = {
   signOutRequest
 };
 
-export default connect(null, mapDispatchToProps)(UserDropdown);
+export default connect(null, mapDispatchToProps)(withBreakpoints(UserDropdown));
