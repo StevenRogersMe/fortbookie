@@ -4,6 +4,7 @@ import ReactAvatarEditor from 'react-avatar-editor';
 import Button from 'components/button';
 import Slider from 'components/slider';
 import Typography from 'components/typography';
+import Overlay from 'components/overlay';
 // Styles
 import './styles.sass';
 // Assets
@@ -51,6 +52,7 @@ const AvatarEditor = ({ image }) => {
       </div>
       {showCropper &&
         <div className="avatar-editor__cropper">
+          <Overlay isActive={showCropper} />
           <div className="avatar-editor__cropper-box">
             <ReactAvatarEditor
               ref={editorRef}
