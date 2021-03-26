@@ -42,13 +42,13 @@ const AvatarEditor = ({ image }) => {
     <div className="avatar-editor">
       <div className="avatar-editor__box">
         <figure style={{ backgroundImage: `url(${editedAvatar})` }} className="avatar-editor__box-image" />
+        <input type="file" accept="image/*" onChange={handleFileUpload} className="avatar-editor__box-input" />
         <div className="avatar-editor__box-overlay">
-          <input type="file" accept="image/*" onChange={handleFileUpload} className="avatar-editor__box-input" />
           <Typography component="span" variant="p-sm" className="text-light">Upload an image</Typography>
         </div>
-        <div className="avatar-editor__box-btn" onClick={() => setShowCropper(true)}>
+        <button className="avatar-editor__box-btn" onClick={() => setShowCropper(true)}>
           <PencilIcon />
-        </div>
+        </button>
       </div>
       {showCropper &&
         <div className="avatar-editor__cropper">
