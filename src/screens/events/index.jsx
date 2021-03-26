@@ -72,6 +72,8 @@ const EventsScreen = ({ fetchEventsRequest, events: { loading, data, error }, be
                         items={games}
                         handleSelect={betId => handleSelectBet(eventIdx, betId)}
                         selected={betSlips}
+                        alt={selectedRegion === 'live'}
+                        blocked={selectedRegion === 'live' && eventIdx === 1}
                       />
                     </Accordion.Content>
                   </Accordion>
