@@ -6,6 +6,7 @@ import Box from 'components/box';
 import Typography from 'components/typography';
 import DataPreview from 'components/data-preview';
 import Input from 'components/input';
+import FormGroup from 'components/form-group';
 import Button from 'components/button';
 // Styles
 import './styles.sass';
@@ -23,18 +24,20 @@ const ReferralsScreen = () => {
           <div className="referrals-screen__control">
             <div className="referrals-screen__control-items">
               <Box className="referrals-screen__box">
-                <Typography component="h5" className="referrals-screen__box-title">Your Referral Link</Typography>
-                <div className="referrals-screen__box-form">
-                  <Input className="referrals-screen__box-input" placeholder="https://fortbookie.com/?ref=fortbettor" />
-                  <Button variant="primary" size="lg">Copy</Button>
-                </div>
+                <FormGroup label="Your Referral Link" last>
+                  <div className="referrals-screen__box-group">
+                    <Input value="https://fortbookie.com/?sref=fortbettor" className="referrals-screen__box-input" disabled />
+                    <Button variant="primary" size="lg">Copy</Button>
+                  </div>
+                </FormGroup>
               </Box>
               <Box className="referrals-screen__box">
-                <Typography component="h5" className="referrals-screen__box-title">Availible Earnings</Typography>
-                <div className="referrals-screen__box-form">
-                  <Input className="referrals-screen__box-input" placeholder="$18.24" />
-                  <Button variant="accent" size="lg">Claim</Button>
-                </div>
+                <FormGroup label="Availible Earnings" last>
+                  <div className="referrals-screen__box-group">
+                    <Input value="$18.24" className="referrals-screen__box-input" disabled />
+                    <Button variant="accent" size="lg">Claim</Button>
+                  </div>
+                </FormGroup>
               </Box>
             </div>
             <div className="referrals-screen__control-text">
