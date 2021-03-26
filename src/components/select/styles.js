@@ -1,4 +1,4 @@
-export const colourStyles = dark => ({
+export const selectStyles = dark => ({
   control: (styles, state) => ({
     ...styles,
     backgroundColor: 'transparent',

@@ -4,14 +4,14 @@ import ReactSelect from 'react-select';
 // Context
 import { useTheme } from 'context/theme-context';
 // Styles
-import { colourStyles } from './styles';
+import { selectStyles } from './styles';
 
 const Select = ({ options, defaultValue, ...otherProps }) => {
   const { dark } = useTheme();
 
   return (
     <ReactSelect
-      styles={colourStyles(dark)}
+      styles={selectStyles(dark)}
       options={options}
       defaultValue={defaultValue}
       {...otherProps}
