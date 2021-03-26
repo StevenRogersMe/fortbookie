@@ -11,11 +11,14 @@
   user-select: none
   &:hover,
   &.is-active
-    background-color: $c-primary-1
     .user-dropdown-item__title
       color: $c-light
     .user-dropdown-item__icon path
       fill: $c-light
+  &:hover
+    background-color: rgba($c-primary-1, 0.4)
+  &.is-active
+    background-color: $c-primary-1
   &__icon
     margin-right: 20px
     transition: 0.2s
