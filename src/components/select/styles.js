@@ -2,9 +2,9 @@ export const selectStyles = dark => ({
   control: (styles, state) => ({
     ...styles,
     backgroundColor: 'transparent',
-    boxShadow: 'none',
-    borderColor: state.isFocused ? '#C4C6CA' : '#E7ECF2',
-    padding: '3px',
+    borderColor: '#E7ECF2',
+    boxShadow: state.isFocused ? '0px 0px 10px rgba(33, 58, 88, 0.1);' : 'none',
+    padding: '5px 11px 6px 11px',
     '&:hover': {
       borderColor: '#C4C6CA'
     },
@@ -16,7 +16,8 @@ export const selectStyles = dark => ({
   }),
   singleValue: styles => ({
     ...styles,
-    color: dark ? '#ffffff' : '#9099A6',
+    color: dark ? '#ffffff' : '#3c4146',
+    fontWeight: '500',
     fontSize: '14px'
   }),
   indicatorSeparator: () => ({ display: 'none' }),
@@ -25,7 +26,8 @@ export const selectStyles = dark => ({
     color: isSelected ? '#ffffff' : (dark ? '#ffffff' : '#3C4146'),
     fontWeight: '500',
     fontSize: '14px',
-    backgroundColor: isDisabled ? null : (isSelected ? '#5E00D6' : (isFocused ? (dark ? '#9099a6' :'#f3f4f7') : null)),
+    padding: '13px 20px',
+    backgroundColor: isDisabled ? null : (isSelected ? '#5E00D6' : (isFocused ? (dark ? '#9099a6' : '#f3f4f7') : null)),
     cursor: 'pointer'
   }),
   menu: styles => ({
