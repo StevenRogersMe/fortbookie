@@ -55,9 +55,7 @@ const SettingsScreen = () => {
         <ContentBox.Body>
           <form className="settings-screen__body" onSubmit={handleSubmit}>
             <FormGroup label="Profile picture">
-              <div className="settings-screen__item-box">
-                <AvatarEditor image={AvatarImage} />
-              </div>
+              <AvatarEditor image={AvatarImage} />
             </FormGroup>
             <FormGroup label="Username" errorMsg={touched.userName && errors.userName}>
               <Input
