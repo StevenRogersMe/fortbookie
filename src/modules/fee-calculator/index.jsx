@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Box from 'components/box';
 import Typography from 'components/typography';
 import Input from 'components/input';
+import FormGroup from 'components/form-group';
 // Styles
 import './styles.sass';
 // Assets
@@ -23,12 +24,10 @@ const FeeCalculator = ({ className, type }) => {
       <Typography className="fee-calculator__title" component="h4">Transaction Fee Calculator</Typography>
       <Box className="fee-calculator__box">
         <div className="fee-calculator__items">
-          <div className="fee-calculator__item">
-            <Typography component="h5" className="fee-calculator__item-title">{title} Amount</Typography>
+          <FormGroup label={`${title} Amount`} className="fee-calculator__item">
             <Input placeholder="$50.00" />
-          </div>
-          <div className="fee-calculator__item">
-            <Typography component="h5" className="fee-calculator__item-title">Estimated Fees</Typography>
+          </FormGroup>
+          <FormGroup label="Estimated Fees" className="fee-calculator__item">
             <div className="fee-calculator__coins">
               <div className="fee-calculator__coin">
                 <LitecoinIcon className="fee-calculator__coin-icon" />
@@ -39,7 +38,7 @@ const FeeCalculator = ({ className, type }) => {
                 <span className="fee-calculator__coin-price">$0.09</span>
               </div>
             </div>
-          </div>
+          </FormGroup>
         </div>
       </Box>
     </div>
