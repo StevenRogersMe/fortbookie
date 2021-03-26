@@ -15,6 +15,7 @@ import Regions from 'modules/regions';
 import UserDropdown from 'modules/user-dropdown';
 import Burger from 'components/burger';
 import Overlay from 'components/overlay';
+import Close from 'components/close';
 // Assets
 import { ReactComponent as Logo } from 'assets/images/logo.svg';
 import { ReactComponent as LogoLight } from 'assets/images/logo-light.svg';
@@ -75,8 +76,11 @@ const Header = ({ user: { userData }, breakpoints, currentBreakpoint }) => {
 
       {isMobile &&
         <Fragment>
-          <Overlay isActive={showMenu} zIndex="999" onClick={toggleMenu} fixed />
+          <Overlay isActive={showMenu} zIndex="999" onClick={toggleMenu} />
           <div className={`header__mobile ${showMenu ? 'is-active' : ''}`}>
+            <div className="header__mobile-close">
+              <Close dark onClick={toggleMenu} />
+            </div>
             {userData &&
               <div className="header__mobile-line">
                 <Regions onItemClick={toggleMenu} />
