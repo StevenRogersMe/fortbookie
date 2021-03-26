@@ -22,19 +22,13 @@ const validationSchema = Yup.object().shape({
   timeZone: Yup.string().required('Time Zone is a required field'),
 });
 
-const timeZones = [
-  { label: 'Pacific standard', value: 'pacific standard' },
-  { label: 'Pacific standard 2', value: 'pacific standard 2' },
-  { label: 'Pacific standard 3', value: 'pacific standard 3' }
-];
-
 const SettingsScreen = () => {
   const formik = useFormik({
     initialValues: {
       userName: 'Fortbettor',
       email: 'fortbettor@gmail.com',
       password: '******123',
-      timeZone: 'pacific standard'
+      timeZone: 'America/Phoenix'
     },
     validationSchema,
     onSubmit: (values, { setSubmitting, resetForm }) => {
@@ -92,10 +86,10 @@ const SettingsScreen = () => {
             </FormGroup>
             <FormGroup label="Time Zone" errorMsg={touched.timeZone && errors.timeZone}>
               <Select
-                options={timeZones}
-                value={timeZones.find(({ value }) => value === values.timeZone)}
+                value={values.timeZone}
                 onChange={({ value }) => handleChange("timeZone")(value)}
                 name="timeZone"
+                timezones
               />
             </FormGroup>
             <Button variant="primary" size="xl" type="submit">Save</Button>
