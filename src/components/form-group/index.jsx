@@ -5,9 +5,10 @@ import Typography from 'components/typography';
 // Styles
 import './styles.sass';
 
-const FormGroup = ({ children, label, errorMsg, className }) => {
+const FormGroup = ({ children, label, errorMsg, last, className }) => {
   const classes = classNames({
     'form-group': true,
+    'form-group--last': last,
     [className]: className
   });
 
