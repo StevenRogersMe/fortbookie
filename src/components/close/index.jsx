@@ -5,9 +5,10 @@ import './styles.sass';
 // Assets
 import { ReactComponent as CloseIcon } from 'assets/images/icons/close.svg';
 
-const Close = ({ className, onClick }) => {
+const Close = ({ className, onClick, dark }) => {
   const classes = classNames({
     'close': true,
+    'close--dark': dark,
     [className]: className
   });
 
