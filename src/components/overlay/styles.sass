@@ -8,9 +8,15 @@
   left: 0
   bottom: 0
   right: 0
+
+// Animations
+.overlay-animation-enter
   opacity: 0
-  visibility: hidden
-  transition: 0.2s
-  &.is-active
-    opacity: 1
-    visibility: visible
+.overlay-animation-enter-active
+  opacity: 1
+  transition: 0.3s
+.overlay-animation-exit
+  opacity: 1
+.overlay-animation-exit-active
+  opacity: 0
+  transition: 0.3s
