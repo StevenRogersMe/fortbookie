@@ -9,6 +9,7 @@ import depositRoutes from 'screens/deposit/route';
 import withdrawRoutes from 'screens/withdraw/route';
 import referralsRoutes from 'screens/referrals/route';
 import settingsRoutes from 'screens/settings/route';
+import playerTransferRoutes from 'screens/player-transfer/route';
 
 const routes = [
   ...authRoutes,
@@ -21,7 +22,8 @@ const routes = [
   ...depositRoutes,
   ...withdrawRoutes,
   ...referralsRoutes,
-  ...settingsRoutes
+  ...settingsRoutes,
+  ...playerTransferRoutes
 ];
 
 export default routes;
