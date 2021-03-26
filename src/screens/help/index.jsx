@@ -39,10 +39,10 @@ const HelpScreen = () => {
             <Typography component="h4" className="help-screen__topics-title">Browse By Topics</Typography>
             <Box className="help-screen__topics-wrap">
               {topics.map(({ title, Icon }, idx) => (
-                <div key={idx} className="help-screen__topic">
+                <a href="http://example.com" key={idx} className="help-screen__topic">
                   <Icon className="help-screen__topic-icon" />
                   <Typography component="h5" className="help-screen__topic-title">{title}</Typography>
-                </div>
+                </a>
               ))}
             </Box>
           </div>
