@@ -26,11 +26,11 @@ const DepositDetails = () => {
               <img src={QrCode} className="deposit-details__item-qr" alt="qr" />
             </Box>
             <div className="deposit-details__or">
-              <Typography component="span" variant="h3" >OR</Typography>
+              <Typography component="span" variant="h3">OR</Typography>
             </div>
             <Box className="deposit-details__item">
               <Typography component="h4" className="deposit-details__item-title">Send your bitcoin to this address</Typography>
-              <Input placeholder="3DmdyMxDew8BJPpDGW3hFUzv3jh75sN1jW" className="deposit-details__item-input" center />
+              <Input value="3DmdyMxDew8BJPpDGW3hFUzv3jh75sN1jW" className="deposit-details__item-input" center disabled />
               <Button variant="primary" size="lg">Copy address</Button>
             </Box>
           </div>
