@@ -26,9 +26,17 @@
     flex-direction: column
     flex: 1 1 200px
     padding: 20px
+    cursor: pointer
+    &:hover
+      .help-screen__topic-title
+        color: $c-primary-1
+      .help-screen__topic-icon path
+        fill: $c-primary-1
     &-icon
       margin-bottom: 15px
       path
         fill: getColor('text-gray')
+        transition: 0.2s
     &-title
       color: getColor('text-gray')
+      transition: 0.2s
