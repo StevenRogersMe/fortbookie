@@ -5,7 +5,7 @@ import { useFormik } from 'formik';
 import ScreenLayout from 'components/screen-layout';
 import ContentBox from 'components/content-box';
 import Typography from 'components/typography';
-import AvatarEditor from 'components/avatar-editor';
+import AvatarEditor from 'modules/avatar-editor';
 import Input from 'components/input';
 import Select from 'components/select';
 import Button from 'components/button';
