@@ -7,6 +7,7 @@ import './styles.sass';
 
 const Alert = ({ type, children, isActive, onClose, className }) => {
   const [container] = React.useState(document.createElement('div'));
+  const alertRef = React.createRef(null);
 
   React.useEffect(() => {
     if (isActive) {
@@ -25,11 +26,11 @@ const Alert = ({ type, children, isActive, onClose, className }) => {
   });
 
   return ReactDOM.createPortal((
-    <CSSTransition in={isActive} timeout={300} onExited={() => document.body.removeChild(container)} classNames="alert-animation" >
-      <div className={classes}>
+    <CSSTransition nodeRef={alertRef} in={isActive} timeout={300} onExited={() => document.body.removeChild(container)} classNames="alert-animation" >
+      <div className={classes} ref={alertRef}>
         {children}
       </div>
-    </CSSTransition >
+    </CSSTransition>
   ), container);
 };
 
