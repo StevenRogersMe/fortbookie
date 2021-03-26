@@ -14,7 +14,7 @@ const AccordionTab = ({ title, date, time, handleAccordion, isExpanded }) => {
   return (
     <div className={classes} onClick={handleAccordion}>
       <div className="accordion-tab__title">
-        <Typography component="h3">{title}</Typography>
+        <Typography component="h4">{title}</Typography>
       </div>
       <div className="accordion-tab__meta">
         <Typography component="span" variant="p" className="text-medium accordion-tab__meta-item">{date}</Typography>

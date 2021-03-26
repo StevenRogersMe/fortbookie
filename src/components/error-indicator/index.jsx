@@ -17,7 +17,7 @@ const ErrorIndicator = ({ className, retry }) => {
   return (
     <div className={classes}>
       <DangerIcon className="error-indicator__icon" />
-      <Typography component="span" variant="h3" className="error-indicator__title">BOOM!</Typography>
+      <Typography component="span" variant="h4" className="error-indicator__title">BOOM!</Typography>
       <Typography component="span" variant="p" className="error-indicator__text"> Something has gone terribly wrong</Typography>
       {retry && <Button className="error-indicator__button" variant="primary" size="md" onClick={retry}>Retry</Button>}
     </div>

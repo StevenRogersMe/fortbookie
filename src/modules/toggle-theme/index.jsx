@@ -12,7 +12,7 @@ const ToggleTheme = () => {
   return (
     <div className="toggle-theme">
       <ToggleSwitch onChange={toggleTheme} checked={dark} className="toggle-theme__switch" />
-      <Typography component="span" variant="h5" className="user-dropdown-item__title">{dark ? 'Dark theme' : 'Light theme'}</Typography>
+      <Typography component="span" variant="h6" className="user-dropdown-item__title">{dark ? 'Dark theme' : 'Light theme'}</Typography>
     </div>
   );
 };

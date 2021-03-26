@@ -15,7 +15,7 @@ const FormGroup = ({ children, label, errorMsg, last, className }) => {
   return (
     <div className={classes}>
       {label &&
-        <Typography component="label" variant="h5" className="form-group__label">{label}</Typography>
+        <Typography component="label" variant="h6" className="form-group__label">{label}</Typography>
       }
       {children}
       {errorMsg && <Typography component="span" variant="p" className="text-danger form-group__error">{errorMsg}</Typography>}

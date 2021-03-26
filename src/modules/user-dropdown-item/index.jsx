@@ -14,7 +14,7 @@ const UserDropdownItem = ({ title, icon: Icon, onClick, className, isActive }) =
   return (
     <div className={classes} onClick={onClick}>
       <Icon className="user-dropdown-item__icon" />
-      <Typography component="span" variant="h5" className="user-dropdown-item__title">{title}</Typography>
+      <Typography component="span" variant="h6" className="user-dropdown-item__title">{title}</Typography>
     </div>
   );
 };

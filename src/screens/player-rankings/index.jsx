@@ -25,7 +25,7 @@ const PlayerRankingsScreen = ({ fetchPlayerRankingsRequest, playerRankings: { lo
       <ContentBox className="player-rankings">
         <ContentBox.Header className="player-rankings__header">
           <div className="player-rankings__header-left">
-            <Typography component="h3" className="player-rankings__header-title">Player Rankings</Typography>
+            <Typography component="h4" className="player-rankings__header-title">Player Rankings</Typography>
           </div>
           <div className="player-rankings__header-right">
             <div className="player-rankings__header-select">

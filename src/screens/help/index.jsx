@@ -32,16 +32,16 @@ const HelpScreen = () => {
         </ContentBox.Header>
         <ContentBox.Body>
           <div className="help-screen__email">
-            <Typography component="h3" className="help-screen__email-title">E-mail</Typography>
+            <Typography component="h4" className="help-screen__email-title">E-mail</Typography>
             <a href="mailto:fortbookiesupport@gmail.com" className="help-screen__email-link">fortbookiesupport@gmail.com</a>
           </div>
           <div className="help-screen__topics">
-            <Typography component="h3" className="help-screen__topics-title">Browse By Topics</Typography>
+            <Typography component="h4" className="help-screen__topics-title">Browse By Topics</Typography>
             <Box className="help-screen__topics-wrap">
               {topics.map(({ title, Icon }, idx) => (
                 <div key={idx} className="help-screen__topic">
                   <Icon className="help-screen__topic-icon" />
-                  <span className="help-screen__topic-title">{title}</span>
+                  <Typography component="h5" className="help-screen__topic-title">{title}</Typography>
                 </div>
               ))}
             </Box>

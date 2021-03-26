@@ -19,7 +19,7 @@ const List = ({ header, items, handleSelect, selected }) => {
         {items.map(({ id, game, price }) => (
           <div key={id} className={`list__item ${isActive(id) ? 'is-active' : ''}`} onClick={() => { handleSelect(id) }}>
             <Typography component="span" variant="p-sm" className="text-medium list__item-game">{game}</Typography>
-            <Typography component="h5">{price}</Typography>
+            <Typography component="span" variant="h6">{price}</Typography>
           </div>
         ))}
       </div>
