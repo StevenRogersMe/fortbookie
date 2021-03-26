@@ -5,10 +5,11 @@ import Typography from 'components/typography';
 // Styles
 import './styles.sass';
 
-const List = ({ header, items, handleSelect, alt, selected }) => {
+const List = ({ header, items, handleSelect, alt, blocked, selected }) => {
   const classnames = classNames({
     'list': true,
     'list--alt': alt,
+    'list--blocked': blocked,
   });
 
   const isActive = currentId => selected.some(({ id }) => id === currentId);
