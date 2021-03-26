@@ -29,7 +29,7 @@ import { ReactComponent as LogOut } from 'assets/images/user/logout.svg';
 
 const items = [
   { title: 'Transactions', icon: Transaction, path: '/transactions' },
-  { title: 'Player Transfer', icon: Transfer, path: '/' },
+  { title: 'Player Transfer', icon: Transfer, path: '/player-transfer' },
   { title: 'Player Rankings', icon: Rankings, path: '/player-rankings' },
   { title: 'Refer a friend', icon: Referal, path: '/referrals' },
   { title: 'Rewards', icon: Rewards, path: '/rewards' },
