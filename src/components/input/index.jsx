@@ -8,6 +8,7 @@ const Input = forwardRef(({ className, standard, size, invalid, variant, disable
     'input': standard !== false,
     'input--invalid': invalid,
     'input--center': center,
+    'input--disabled': disabled,
     [`input--${variant}`]: variant,
     [`input--${size}`]: size,
     [className]: className
