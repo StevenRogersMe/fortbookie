@@ -8,12 +8,21 @@ import DataPreview from 'components/data-preview';
 import Input from 'components/input';
 import FormGroup from 'components/form-group';
 import Button from 'components/button';
+import Alert from 'components/alert';
 // Styles
 import './styles.sass';
 // Data preview
 import { dataPreviewContent } from './data-preview-content';
 
 const ReferralsScreen = () => {
+  const [copySuccess, setCopySuccess] = React.useState(false);
+  const tempLink = 'https://fortbookie.com/?sref=fortbettor';
+
+  const handleCopyClick = () => {
+    setCopySuccess(true);
+    navigator.clipboard.writeText(tempLink);
+  };
+
   return (
     <ScreenLayout>
       <ContentBox className="referrals-screen">
@@ -21,13 +30,14 @@ const ReferralsScreen = () => {
           <Typography component="h3">Referrals</Typography>
         </ContentBox.Header>
         <ContentBox.Body>
+          <Alert type="success" isActive={copySuccess} onClose={() => setCopySuccess(false)}>Copied successfully</Alert>
           <div className="referrals-screen__control">
             <div className="referrals-screen__control-items">
               <Box className="referrals-screen__box">
                 <FormGroup label="Your Referral Link" last>
                   <div className="referrals-screen__box-group">
-                    <Input value="https://fortbookie.com/?sref=fortbettor" className="referrals-screen__box-input" disabled />
-                    <Button variant="primary" size="lg">Copy</Button>
+                    <Input value={tempLink} className="referrals-screen__box-input" disabled />
+                    <Button variant="primary" size="lg" onClick={handleCopyClick}>Copy</Button>
                   </div>
                 </FormGroup>
               </Box>
