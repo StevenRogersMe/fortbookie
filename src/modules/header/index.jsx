@@ -15,7 +15,7 @@ import Regions from 'modules/regions';
 import UserDropdown from 'modules/user-dropdown';
 import Burger from 'components/burger';
 import Overlay from 'components/overlay';
-import Close from 'components/close';
+import Close from 'components/close-button';
 // Assets
 import { ReactComponent as Logo } from 'assets/images/logo.svg';
 import { ReactComponent as LogoLight } from 'assets/images/logo-light.svg';

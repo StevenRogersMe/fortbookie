@@ -1,7 +1,7 @@
 import React from 'react';
 // UI
 import Input from 'components/input';
-import Close from 'components/close';
+import Close from 'components/close-button';
 import Typography from 'components/typography';
 // Styles
 import './styles.sass';
