@@ -13,9 +13,9 @@ const Close = ({ className, onClick, dark }) => {
   });
 
   return (
-    <div className={classes} onClick={onClick}>
+    <button className={classes} onClick={onClick}>
       <CloseIcon className="close__icon" />
-    </div>
+    </button>
   );
 };
 
