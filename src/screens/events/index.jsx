@@ -95,7 +95,7 @@ const EventsScreen = (props) => {
             }
           </div>
           <div className={`events-screen__bets ${showBets ? 'is-active' : ''}`}>
-            <CloseButton className="events-screen__bets-close" onClick={toggleShowBets} dark />
+            {isMobile && <CloseButton className="events-screen__bets-close" onClick={toggleShowBets} dark />}
             <Bets />
           </div>
         </div>
