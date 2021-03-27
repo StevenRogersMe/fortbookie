@@ -5,7 +5,7 @@ import { withBreakpoints } from 'react-breakpoints'
 // Redux
 import { fetchEventsRequest } from 'redux/events/actions';
 import { selectEvents } from 'redux/events/selectors';
-import { selectBetSlips } from 'redux/bet-slips/selectors';
+import { selectBetSlips, selectTotalBetSlips } from 'redux/bet-slips/selectors';
 import { toggleBetSlip } from 'redux/bet-slips/actions';
 import { setSelectedRegion } from 'redux/selected-region/actions';
 import { selectSelectedRegion } from 'redux/selected-region/selectors';
@@ -18,6 +18,7 @@ import List from 'components/list';
 import ErrorIndicator from 'components/error-indicator';
 import Spinner from 'components/spinner';
 import FixedButton from 'components/fixed-button';
+import CloseButton from 'components/close-button';
 // Hooks
 import useScrollBlock from 'hooks/use-scroll-block';
 // Styles
@@ -25,7 +26,19 @@ import './styles.sass';
 // Assets
 import { ReactComponent as BettingsIcon } from 'assets/images/icons/betting.svg';
 
-const EventsScreen = ({ fetchEventsRequest, events: { loading, data, error }, betSlips, toggleBetSlip, breakpoints, currentBreakpoint, selectedRegion, setSelectedRegion }) => {
+const EventsScreen = (props) => {
+  const {
+    fetchEventsRequest,
+    events: { loading, data, error },
+    betSlips,
+    toggleBetSlip,
+    breakpoints,
+    currentBreakpoint,
+    selectedRegion,
+    setSelectedRegion,
+    totalBetSlips
+  } = props;
+
   const [showBets, setShowBets] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(false);
   const [blockScroll, allowScroll] = useScrollBlock();
@@ -82,11 +95,12 @@ const EventsScreen = ({ fetchEventsRequest, events: { loading, data, error }, be
             }
           </div>
           <div className={`events-screen__bets ${showBets ? 'is-active' : ''}`}>
+            <CloseButton className="events-screen__bets-close" onClick={toggleShowBets} dark />
             <Bets />
           </div>
         </div>
       </div>
-      {isMobile && <FixedButton icon={BettingsIcon} onClick={() => toggleShowBets()} />}
+      {isMobile && <FixedButton icon={BettingsIcon} title="Bets" text={totalBetSlips} onClick={toggleShowBets} />}
     </ScreenLayout>
   );
 };
@@ -95,6 +109,7 @@ const mapStateToProps = createStructuredSelector({
   events: selectEvents,
   betSlips: selectBetSlips,
   selectedRegion: selectSelectedRegion,
+  totalBetSlips: selectTotalBetSlips,
 });
 
 const mapDispatchToProps = {
