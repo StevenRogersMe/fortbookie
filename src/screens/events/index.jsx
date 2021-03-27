@@ -100,7 +100,7 @@ const EventsScreen = (props) => {
           </div>
         </div>
       </div>
-      {isMobile && <FixedButton icon={BettingsIcon} title="Bets" text={totalBetSlips} onClick={toggleShowBets} />}
+      {isMobile && <FixedButton icon={BettingsIcon} text={totalBetSlips} onClick={toggleShowBets} />}
     </ScreenLayout>
   );
 };
