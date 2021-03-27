@@ -9,13 +9,16 @@
   padding: 10px 15px
   cursor: pointer
   user-select: none
+  width: 100%
   &:hover,
+  &:focus,
   &.is-active
     .user-dropdown-item__title
       color: $c-light
     .user-dropdown-item__icon path
       fill: $c-light
-  &:hover
+  &:hover,
+  &:focus
     background-color: rgba($c-primary-1, 0.4)
   &.is-active
     background-color: $c-primary-1

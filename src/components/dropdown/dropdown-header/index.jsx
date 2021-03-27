@@ -1,5 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
+// UI
+import Button from 'components/button';
 // Styles
 import './styles.sass';
 
@@ -11,9 +13,9 @@ const DropdownHeader = ({ children, className, isActive, onClick }) => {
   });
 
   return (
-    <div className={classnames} onClick={onClick}>
+    <Button className={classnames} onClick={onClick}>
       {children}
-    </div>
+    </Button>
   )
 };
 
