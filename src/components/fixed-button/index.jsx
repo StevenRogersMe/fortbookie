@@ -1,15 +1,26 @@
 import React from 'react';
+import ReactDom from 'react-dom';
 // UI
 import Typography from 'components/typography';
 // Styles
 import './styles.sass';
 
 const FixedButton = ({ icon: Icon, text, ...otherProps }) => {
+  const [container] = React.useState(document.createElement('div'));
+  React.useEffect(() => {
+    document.body.appendChild(container);
+    return () => {
+      document.body.removeChild(container);
+    }
+  }, [container]);
+
   return (
-    <div className="fixed-button" {...otherProps}>
-      {text.toString() && <Typography component="span" variant="p-sm" className="text-bold fixed-button__text">{text}</Typography>}
-      <Icon className="fixed-button__icon" />
-    </div>
+    ReactDom.createPortal((
+      <div className="fixed-button" {...otherProps}>
+        {text.toString() && <Typography component="span" variant="p-sm" className="text-bold fixed-button__text">{text}</Typography>}
+        <Icon className="fixed-button__icon" />
+      </div>
+    ), container)
   );
 };
 
