@@ -20,14 +20,14 @@ const Bets = ({ removeAllBetSlips }) => {
     <div className="bets">
       <div className="bets__wrap">
         <div className="bets__buttons">
-          <button
+          <Button
             className={`bets__button ${tabActiveClass('betSlips')}`}
             onClick={() => handleTab('betSlips')}
-          >Bet Slips</button>
-          <button
+          >Bet Slips</Button>
+          <Button
             className={`bets__button ${tabActiveClass('openBets')}`}
             onClick={() => handleTab('openBets')}
-          >Open Bets</button>
+          >Open Bets</Button>
         </div>
         <div className="bets__balance">
           <Typography component="span" variant="h6" className="bets__balance-current">Balance: 100$</Typography>

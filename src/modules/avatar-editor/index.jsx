@@ -46,9 +46,9 @@ const AvatarEditor = ({ image }) => {
         <div className="avatar-editor__box-overlay">
           <Typography component="span" variant="p-sm" className="text-light">Upload an image</Typography>
         </div>
-        <button className="avatar-editor__box-btn" onClick={() => setShowCropper(true)}>
+        <Button className="avatar-editor__box-btn" onClick={() => setShowCropper(true)}>
           <PencilIcon />
-        </button>
+        </Button>
       </div>
       {showCropper &&
         <div className="avatar-editor__cropper">
