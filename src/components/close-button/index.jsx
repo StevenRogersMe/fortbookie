@@ -1,5 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
+// Ui
+import Button from 'components/button';
 // Styles
 import './styles.sass';
 // Assets
@@ -13,9 +15,9 @@ const CloseButton = ({ className, onClick, dark }) => {
   });
 
   return (
-    <button className={classes} onClick={onClick}>
+    <Button className={classes} onClick={onClick}>
       <CloseIcon className="close-button__icon" />
-    </button>
+    </Button>
   );
 };
 
