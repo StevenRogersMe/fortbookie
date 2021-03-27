@@ -5,7 +5,7 @@ import './styles.sass';
 
 const Button = ({ children, href, className, variant, size, disabled, onClick, fluid, noShadow, type, style, loading }) => {
   const classes = classNames({
-    'button': !disabled,
+    'button': variant && !disabled,
     'button--no-shadow': noShadow,
     'button--fluid': fluid,
     'button--loading': loading,
