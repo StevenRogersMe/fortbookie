@@ -100,7 +100,7 @@ const EventsScreen = (props) => {
           </div>
         </div>
       </div>
-      {isMobile && <FixedButton icon={BettingsIcon} text={totalBetSlips} onClick={toggleShowBets} />}
+      {isMobile && <FixedButton icon={BettingsIcon} text={totalBetSlips} onClick={toggleShowBets} zIndex={showBets ? 500 : 100} />}
     </ScreenLayout>
   );
 };
