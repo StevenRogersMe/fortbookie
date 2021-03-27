@@ -18,7 +18,7 @@ const NavLink = ({ children, className, isActive, accent, ...otherProps }) => {
   });
 
   return (
-    <Typography component="span" variant="h6" className={classes} role="button" tabIndex="1" {...otherProps}>
+    <Typography component="button" variant="h6" className={classes} {...otherProps}>
       {children}
     </Typography>
   );
