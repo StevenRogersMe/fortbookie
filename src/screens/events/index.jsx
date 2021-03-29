@@ -41,8 +41,8 @@ const EventsScreen = (props) => {
   } = props;
 
   const [showBets, setShowBets] = React.useState(false);
-  const isMobile = useIsBreakpoint();
-  const [blockScroll, allowScroll] = useScrollBlock(currentBreakpoint, 'lg');
+  const isMobile = useIsBreakpoint(currentBreakpoint, 'lg');
+  const [blockScroll, allowScroll] = useScrollBlock();
 
   React.useLayoutEffect(() => {
     fetchEventsRequest(selectedRegion);
