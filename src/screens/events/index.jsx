@@ -2,6 +2,8 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { withBreakpoints } from 'react-breakpoints'
+// Hooks
+import useIsBreakpoint from 'hooks/use-is-breakpoint';
 // Redux
 import { fetchEventsRequest } from 'redux/events/actions';
 import { selectEvents } from 'redux/events/selectors';
@@ -32,7 +34,6 @@ const EventsScreen = (props) => {
     events: { loading, data, error },
     betSlips,
     toggleBetSlip,
-    breakpoints,
     currentBreakpoint,
     selectedRegion,
     setSelectedRegion,
@@ -40,16 +41,12 @@ const EventsScreen = (props) => {
   } = props;
 
   const [showBets, setShowBets] = React.useState(false);
-  const [isMobile, setIsMobile] = React.useState(false);
-  const [blockScroll, allowScroll] = useScrollBlock();
+  const isMobile = useIsBreakpoint();
+  const [blockScroll, allowScroll] = useScrollBlock(currentBreakpoint, 'lg');
 
   React.useLayoutEffect(() => {
     fetchEventsRequest(selectedRegion);
   }, [fetchEventsRequest, selectedRegion]);
-
-  React.useEffect(() => {
-    breakpoints[currentBreakpoint] < breakpoints.lg ? setIsMobile(true) : setIsMobile(false);
-  }, [breakpoints, currentBreakpoint]);
 
   const handleSelectBet = (eventIdx, betId) => toggleBetSlip({ eventIdx, betId });
   const toggleShowBets = () => {

@@ -1,10 +1,12 @@
 import React, { Fragment } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { withBreakpoints } from 'react-breakpoints'
+import { withBreakpoints } from 'react-breakpoints';
 import { createStructuredSelector } from 'reselect';
 // Redux
 import { selectUser } from 'redux/auth/selectors';
+// Hooks
+import useIsBreakpoint from 'hooks/use-is-breakpoint';
 // Context
 import { useTheme } from 'context/theme-context';
 // UI
@@ -24,20 +26,12 @@ import { isMathcingPath } from 'utils/router';
 // Styles
 import './styles.sass';
 
-const Header = ({ user: { userData }, breakpoints, currentBreakpoint }) => {
+const Header = ({ user: { userData }, currentBreakpoint }) => {
   const history = useHistory();
   const location = useLocation();
   const { dark } = useTheme();
-  const [isMobile, setIsMobile] = React.useState(false);
+  const isMobile = useIsBreakpoint(currentBreakpoint, 'xl');
   const [showMenu, setShowMenu] = React.useState(false);
-
-  React.useEffect(() => {
-    if (breakpoints[currentBreakpoint] < breakpoints.xl) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  }, [breakpoints, currentBreakpoint]);
 
   const toggleMenu = () => setShowMenu(showMenu => !showMenu);
 

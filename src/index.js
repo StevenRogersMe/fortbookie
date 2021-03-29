@@ -13,7 +13,7 @@ import { store } from 'redux/store';
 import './index.sass';
 import 'simplebar/dist/simplebar.min.css';
 
-const breakpoints = {
+export const breakpoints = {
   xs: 461,
   sm: 576,
   md: 768,

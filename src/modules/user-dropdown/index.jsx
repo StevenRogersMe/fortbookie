@@ -2,6 +2,8 @@ import React from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withBreakpoints } from 'react-breakpoints'
+// Hooks
+import useIsBreakpoint from 'hooks/use-is-breakpoint';
 // Redux
 import { signOutRequest } from 'redux/auth/sign-out/actions';
 // UI
@@ -37,20 +39,12 @@ const items = [
   { title: 'Help', icon: Support, path: '/help' },
 ];
 
-const UserDropdown = ({ userData, signOutRequest, breakpoints, currentBreakpoint }) => {
+const UserDropdown = ({ userData, signOutRequest, currentBreakpoint }) => {
   const history = useHistory();
   const location = useLocation();
   const [isActive, setIsActive] = React.useState(false);
   const [blockScroll, allowScroll] = useScrollBlock();
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    if (breakpoints[currentBreakpoint] < breakpoints.sm) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  }, [breakpoints, currentBreakpoint]);
+  const isMobile = useIsBreakpoint(currentBreakpoint, 'sm');
 
   const handleDropdown = () => {
     if (isMobile) {
