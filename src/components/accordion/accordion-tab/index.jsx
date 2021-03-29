@@ -4,6 +4,8 @@ import classNames from 'classnames';
 import Typography from 'components/typography';
 // Styles
 import './styles.sass';
+// Helpers
+import { handleAccessibilityKeyPress } from 'utils/helpers';
 
 const AccordionTab = ({ title, date, time, handleAccordion, isExpanded }) => {
 
@@ -11,8 +13,10 @@ const AccordionTab = ({ title, date, time, handleAccordion, isExpanded }) => {
     'accordion-tab': true,
   });
 
+  const handleKeyPress = e => handleAccessibilityKeyPress(e, handleAccordion);
+
   return (
-    <div className={classes} onClick={handleAccordion}>
+    <div className={classes} onClick={handleAccordion} onKeyPress={handleKeyPress} tabIndex="0">
       <div className="accordion-tab__title">
         <Typography component="h4">{title}</Typography>
       </div>
