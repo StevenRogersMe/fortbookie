@@ -48,18 +48,16 @@ const EventsScreen = (props) => {
     fetchEventsRequest(selectedRegion);
   }, [fetchEventsRequest, selectedRegion]);
 
+
   const handleSelectBet = (eventIdx, betId) => toggleBetSlip({ eventIdx, betId });
   const toggleShowBets = () => {
-    setShowBets(showBets => {
-      if (showBets) {
-        allowScroll();
-        return false;
-      } else {
-        blockScroll();
-        return true;
-      }
-    });
+    showBets ? allowScroll() : blockScroll();
+    setShowBets(showBets => !showBets);
   };
+
+  if (!isMobile && showBets) {
+    toggleShowBets();
+  }
 
   return (
     <ScreenLayout>
