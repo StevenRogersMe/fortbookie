@@ -61,19 +61,12 @@ const UserDropdown = ({ userData, signOutRequest, currentBreakpoint }) => {
           <div className="user-dropdown__avatar">
             <img src={AvatarImage} alt="avatar" />
           </div>
-          <div className="user-dropdown__data">
-            <div className="user-dropdown__data-top">
-              <Typography component="span" variant="p" className="text-medium user-dropdown__name">{userData.name}</Typography>
-            </div>
-            <div className="user-dropdown__data-bottom">
-              <Typography component="span" variant="p" className="text-semibold user-dropdown__balance">{userData.balance}$</Typography>
-              <Typography component="span" variant="p" className="text-medium user-dropdown__pending">{userData.pending}$ Pending</Typography>
-            </div>
-          </div>
+          {!isMobile && <UserData userData={userData} />}
           <ArrowIcon className={`user-dropdown__icon ${isActive ? 'is-active' : ''}`} />
         </Dropdown.Header>
         <Dropdown.Box className="user-dropdown__box">
           <Scrollbar className="user-dropdown__box-scroll">
+            {isMobile && <UserData userData={userData} />}
             {items.map(({ title, icon, path }, idx) => (
               <UserDropdownItem
                 key={idx}
@@ -96,6 +89,18 @@ const UserDropdown = ({ userData, signOutRequest, currentBreakpoint }) => {
     </React.Fragment>
   );
 };
+
+const UserData = ({ userData }) => (
+  <div className="user-dropdown__data">
+    <div className="user-dropdown__data-top">
+      <Typography component="span" variant="p" className="text-medium user-dropdown__name">{userData.name}</Typography>
+    </div>
+    <div className="user-dropdown__data-bottom">
+      <Typography component="span" variant="p" className="text-semibold user-dropdown__balance">{userData.balance}$</Typography>
+      <Typography component="span" variant="p" className="text-medium user-dropdown__pending">{userData.pending}$ Pending</Typography>
+    </div>
+  </div>
+);
 
 const mapDispatchToProps = {
   signOutRequest

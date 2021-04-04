@@ -17,15 +17,18 @@
     width: 45px
     height: 45px
     margin-right: 15px
-    +media-max($bp-md)
+    +media-max($bp-sm)
       width: 35px
       height: 35px
       margin-right: 0
   // Data
   &__data
     padding-right: 15px
-    +media-max($bp-md)
-      display: none
+    +media-max($bp-sm)
+      padding-right: 0
+      text-align: center
+      margin-left: 15px
+      margin-bottom: 20px
   &__name,
   &__pending
     color: getColor("text-gray")
@@ -36,7 +39,7 @@
     transition: 0.2s
     path
       fill: getColor("text-gray")
-    +media-max($bp-md)
+    +media-max($bp-sm)
       display: none
     &.is-active
       transform: rotate(180deg)
@@ -53,10 +56,12 @@
     &-scroll
       padding: 20px
       min-height: 0
+    +media-max($bp-xl)
+      right: -20px
     +media-max($bp-sm)
       position: fixed
       top: $h-height
-      left: 0
+      right: 0
       margin-top: 0
       max-height: 100%
       height: calc( 100vh - #{$h-height} )
