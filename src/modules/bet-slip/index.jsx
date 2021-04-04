@@ -31,12 +31,8 @@ const BetSlip = ({ title, game, price, removeBetSlip }) => {
         <Typography component="span" variant="h6" className="text-accent-2 bet-slip__details-price">{price}</Typography>
       </div>
       <div className="bet-slip__control">
-        <div className="bet-slip__control-input">
-          <Input type="number" placeholder="Risk" value={state.risk} name="risk" onChange={inputHandler} />
-        </div>
-        <div className="bet-slip__control-input">
-          <Input type="number" placeholder="To Win" value={state.toWin} name="toWin" onChange={inputHandler} />
-        </div>
+        <Input className="bet-slip__control-input" type="number" placeholder="Risk" value={state.risk} name="risk" onChange={inputHandler} />
+        <Input className="bet-slip__control-input" type="number" placeholder="To Win" value={state.toWin} name="toWin" onChange={inputHandler} />
       </div>
     </div>
   );
