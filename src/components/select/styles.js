@@ -8,6 +8,9 @@ export const selectStyles = dark => ({
     '&:hover': {
       borderColor: '#C4C6CA'
     },
+    '@media only screen and (max-width: 1170px)': {
+      padding: '3px 5px 4px 5px',
+    },
   }),
   placeholder: styles => ({
     ...styles,
@@ -28,7 +31,10 @@ export const selectStyles = dark => ({
     fontSize: '14px',
     padding: '13px 20px',
     backgroundColor: isDisabled ? null : (isSelected ? '#5E00D6' : (isFocused ? (dark ? '#9099a6' : '#f3f4f7') : null)),
-    cursor: 'pointer'
+    cursor: 'pointer',
+    '@media only screen and (max-width: 1170px)': {
+      padding: '12px 15px',
+    },
   }),
   menu: styles => ({
     ...styles,
