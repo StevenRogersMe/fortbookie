@@ -41,25 +41,23 @@ const OpenBets = ({ fetchOpenBetsRequest, openBets: { loading, data, error } }) 
                 Remaining Balance
               </Typography>
             </div>
-            <div className="open-bets__items">
-              <Scrollbar className="open-bets__items-scroll">
-                {data.map(({ id, date, time, betAmount, remainingBalance, placed, placedPrice, game, gamePrice, title }) => (
-                  <div key={id} className="open-bets__item">
-                    <OpenBet
-                      date={date}
-                      time={time}
-                      betAmount={betAmount}
-                      remainingBalance={remainingBalance}
-                      placed={placed}
-                      placedPrice={placedPrice}
-                      game={game}
-                      gamePrice={gamePrice}
-                      title={title}
-                    />
-                  </div>
-                ))}
-              </Scrollbar>
-            </div>
+            <Scrollbar className="open-bets__items" autoHide={false}>
+              {data.map(({ id, date, time, betAmount, remainingBalance, placed, placedPrice, game, gamePrice, title }) => (
+                <div key={id} className="open-bets__item">
+                  <OpenBet
+                    date={date}
+                    time={time}
+                    betAmount={betAmount}
+                    remainingBalance={remainingBalance}
+                    placed={placed}
+                    placedPrice={placedPrice}
+                    game={game}
+                    gamePrice={gamePrice}
+                    title={title}
+                  />
+                </div>
+              ))}
+            </Scrollbar>
           </div>
         }
       </div>

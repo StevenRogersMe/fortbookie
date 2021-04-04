@@ -19,15 +19,13 @@ const BetSlips = ({ betSlips, totalBetSlips, removeBetSlip, totalBetSlipsRisk, t
         {betSlips.length === 0 ?
           <BetsEmpty title="Bet Slip" />
           :
-          <div className="bet-slips__items">
-            <Scrollbar className="bet-slips__items-scroll" autoHide={false}>
-              {betSlips.map(({ id, title, game, price }) => (
-                <div key={id} className="bet-slips__item">
-                  <BetSlip title={title} game={game} price={price} removeBetSlip={() => removeBetSlip(id)} />
-                </div>
-              ))}
-            </Scrollbar>
-          </div>
+          <Scrollbar className="bet-slips__items" autoHide={false}>
+            {betSlips.map(({ id, title, game, price }) => (
+              <div key={id} className="bet-slips__item">
+                <BetSlip title={title} game={game} price={price} removeBetSlip={() => removeBetSlip(id)} />
+              </div>
+            ))}
+          </Scrollbar>
         }
       </div>
       <div className="bet-slips__footer">
