@@ -22,7 +22,7 @@ const validationSchema = Yup.object().shape({
   email: Yup.string().email().required('Email field is required'),
   user: Yup.string().required('Username field is required'),
   password: Yup.string().required('Password is required'),
-  confirmPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match'),
+  confirmPassword: Yup.string().required('Password confirm is required').oneOf([Yup.ref('password'), null], 'Passwords must match'),
   certify: Yup.boolean().oneOf([true], 'Field must be checked'),
   read: Yup.boolean().oneOf([true], 'Field must be checked')
 });
