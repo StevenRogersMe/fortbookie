@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // UI
 import Typography from 'components/typography';
 // Styles
@@ -13,6 +14,10 @@ const BetsEmpty = ({ title }) => {
       </Typography>
     </div>
   );
+};
+
+BetsEmpty.propTypes = {
+  title: PropTypes.string,
 };
 
 export default BetsEmpty;
