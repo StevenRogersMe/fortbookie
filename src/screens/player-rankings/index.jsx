@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { createStructuredSelector } from 'reselect';
 // Redux
 import { fetchPlayerRankingsRequest } from 'redux/player-rankings/actions';
@@ -30,7 +31,7 @@ const PlayerRankingsScreen = ({ fetchPlayerRankingsRequest, playerRankings: { lo
           <div className="player-rankings__header-right">
             <div className="player-rankings__header-select">
               <Select
-                defaultValue={{ label: "All", value: 'All' }}
+                defaultValue={{ label: 'All', value: 'All' }}
                 options={[
                   { value: 'All', label: 'All' },
                   { value: 'NAE', label: 'NAE' },
@@ -56,6 +57,11 @@ const PlayerRankingsScreen = ({ fetchPlayerRankingsRequest, playerRankings: { lo
       </ContentBox>
     </ScreenLayout>
   );
+};
+
+PlayerRankingsScreen.propTypes = {
+  fetchPlayerRankingsRequest: PropTypes.func,
+  playerRankings: PropTypes.object,
 };
 
 const mapStateToProps = () => createStructuredSelector({
