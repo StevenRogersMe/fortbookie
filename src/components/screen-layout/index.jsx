@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // UI
 import Container from 'components/container';
@@ -18,6 +19,11 @@ const ScreenLayout = ({ children, className }) => {
       </Container>
     </div>
   );
+};
+
+ScreenLayout.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
 };
 
 export default ScreenLayout;
