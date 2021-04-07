@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Switch, Redirect } from 'react-router-dom';
 // UI
 import ScreenLayout from 'components/screen-layout';
@@ -15,6 +16,10 @@ const WithdrawScreen = ({ routes }) => {
       </Switch>
     </ScreenLayout>
   );
+};
+
+WithdrawScreen.propTypes = {
+  routes: PropTypes.array,
 };
 
 export default WithdrawScreen;
