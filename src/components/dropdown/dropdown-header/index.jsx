@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // UI
 import Button from 'components/button';
@@ -16,7 +17,14 @@ const DropdownHeader = ({ children, className, isActive, onClick }) => {
     <Button className={classnames} onClick={onClick}>
       {children}
     </Button>
-  )
+  );
+};
+
+DropdownHeader.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  isActive: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 export default DropdownHeader;

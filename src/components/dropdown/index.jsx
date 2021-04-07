@@ -1,4 +1,5 @@
 import React, { Component, createRef } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // UI
 import DropdownHeader from './dropdown-header';
@@ -14,10 +15,10 @@ class Dropdown extends Component {
 
   componentDidMount() {
     document.addEventListener('click', this.clickOutside);
-  };
+  }
   componentWillUnmount() {
     document.removeEventListener('click', this.clickOutside);
-  };
+  }
 
   clickOutside = ({ target }) => {
     const { isActive, onClickOutside } = this.props;
@@ -45,5 +46,12 @@ class Dropdown extends Component {
     );
   }
 }
+
+Dropdown.propTypes = {
+  isActive: PropTypes.bool,
+  onClickOutside: PropTypes.func,
+  children: PropTypes.node,
+  className: PropTypes.string,
+};
 
 export default Dropdown;
