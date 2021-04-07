@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import PropTypes from 'prop-types';
 // UI
 import Typography from 'components/typography';
 // Styles
@@ -11,7 +12,7 @@ const FixedButton = ({ icon: Icon, text, zIndex, ...otherProps }) => {
     document.body.appendChild(container);
     return () => {
       document.body.removeChild(container);
-    }
+    };
   }, [container]);
 
   return (
@@ -26,6 +27,12 @@ const FixedButton = ({ icon: Icon, text, zIndex, ...otherProps }) => {
 
 FixedButton.defaultProps = {
   zIndex: 100
+};
+
+FixedButton.propTypes = {
+  icon: PropTypes.object,
+  text: PropTypes.string,
+  zIndex: PropTypes.number,
 };
 
 export default FixedButton;
