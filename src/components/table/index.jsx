@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // UI
 import Spinner from 'components/spinner';
@@ -50,6 +51,16 @@ const Table = ({ content, loading, data, error, retry, equal, bordered }) => {
       </table>
     </div>
   );
+};
+
+Table.propTypes = {
+  content: PropTypes.array,
+  loading: PropTypes.bool,
+  error: PropTypes.bool,
+  data: PropTypes.array,
+  retry: PropTypes.func,
+  equal: PropTypes.bool,
+  bordered: PropTypes.bool,
 };
 
 export default Table;
