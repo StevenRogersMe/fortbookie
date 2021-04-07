@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // Styles
 import './styles.sass';
@@ -16,6 +17,13 @@ const RowGroup = ({ children, nowrap, center, size }) => {
       {children}
     </div>
   );
+};
+
+RowGroup.propTypes = {
+  children: PropTypes.node,
+  nowrap: PropTypes.bool,
+  center: PropTypes.bool,
+  size: PropTypes.string,
 };
 
 export default RowGroup;
