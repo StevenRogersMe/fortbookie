@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Switch, Redirect } from 'react-router-dom';
 // UI
 import ScreenLayout from 'components/screen-layout';
@@ -16,6 +17,10 @@ const DepositScreen = ({ routes }) => {
       </Switch>
     </ScreenLayout>
   );
+};
+
+DepositScreen.propTypes = {
+  routes: PropTypes.array,
 };
 
 export default DepositScreen;
