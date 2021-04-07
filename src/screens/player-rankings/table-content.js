@@ -1,3 +1,5 @@
+/* eslint-disable react/display-name */
+/* eslint-disable react/prop-types */
 import React, { Fragment } from 'react';
 
 export const tableContent = () => {
@@ -28,5 +30,5 @@ export const tableContent = () => {
       title: 'Earnings',
       render: ({ earnings }) => <Fragment>${earnings}</Fragment>
     },
-  ]
+  ];
 };
