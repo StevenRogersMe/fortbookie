@@ -6,7 +6,7 @@ import getDummyData from 'services/_utils/get-dummy-data';
 export default class DummyService {
 
   getEvents = () => {
-    return getDummyData({ data })
+    return getDummyData({ data });
   }
 
-};
+}
