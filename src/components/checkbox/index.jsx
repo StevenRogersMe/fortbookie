@@ -30,7 +30,10 @@ const Checkbox = ({ checked, className, label, onChange, name, error, ...otherPr
 Checkbox.propTypes = {
   checked: PropTypes.bool,
   className: PropTypes.string,
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]),
   onChange: PropTypes.func,
   name: PropTypes.string,
   error: PropTypes.bool,
