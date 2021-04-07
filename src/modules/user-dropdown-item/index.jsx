@@ -22,7 +22,7 @@ const UserDropdownItem = ({ title, icon: Icon, onClick, className, isActive }) =
 };
 
 UserDropdownItem.propTypes = {
-  title: PropTypes.object,
+  title: PropTypes.string,
   icon: PropTypes.object,
   onClick: PropTypes.func,
   className: PropTypes.string,
