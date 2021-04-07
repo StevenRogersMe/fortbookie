@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // UI
 import Box from 'components/box';
@@ -17,6 +18,13 @@ const CoinPreview = ({ icon: Icon, isActive, onClick, className }) => {
       <Icon className="coin-preview__icon" />
     </Box>
   );
+};
+
+CoinPreview.propTypes = {
+  icon: PropTypes.node,
+  isActive: PropTypes.bool,
+  onClick: PropTypes.func,
+  className: PropTypes.string,
 };
 
 export default CoinPreview;
