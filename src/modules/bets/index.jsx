@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 // Redux
 import { removeAllBetSlips } from 'redux/bet-slips/actions';
 // UI
@@ -50,6 +51,10 @@ const Bets = ({ removeAllBetSlips }) => {
       </div>
     </div>
   );
+};
+
+Bets.propTypes = {
+  removeAllBetSlips: PropTypes.func,
 };
 
 const mapDispatchToProps = {
