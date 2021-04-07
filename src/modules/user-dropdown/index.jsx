@@ -1,7 +1,8 @@
 import React from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { withBreakpoints } from 'react-breakpoints'
+import { withBreakpoints } from 'react-breakpoints';
+import PropTypes from 'prop-types';
 // Hooks
 import useIsBreakpoint from 'hooks/use-is-breakpoint';
 // Redux
@@ -72,7 +73,7 @@ const UserDropdown = ({ userData, signOutRequest, currentBreakpoint }) => {
                 key={idx}
                 title={title}
                 icon={icon}
-                onClick={() => { handleDropdown(); history.push(path) }}
+                onClick={() => { handleDropdown(); history.push(path); }}
                 className="user-dropdown__item"
                 isActive={location.pathname === path}
               />
@@ -90,6 +91,12 @@ const UserDropdown = ({ userData, signOutRequest, currentBreakpoint }) => {
   );
 };
 
+UserDropdown.propTypes = {
+  userData: PropTypes.object,
+  signOutRequest: PropTypes.func,
+  currentBreakpoint: PropTypes.string,
+};
+
 const UserData = ({ userData }) => (
   <div className="user-dropdown__data">
     <div className="user-dropdown__data-top">
@@ -101,6 +108,9 @@ const UserData = ({ userData }) => (
     </div>
   </div>
 );
+UserData.propTypes = {
+  userData: PropTypes.object,
+};
 
 const mapDispatchToProps = {
   signOutRequest
