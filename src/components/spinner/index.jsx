@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // Context
 import { useTheme } from 'context/theme-context';
@@ -13,26 +14,20 @@ const Spinner = ({ boxed }) => {
     'spinner--light': dark,
   });
 
-  return (
-    <WithBox boxed={boxed}>
-      <div className={classes}>
-        <div className="spinner__inner">
-          <div></div>
-          <div></div>
-        </div>
+  const spinner = (
+    <div className={classes}>
+      <div className="spinner__inner">
+        <div></div>
+        <div></div>
       </div>
-    </WithBox>
+    </div>
   );
+
+  return boxed ? <div className="spinner-box">{spinner}</div> : spinner;
 };
 
-const WithBox = ({ children, boxed }) => (
-  <>
-    {boxed ?
-      <div className="spinner-box">{children}</div>
-      :
-      children
-    }
-  </>
-);
+Spinner.propTypes = {
+  boxed: PropTypes.bool,
+};
 
 export default Spinner;
