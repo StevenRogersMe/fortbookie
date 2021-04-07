@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // Styles
 import './styles.sass';
 // Assets
@@ -15,6 +16,10 @@ const SignContainer = ({ children }) => {
       </div>
     </div>
   );
+};
+
+SignContainer.propTypes = {
+  children: PropTypes.node,
 };
 
 export default SignContainer;
