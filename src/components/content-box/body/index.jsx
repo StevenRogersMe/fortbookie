@@ -10,7 +10,7 @@ const Body = ({ children }) => {
 };
 
 Body.propTypes = {
-  children: PropTypes.bool,
+  children: PropTypes.node,
 };
 
 export default Body;

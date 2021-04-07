@@ -18,7 +18,7 @@ const Container = ({ children, className }) => {
 };
 
 Container.propTypes = {
-  children: PropTypes.bool,
+  children: PropTypes.node,
   className: PropTypes.string,
 };
 

@@ -18,7 +18,7 @@ const Header = ({ children, className }) => {
 };
 
 Header.propTypes = {
-  children: PropTypes.bool,
+  children: PropTypes.node,
   className: PropTypes.string,
 };
 

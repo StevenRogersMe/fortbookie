@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // Styles
 import './styles.sass';
 
@@ -15,6 +16,10 @@ const DataPreview = ({ content }) => {
       </div>
     </div>
   );
+};
+
+DataPreview.propTypes = {
+  content: PropTypes.arr,
 };
 
 export default DataPreview;

@@ -28,7 +28,7 @@ class ContentBox extends Component {
 }
 
 ContentBox.propTypes = {
-  children: PropTypes.bool,
+  children: PropTypes.node,
   className: PropTypes.string,
 };
 
