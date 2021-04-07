@@ -11,7 +11,7 @@ const useScrollBlock = () => {
     if (!body || !body.style || scrollBlocked.current) return;
 
     const scrollBarWidth = window.innerWidth - html.clientWidth;
-    const bodyPaddingRight = parseInt(window.getComputedStyle(body).getPropertyValue("padding-right")) || 0;
+    const bodyPaddingRight = parseInt(window.getComputedStyle(body).getPropertyValue('padding-right')) || 0;
     html.style.position = 'relative';
     html.style.overflow = 'hidden';
     body.style.position = 'relative';
