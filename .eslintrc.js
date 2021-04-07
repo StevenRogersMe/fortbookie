@@ -34,6 +34,10 @@ module.exports = {
     'semi': [
       'error',
       'always'
+    ],
+    'arrow-parens': [
+      'error',
+      'as-needed'
     ]
   }
 };
