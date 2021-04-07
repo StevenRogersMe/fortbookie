@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 // UI
 import Box from 'components/box';
 import Typography from 'components/typography';
@@ -43,6 +44,11 @@ const FeeCalculator = ({ className, type }) => {
       </Box>
     </div>
   );
+};
+
+FeeCalculator.propTypes = {
+  className: PropTypes.string,
+  type: PropTypes.string,
 };
 
 export default FeeCalculator;
