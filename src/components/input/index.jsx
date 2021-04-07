@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // Styles
 import './styles.sass';
@@ -18,5 +19,15 @@ const Input = forwardRef(({ className, standard, size, invalid, variant, disable
     <input className={classes} {...otherProps} ref={ref} disabled={disabled} />
   );
 });
+
+Input.propTypes = {
+  className: PropTypes.string,
+  standard: PropTypes.bool,
+  size: PropTypes.string,
+  variant: PropTypes.string,
+  invalid: PropTypes.bool,
+  disabled: PropTypes.bool,
+  center: PropTypes.bool,
+};
 
 export default Input;
