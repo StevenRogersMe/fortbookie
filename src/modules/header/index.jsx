@@ -3,6 +3,7 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withBreakpoints } from 'react-breakpoints';
 import { createStructuredSelector } from 'reselect';
+import PropTypes from 'prop-types';
 // Redux
 import { selectUser } from 'redux/auth/selectors';
 // Hooks
@@ -47,76 +48,56 @@ const Header = ({ user: { userData }, currentBreakpoint }) => {
             }
           </Link>
 
-          {(userData && !isMobile) && <Regions />}
+          {isMobile && <Overlay isActive={showMenu} zIndex="999" onClick={toggleMenu} inlined />}
+          <div className={`header__center ${showMenu ? 'is-active' : ''}`}>
+            {isMobile && <Close className="header__center-close" onClick={toggleMenu} dark />}
+            {!userData &&
+              <div className="header__center-items">
+                <div className="header__center-item">
+                  <Button size="lg" variant="accent" onClick={() => { toggleMenu && toggleMenu(); history.push('/sign-up'); }}>Sign Up</Button>
+                </div>
+                <div className="header__center-item">
+                  <Button size="lg" variant="primary" onClick={() => { toggleMenu && toggleMenu(); history.push('/sign-in'); }}>Sign In</Button>
+                </div>
+              </div>
+            }
+            {userData &&
+              <Fragment>
+                <div className="header__center-regions"><Regions /></div>
+                <div className="header__center-items">
+                  <div className="header__center-item" onClick={toggleMenu}>
+                    <NavLink isActive={isMathcingPath(location, '/withdraw')} onClick={() => history.push('/withdraw')}>Withdraw</NavLink>
+                  </div>
+                  <div className="header__center-item">
+                    <Button size="lg" variant="accent" onClick={() => { toggleMenu(); history.push('/deposit'); }}>Deposit</Button>
+                  </div>
+                </div>
+              </Fragment>
+            }
+          </div>
 
           <div className="header__right">
-            <div className="header__widgets">
-              {(!userData && !isMobile) && <UnsignedWidgets history={history} />}
-              {(userData && !isMobile) && <SignedWidgets location={location} history={history} />}
-              {userData &&
-                <div className="header__widget">
-                  <UserDropdown userData={userData} />
-                </div>
-              }
-              {isMobile &&
-                <div className="header__widget header__burger">
-                  <Burger onClick={toggleMenu} />
-                </div>
-              }
-            </div>
+            {userData &&
+              <div className="header__user">
+                <UserDropdown userData={userData} />
+              </div>
+            }
+            {isMobile &&
+              <div className="header__burger">
+                <Burger onClick={toggleMenu} />
+              </div>
+            }
           </div>
         </Container>
       </div>
-
-      {isMobile &&
-        <Fragment>
-          <Overlay isActive={showMenu} zIndex="999" onClick={toggleMenu} />
-          <div className={`header__mobile ${showMenu ? 'is-active' : ''}`}>
-            <div className="header__mobile-close">
-              <Close dark onClick={toggleMenu} />
-            </div>
-            {userData &&
-              <div className="header__mobile-line">
-                <Regions onItemClick={toggleMenu} />
-              </div>
-            }
-            <div className="header__mobile-line">
-              <div className="header__widgets">
-                {!userData ?
-                  <UnsignedWidgets history={history} toggleMenu={toggleMenu} />
-                  :
-                  <SignedWidgets toggleMenu={toggleMenu} location={location} history={history} />
-                }
-              </div>
-            </div>
-          </div>
-        </Fragment>
-      }
     </header>
   );
 };
 
-const UnsignedWidgets = ({ toggleMenu, history }) => (
-  <Fragment>
-    <div className="header__widget">
-      <Button size="lg" variant="accent" onClick={() => { toggleMenu && toggleMenu(); history.push('/sign-up') }}>Sign Up</Button>
-    </div>
-    <div className="header__widget">
-      <Button size="lg" variant="primary" onClick={() => { toggleMenu && toggleMenu(); history.push('/sign-in') }}>Sign In</Button>
-    </div>
-  </Fragment>
-);
-
-const SignedWidgets = ({ toggleMenu, location, history }) => (
-  <Fragment>
-    <div className="header__widget" onClick={toggleMenu}>
-      <NavLink isActive={isMathcingPath(location, '/withdraw')} onClick={() => history.push('/withdraw')}>Withdraw</NavLink>
-    </div>
-    <div className="header__widget">
-      <Button size="lg" variant="accent" onClick={() => { toggleMenu && toggleMenu(); history.push('/deposit') }}>Deposit</Button>
-    </div>
-  </Fragment>
-);
+Header.propTypes = {
+  user: PropTypes.object,
+  currentBreakpoint: PropTypes.string,
+};
 
 const mapStateToProps = createStructuredSelector({
   user: selectUser
