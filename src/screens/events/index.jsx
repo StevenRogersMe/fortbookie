@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { withBreakpoints } from 'react-breakpoints'
+import { withBreakpoints } from 'react-breakpoints';
+import PropTypes from 'prop-types';
 // Hooks
 import useIsBreakpoint from 'hooks/use-is-breakpoint';
 // Redux
@@ -28,7 +29,7 @@ import './styles.sass';
 // Assets
 import { ReactComponent as BettingsIcon } from 'assets/images/icons/betting.svg';
 
-const EventsScreen = (props) => {
+const EventsScreen = props => {
   const {
     fetchEventsRequest,
     events: { loading, data, error },
@@ -98,6 +99,17 @@ const EventsScreen = (props) => {
       {isMobile && <FixedButton icon={BettingsIcon} text={totalBetSlips} onClick={toggleShowBets} zIndex={showBets ? 500 : 100} />}
     </ScreenLayout>
   );
+};
+
+EventsScreen.propTypes = {
+  fetchEventsRequest: PropTypes.func,
+  events: PropTypes.object,
+  betSlips: PropTypes.array,
+  toggleBetSlip: PropTypes.func,
+  currentBreakpoint: PropTypes.string,
+  selectedRegion: PropTypes.string,
+  setSelectedRegion: PropTypes.func,
+  totalBetSlips: PropTypes.number,
 };
 
 const mapStateToProps = createStructuredSelector({
