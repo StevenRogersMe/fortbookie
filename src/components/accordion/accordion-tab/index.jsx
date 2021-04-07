@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // UI
 import Typography from 'components/typography';
@@ -31,6 +32,14 @@ const AccordionTab = ({ title, date, time, handleAccordion, isExpanded }) => {
       </div>
     </div>
   );
+};
+
+AccordionTab.propTypes = {
+  title: PropTypes.string,
+  date: PropTypes.string,
+  time: PropTypes.string,
+  handleAccordion: PropTypes.func.isRequired,
+  isExpanded: PropTypes.bool
 };
 
 export default AccordionTab;

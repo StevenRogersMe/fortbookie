@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // Styles
 import './styles.sass';
@@ -22,7 +23,7 @@ const AccordionContent = ({ children, className, isExpanded }) => {
           clearTimeout(timeout);
         }, 0);
       }
-    }
+    };
   }, [isExpanded]);
 
   const classes = classNames({
@@ -39,5 +40,10 @@ const AccordionContent = ({ children, className, isExpanded }) => {
   );
 };
 
+AccordionContent.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  isExpanded: PropTypes.bool
+};
 
 export default AccordionContent;

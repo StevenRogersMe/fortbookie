@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 // Components
 import AccordionTab from './accordion-tab';
 import AccordionContent from './accordion-content';
@@ -55,5 +56,11 @@ class Accordion extends Component {
     );
   }
 }
+
+Accordion.propTypes = {
+  children: PropTypes.node.isRequired,
+  onChange: PropTypes.element,
+  className: PropTypes.string,
+};
 
 export default Accordion;
