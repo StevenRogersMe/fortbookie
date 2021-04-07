@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 // Redux
@@ -36,6 +37,10 @@ const App = ({ sessionCheckStart }) => {
       </ThemeProvider>
     </div>
   );
+};
+
+App.propTypes = {
+  sessionCheckStart: PropTypes.func,
 };
 
 const mapDispatchToProps = {
