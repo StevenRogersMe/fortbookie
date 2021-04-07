@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // Styles
 import './styles.sass';
@@ -18,6 +19,13 @@ const Typography = ({ children, component, variant, className, ...otherProps }) 
 
 Typography.defaultProps = {
   component: 'p'
+};
+
+Typography.propTypes = {
+  children: PropTypes.node,
+  component: PropTypes.string,
+  variant: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default Typography;
