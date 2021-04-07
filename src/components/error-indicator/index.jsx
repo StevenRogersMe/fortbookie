@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // UI
 import Typography from 'components/typography';
@@ -22,6 +23,11 @@ const ErrorIndicator = ({ className, retry }) => {
       {retry && <Button className="error-indicator__button" variant="primary" size="md" onClick={retry}>Retry</Button>}
     </div>
   );
+};
+
+ErrorIndicator.propTypes = {
+  className: PropTypes.string,
+  retry: PropTypes.func,
 };
 
 export default ErrorIndicator;
