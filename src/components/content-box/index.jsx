@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // UI
-import Header from './header'
-import Body from './body'
+import Header from './header';
+import Body from './body';
 // Styles
 import './styles.sass';
 
@@ -25,5 +26,10 @@ class ContentBox extends Component {
     );
   }
 }
+
+ContentBox.propTypes = {
+  children: PropTypes.bool,
+  className: PropTypes.string,
+};
 
 export default ContentBox;
