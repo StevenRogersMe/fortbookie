@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React from 'react';
 // Components
 import Typography from 'components/typography';
@@ -46,5 +47,5 @@ export const dataPreviewContent = () => {
         </div>
       ),
     },
-  ]
+  ];
 };
