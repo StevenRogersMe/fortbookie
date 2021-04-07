@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 // Styles
 import './styles.sass';
 
-const Overlay = ({ isActive, className, zIndex, style, ...otherProps }) => {
+const Overlay = ({ isActive, className, zIndex, ...otherProps }) => {
   const [container] = React.useState(document.createElement('div'));
   const overlayRef = React.createRef(null);
 
@@ -29,6 +30,13 @@ const Overlay = ({ isActive, className, zIndex, style, ...otherProps }) => {
 
 Overlay.defaultProps = {
   zIndex: 100
+};
+
+Overlay.propTypes = {
+  isActive: PropTypes.bool,
+  className: PropTypes.string,
+  children: PropTypes.node,
+  zIndex: PropTypes.number,
 };
 
 export default Overlay;
