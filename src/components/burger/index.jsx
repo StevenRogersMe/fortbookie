@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // Styles
 import './styles.sass';
@@ -14,6 +15,10 @@ const Burger = ({ className, ...otherProps }) => {
       <span></span>
     </div>
   );
+};
+
+Burger.propTypes = {
+  className: PropTypes.string,
 };
 
 export default Burger;
