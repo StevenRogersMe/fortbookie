@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // UI
 import Typography from 'components/typography';
@@ -34,6 +35,15 @@ const List = ({ header, items, handleSelect, alt, blocked, selected }) => {
       </div>
     </div>
   );
+};
+
+List.propTypes = {
+  header: PropTypes.string,
+  items: PropTypes.array,
+  handleSelect: PropTypes.func,
+  alt: PropTypes.bool,
+  blocked: PropTypes.bool,
+  selected: PropTypes.array,
 };
 
 export default List;
