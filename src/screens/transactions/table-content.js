@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/display-name */
 import React, { Fragment } from 'react';
 // Components
 import Typography from 'components/typography';
@@ -29,7 +31,7 @@ export const tableContent = () => {
               <Typography component="span" variant="p-sm" className="text-medium text-gray-3">{title}</Typography>
             </div>
           </Fragment>
-        )
+        );
       }
     },
     {
@@ -40,5 +42,5 @@ export const tableContent = () => {
       title: 'Remaining Balance',
       render: ({ remainingBalance }) => <Fragment>${remainingBalance}</Fragment>
     },
-  ]
+  ];
 };

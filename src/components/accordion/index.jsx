@@ -18,15 +18,15 @@ class Accordion extends Component {
   componentDidMount() {
     const { expanded } = this.props;
     if (expanded) {
-      this.setState({ isExpanded: expanded })
+      this.setState({ isExpanded: expanded });
     }
-  };
+  }
 
   componentDidUpdate(prevProps) {
     if (prevProps.expanded !== this.props.expanded) {
-      this.setState({ isExpanded: this.props.expanded })
+      this.setState({ isExpanded: this.props.expanded });
     }
-  };
+  }
 
   handleAccordion = () => {
     const { onChange } = this.props;
@@ -61,6 +61,7 @@ Accordion.propTypes = {
   children: PropTypes.node.isRequired,
   onChange: PropTypes.element,
   className: PropTypes.string,
+  expanded: PropTypes.bool,
 };
 
 export default Accordion;
