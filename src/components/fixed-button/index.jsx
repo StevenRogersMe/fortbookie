@@ -32,7 +32,10 @@ FixedButton.defaultProps = {
 FixedButton.propTypes = {
   icon: PropTypes.object,
   text: PropTypes.string,
-  zIndex: PropTypes.number,
+  zIndex: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ])
 };
 
 export default FixedButton;

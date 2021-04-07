@@ -36,7 +36,10 @@ Overlay.propTypes = {
   isActive: PropTypes.bool,
   className: PropTypes.string,
   children: PropTypes.node,
-  zIndex: PropTypes.number,
+  zIndex: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ])
 };
 
 export default Overlay;
