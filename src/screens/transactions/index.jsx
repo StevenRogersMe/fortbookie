@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import PropTypes from 'prop-types';
 // Redux
 import { fetchTransactionsRequest } from 'redux/transactions/actions';
 import { selectTransactions } from 'redux/transactions/selectors';
@@ -39,16 +40,16 @@ const TransactionsScreen = ({ fetchTransactionsRequest, transactions: { loading,
           <div className="transactions-screen__header-right">
             <div className="transactions-screen__header-select">
               <Select
-                defaultValue={{ label: "24 Hours", value: '24 Hours' }}
+                defaultValue={{ label: '24 Hours', value: '24 Hours' }}
                 options={[
-                  { label: "24 Hours", value: '24 Hours' },
-                  { label: "12 Hours", value: '12 Hours' }
+                  { label: '24 Hours', value: '24 Hours' },
+                  { label: '12 Hours', value: '12 Hours' }
                 ]}
               />
             </div>
             <div className="transactions-screen__header-select">
               <Select
-                defaultValue={{ label: "All", value: 'All' }}
+                defaultValue={{ label: 'All', value: 'All' }}
                 options={[
                   { value: 'All', label: 'All' },
                   { value: 'event 1', label: 'Event 1' },
@@ -73,6 +74,11 @@ const TransactionsScreen = ({ fetchTransactionsRequest, transactions: { loading,
       </ContentBox>
     </ScreenLayout>
   );
+};
+
+TransactionsScreen.propTypes = {
+  fetchTransactionsRequest: PropTypes.func,
+  transactions: PropTypes.object,
 };
 
 const mapStateToProps = () => createStructuredSelector({
