@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // Components
 import Input from 'components/input';
@@ -24,6 +25,15 @@ const Checkbox = ({ checked, className, label, onChange, name, error, ...otherPr
       {label && <div className="checkbox__label">{label}</div>}
     </label>
   );
+};
+
+Checkbox.propTypes = {
+  checked: PropTypes.bool,
+  className: PropTypes.string,
+  label: PropTypes.string,
+  onChange: PropTypes.func,
+  name: PropTypes.string,
+  error: PropTypes.bool,
 };
 
 export default Checkbox;
