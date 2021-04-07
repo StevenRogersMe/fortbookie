@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 // UI
 import Button from 'components/button';
 import Typography from 'components/typography';
@@ -18,6 +19,14 @@ const UserDropdownItem = ({ title, icon: Icon, onClick, className, isActive }) =
       <Typography component="span" variant="h6" className="user-dropdown-item__title">{title}</Typography>
     </Button>
   );
+};
+
+UserDropdownItem.propTypes = {
+  title: PropTypes.object,
+  icon: PropTypes.object,
+  onClick: PropTypes.func,
+  className: PropTypes.string,
+  isActive: PropTypes.bool,
 };
 
 export default UserDropdownItem;
