@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 // UI
 import ContentBox from 'components/content-box';
@@ -25,10 +26,10 @@ const PaymentOperation = ({ type }) => {
       <ContentBox.Body>
         <div className="payment-operation__method">
           <div className="payment-operation__method-item">
-            <CoinPreview icon={BitcoinIcon} isActive={selectedCoin === 'bitcoin'} onClick={() => { setSelectedCoin('bitcoin') }} />
+            <CoinPreview icon={BitcoinIcon} isActive={selectedCoin === 'bitcoin'} onClick={() => { setSelectedCoin('bitcoin'); }} />
           </div>
           <div className="payment-operation__method-item">
-            <CoinPreview icon={LitecoinIcon} isActive={selectedCoin === 'litecoin'} onClick={() => { setSelectedCoin('litecoin') }} />
+            <CoinPreview icon={LitecoinIcon} isActive={selectedCoin === 'litecoin'} onClick={() => { setSelectedCoin('litecoin'); }} />
           </div>
         </div>
         <div className="payment-operation__calc">
@@ -38,6 +39,10 @@ const PaymentOperation = ({ type }) => {
       </ContentBox.Body>
     </ContentBox>
   );
+};
+
+PaymentOperation.propTypes = {
+  type: PropTypes.string,
 };
 
 export default PaymentOperation;
