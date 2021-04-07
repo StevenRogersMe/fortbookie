@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // Styles
 import './styles.sass';
@@ -15,6 +16,12 @@ const ToggleSwitch = ({ onChange, checked, className }) => {
       <label htmlFor="switch" className="switch__label"></label>
     </div>
   );
+};
+
+ToggleSwitch.propTypes = {
+  onChange: PropTypes.func,
+  className: PropTypes.string,
+  checked: PropTypes.bool,
 };
 
 export default ToggleSwitch;
