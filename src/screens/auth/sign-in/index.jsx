@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
+import PropTypes from 'prop-types';
 // Redux
 import { selectUser } from 'redux/auth/selectors';
-import { signInRequest } from 'redux/auth/sign-in/actions'
+import { signInRequest } from 'redux/auth/sign-in/actions';
 // UI
 import ScreenLayout from 'components/screen-layout';
 import SignContainer from 'modules/sign-container';
@@ -49,7 +50,7 @@ const SignIn = ({ signInRequest, user: { loading, userData } }) => {
   });
 
   if (userData) {
-    return <div />
+    return <div />;
   }
 
   const { handleSubmit, touched, errors, handleChange, handleBlur, values } = formik;
@@ -98,6 +99,11 @@ const SignIn = ({ signInRequest, user: { loading, userData } }) => {
       </SignContainer>
     </ScreenLayout>
   );
+};
+
+SignIn.propTypes = {
+  signInRequest: PropTypes.func,
+  user: PropTypes.object,
 };
 
 const mapStateToProps = createStructuredSelector({
