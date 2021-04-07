@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // Styles
 import './styles.sass';
@@ -14,6 +15,11 @@ const Container = ({ children, className }) => {
       {children}
     </div>
   );
+};
+
+Container.propTypes = {
+  children: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 export default Container;
