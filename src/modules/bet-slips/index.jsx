@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import PropTypes from 'prop-types';
 // Redux
 import { selectBetSlips, selectTotalBetSlips, selectTotalBetSlipsRisk, selectTotalBetSlipsWinnings } from 'redux/bet-slips/selectors';
 import { removeBetSlip } from 'redux/bet-slips/actions';
@@ -46,6 +47,14 @@ const BetSlips = ({ betSlips, totalBetSlips, removeBetSlip, totalBetSlipsRisk, t
       </div>
     </div>
   );
+};
+
+BetSlips.propTypes = {
+  betSlips: PropTypes.array,
+  totalBetSlips: PropTypes.number,
+  removeBetSlip: PropTypes.func,
+  totalBetSlipsRisk: PropTypes.number,
+  totalBetSlipsWinnings: PropTypes.number,
 };
 
 const mapStateToProps = createStructuredSelector({
