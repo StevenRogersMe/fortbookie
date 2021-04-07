@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // Ui
 import Button from 'components/button';
@@ -19,6 +20,12 @@ const CloseButton = ({ className, onClick, dark }) => {
       <CloseIcon className="close-button__icon" />
     </Button>
   );
+};
+
+CloseButton.propTypes = {
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  dark: PropTypes.bool,
 };
 
 export default CloseButton;
