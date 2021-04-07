@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // UI
 import Input from 'components/input';
 import Close from 'components/close-button';
@@ -36,6 +37,13 @@ const BetSlip = ({ title, game, price, removeBetSlip }) => {
       </div>
     </div>
   );
+};
+
+BetSlip.propTypes = {
+  title: PropTypes.string,
+  game: PropTypes.string,
+  price: PropTypes.string,
+  removeBetSlip: PropTypes.func,
 };
 
 export default BetSlip;
