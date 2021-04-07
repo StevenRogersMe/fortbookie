@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // UI
 import Typography from 'components/typography';
 // Styles
@@ -30,6 +31,18 @@ const OpenBet = ({ date, time, betAmount, remainingBalance, placed, placedPrice,
       </div>
     </div>
   );
+};
+
+OpenBet.propTypes = {
+  date: PropTypes.string,
+  time: PropTypes.string,
+  betAmount: PropTypes.string,
+  remainingBalance: PropTypes.string,
+  placed: PropTypes.string,
+  placedPrice: PropTypes.string,
+  game: PropTypes.string,
+  gamePrice: PropTypes.string,
+  title: PropTypes.string,
 };
 
 export default OpenBet;
