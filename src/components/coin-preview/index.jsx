@@ -21,7 +21,7 @@ const CoinPreview = ({ icon: Icon, isActive, onClick, className }) => {
 };
 
 CoinPreview.propTypes = {
-  icon: PropTypes.node,
+  icon: PropTypes.object,
   isActive: PropTypes.bool,
   onClick: PropTypes.func,
   className: PropTypes.string,
