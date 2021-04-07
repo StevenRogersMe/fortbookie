@@ -1,6 +1,7 @@
 import React from 'react';
 import TimezoneSelect, { i18nTimezones } from 'react-timezone-select';
-import { withBreakpoints } from 'react-breakpoints'
+import PropTypes from 'prop-types';
+import { withBreakpoints } from 'react-breakpoints';
 // Context
 import { useTheme } from 'context/theme-context';
 // Hooks
@@ -22,7 +23,7 @@ const Select = ({ options, defaultValue, timezones,  currentBreakpoint,...otherP
         menuShouldScrollIntoView={isMobile}
         menuShouldBlockScroll={isMobile}
         {...otherProps} />
-    )
+    );
   }
 
   return (
@@ -34,7 +35,14 @@ const Select = ({ options, defaultValue, timezones,  currentBreakpoint,...otherP
       menuShouldBlockScroll={isMobile}
       {...otherProps}
     />
-  )
+  );
+};
+
+Select.propTypes = {
+  options: PropTypes.array,
+  defaultValue: PropTypes.object,
+  timezones: PropTypes.bool,
+  currentBreakpoint: PropTypes.string,
 };
 
 export default withBreakpoints(Select);
