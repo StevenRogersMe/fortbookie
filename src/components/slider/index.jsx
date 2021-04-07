@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactSlider from 'react-slider'
+import PropTypes from 'prop-types';
+import ReactSlider from 'react-slider';
 // Styles
 import './styles.sass';
 
@@ -17,6 +18,14 @@ const Slider = ({ min, max, value, step, onChange }) => {
       renderThumb={props => <span {...props}></span>}
     />
   );
+};
+
+Slider.propTypes = {
+  min: PropTypes.number,
+  max: PropTypes.number,
+  value: PropTypes.number,
+  step: PropTypes.number,
+  onChange: PropTypes.func,
 };
 
 export default Slider;
