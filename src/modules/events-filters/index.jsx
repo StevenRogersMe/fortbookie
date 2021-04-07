@@ -1,5 +1,6 @@
 import React from 'react';
 import { withBreakpoints } from 'react-breakpoints';
+import PropTypes from 'prop-types';
 // Hooks
 import useIsBreakpoint from 'hooks/use-is-breakpoint';
 import useScrollBlock from 'hooks/use-scroll-block';
@@ -76,7 +77,7 @@ const EventsFilters = ({ selectedRegion, setSelectedRegion, currentBreakpoint })
             <Typography component="span" variant="h6" className="event-filters__item-title">Bet type</Typography>
             <div className="event-filters__item-select">
               <Select
-                defaultValue={{ label: "All", value: 'All' }}
+                defaultValue={{ label: 'All', value: 'All' }}
                 options={[
                   { value: 'All', label: 'All' },
                   { value: 'type 1', label: 'Type 1' },
@@ -92,6 +93,12 @@ const EventsFilters = ({ selectedRegion, setSelectedRegion, currentBreakpoint })
       </div>
     </div>
   );
+};
+
+EventsFilters.propTypes = {
+  selectedRegion: PropTypes.string,
+  setSelectedRegion: PropTypes.func,
+  currentBreakpoint: PropTypes.string,
 };
 
 export default withBreakpoints(EventsFilters);
