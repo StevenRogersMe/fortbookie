@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import * as Yup from 'yup';
+import PropTypes from 'prop-types';
 import { useFormik } from 'formik';
 // Redux
 import { selectUser } from 'redux/auth/selectors';
@@ -56,7 +57,7 @@ const SignUp = ({ user: { userData } }) => {
   });
 
   if (userData) {
-    return <div />
+    return <div />;
   }
 
   const { handleSubmit, touched, errors, handleChange, handleBlur, values, isSubmitting } = formik;
@@ -135,6 +136,10 @@ const SignUp = ({ user: { userData } }) => {
       </SignContainer>
     </ScreenLayout>
   );
+};
+
+SignUp.propTypes = {
+  user: PropTypes.object,
 };
 
 const mapStateToProps = createStructuredSelector({
