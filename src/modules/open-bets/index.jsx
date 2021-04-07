@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import PropTypes from 'prop-types';
 // Redux
 import { fetchOpenBetsRequest } from 'redux/open-bets/actions';
 import { selectOpenBets } from 'redux/open-bets/selectors';
@@ -16,7 +17,7 @@ import './styles.sass';
 
 const OpenBets = ({ fetchOpenBetsRequest, openBets: { loading, data, error } }) => {
   React.useLayoutEffect(() => {
-    fetchOpenBetsRequest()
+    fetchOpenBetsRequest();
   }, [fetchOpenBetsRequest]);
 
   return (
@@ -63,6 +64,11 @@ const OpenBets = ({ fetchOpenBetsRequest, openBets: { loading, data, error } }) 
       </div>
     </div>
   );
+};
+
+OpenBets.propTypes = {
+  fetchOpenBetsRequest: PropTypes.func,
+  openBets: PropTypes.object,
 };
 
 const mapStateToProps = createStructuredSelector({
