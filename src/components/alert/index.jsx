@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 // Styles
@@ -15,7 +16,7 @@ const Alert = ({ type, children, isActive, onClose, className }) => {
       const timeout = setTimeout(onClose, 1000);
       return () => {
         clearTimeout(timeout);
-      }
+      };
     }
   }, [isActive, container, onClose]);
 
@@ -32,6 +33,14 @@ const Alert = ({ type, children, isActive, onClose, className }) => {
       </div>
     </CSSTransition>
   ), container);
+};
+
+Alert.propTypes = {
+  type: PropTypes.string,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  isActive: PropTypes.bool,
+  onClose: PropTypes.func
 };
 
 export default Alert;
