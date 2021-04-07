@@ -38,7 +38,7 @@ AccordionTab.propTypes = {
   title: PropTypes.string,
   date: PropTypes.string,
   time: PropTypes.string,
-  handleAccordion: PropTypes.func.isRequired,
+  handleAccordion: PropTypes.func,
   isExpanded: PropTypes.bool
 };
 
