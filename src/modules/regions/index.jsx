@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory, useLocation } from 'react-router';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import PropTypes from 'prop-types';
 // Redux
 import { setSelectedRegion } from 'redux/selected-region/actions';
 import { selectSelectedRegion } from 'redux/selected-region/selectors';
@@ -45,6 +46,12 @@ const Regions = ({ selectedRegion, setSelectedRegion, onItemClick }) => {
       ))}
     </ul>
   );
+};
+
+Regions.propTypes = {
+  selectedRegion: PropTypes.string,
+  setSelectedRegion: PropTypes.func,
+  onItemClick: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
