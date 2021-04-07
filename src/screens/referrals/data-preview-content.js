@@ -1,7 +1,8 @@
+/* eslint-disable react/display-name */
 import React from 'react';
 // UI
 import Typography from 'components/typography';
-import Chart from "react-apexcharts";
+import Chart from 'react-apexcharts';
 
 export const dataPreviewContent = () => {
   const chart = {
@@ -18,7 +19,7 @@ export const dataPreviewContent = () => {
       },
       xaxis: {
         type: 'datetime',
-        categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+        categories: ['2018-09-19T00:00:00.000Z', '2018-09-19T01:30:00.000Z', '2018-09-19T02:30:00.000Z', '2018-09-19T03:30:00.000Z', '2018-09-19T04:30:00.000Z', '2018-09-19T05:30:00.000Z', '2018-09-19T06:30:00.000Z']
       },
       tooltip: {
         x: {
@@ -62,5 +63,5 @@ export const dataPreviewContent = () => {
         </div>
       ),
     },
-  ]
+  ];
 };
