@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Typography from 'components/typography';
 // Context
@@ -22,6 +23,13 @@ const NavLink = ({ children, className, isActive, accent, ...otherProps }) => {
       {children}
     </Typography>
   );
+};
+
+NavLink.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  isActive: PropTypes.bool,
+  accent: PropTypes.bool,
 };
 
 export default NavLink;
