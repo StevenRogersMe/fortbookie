@@ -1,6 +1,7 @@
 import React from 'react';
-import ReactAvatarEditor from 'react-avatar-editor';
+import PropTypes from 'prop-types';
 // UI
+import ReactAvatarEditor from 'react-avatar-editor';
 import Button from 'components/button';
 import Slider from 'components/slider';
 import Typography from 'components/typography';
@@ -28,7 +29,7 @@ const AvatarEditor = ({ image }) => {
 
   const handleZoomSlider = value => setZoom(value);
 
-  const handleSave = e => {
+  const handleSave = () => {
     const editor = editorRef.current;
     if (editor) {
       const canvasScaled = editor.getImageScaledToCanvas();
@@ -75,6 +76,10 @@ const AvatarEditor = ({ image }) => {
       }
     </div>
   );
+};
+
+AvatarEditor.propTypes = {
+  image: PropTypes.string,
 };
 
 export default AvatarEditor;
