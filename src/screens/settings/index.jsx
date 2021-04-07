@@ -87,7 +87,7 @@ const SettingsScreen = () => {
             <FormGroup label="Time Zone" errorMsg={touched.timeZone && errors.timeZone}>
               <Select
                 value={values.timeZone}
-                onChange={({ value }) => handleChange("timeZone")(value)}
+                onChange={({ value }) => handleChange('timeZone')(value)}
                 name="timeZone"
                 timezones
               />
