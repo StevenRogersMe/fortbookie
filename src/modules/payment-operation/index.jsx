@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useHistory, useRouteMatch } from 'react-router-dom';
 // UI
 import ContentBox from 'components/content-box';
 import Typography from 'components/typography';
 import CoinPreview from 'components/coin-preview';
 import FeeCalculator from 'modules/fee-calculator';
-import Button from 'components/button';
 // Styles
 import './styles.sass';
 // Assets
@@ -14,8 +12,7 @@ import { ReactComponent as LitecoinIcon } from 'assets/images/coins/litecoin-ful
 import { ReactComponent as BitcoinIcon } from 'assets/images/coins/bitcoin-full.svg';
 
 const PaymentOperation = ({ type }) => {
-  const history = useHistory();
-  const match = useRouteMatch();
+
   const [selectedCoin, setSelectedCoin] = React.useState(null);
 
   return (
@@ -35,7 +32,6 @@ const PaymentOperation = ({ type }) => {
         <div className="payment-operation__calc">
           <FeeCalculator type={type} />
         </div>
-        <Button variant="primary" size="xl" onClick={() => history.push(`${match.url}/details`)}>Process</Button>
       </ContentBox.Body>
     </ContentBox>
   );
