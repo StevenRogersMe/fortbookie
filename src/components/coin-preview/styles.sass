@@ -10,9 +10,13 @@
   cursor: pointer
   transition: 0.2s
   user-select: none
+  outline: none
   +media-max($bp-lg)
     padding-bottom: 100px
     padding-top: 100px
+  &:hover,
+  &:focus
+    background-color: rgba($c-gray-2, 0.4)
   &.is-active
     background-color: $c-gray-2
   &__icon
