@@ -11,7 +11,7 @@ function* fetchSessionCheckWorker() {
     } else {
       yield put(sessionCheckEnd());
       // Redirect to the home screen
-      if (window.location.pathname !== '/sign-in' || window.location.pathname !== '/sign-up') {
+      if (window.location.pathname !== '/sign-in' && window.location.pathname !== '/sign-up') {
         history.push('/');
       }
     }
