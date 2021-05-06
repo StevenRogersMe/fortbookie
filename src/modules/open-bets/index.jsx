@@ -33,11 +33,11 @@ const OpenBets = ({ fetchOpenBetsRequest, openBets: { loading, data, error } }) 
         {data && data.length > 0 &&
           <div className="open-bets__content">
             <div className="open-bets__header">
-              <Typography component="span" variant="p" className="text-gray-3">
+              <Typography component="span" variant="p" className="text-quaternary-dark">
                 <Typography component="span" className="text-bold">Date</Typography><br />
                 Time
               </Typography>
-              <Typography component="span" variant="p" className="text-gray-3 text-right">
+              <Typography component="span" variant="p" className="text-quaternary-dark text-right">
                 <Typography component="span" className="text-bold">Bet Amount</Typography><br />
                 Remaining Balance
               </Typography>

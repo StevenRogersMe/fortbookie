@@ -21,14 +21,14 @@ export const tableContent = () => {
           <Fragment>
             <div className="transactions-screen__line">
               <Typography component="span" variant="p-sm" className="text-bold">Placed - {placed}</Typography>
-              <Typography component="span" variant="p-sm" className="text-bold text-accent-2">${placedPrice}</Typography>
+              <Typography component="span" variant="p-sm" className="text-bold text-tertiary">${placedPrice}</Typography>
             </div>
             <div className="transactions-screen__line">
               <Typography component="span" variant="p-sm" className="text-bold">{game}</Typography>
               <Typography component="span" variant="p-sm" className="text-bold">{price}</Typography>
             </div>
             <div className="transactions-screen__line">
-              <Typography component="span" variant="p-sm" className="text-medium text-gray-3">{title}</Typography>
+              <Typography component="span" variant="p-sm" className="text-medium text-quaternary-dark">{title}</Typography>
             </div>
           </Fragment>
         );

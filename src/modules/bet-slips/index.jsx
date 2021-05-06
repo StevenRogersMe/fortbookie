@@ -42,7 +42,7 @@ const BetSlips = ({ betSlips, totalBetSlips, removeBetSlip, totalBetSlipsRisk, t
         </div>
         <div className="bet-slips__winnings">
           <Typography component="span" variant="h6" className="bet-slips__winnings-title">Possible winnings</Typography>
-          <Typography component="span" variant="h4" className="text-accent-2">{totalBetSlipsWinnings}$</Typography>
+          <Typography component="span" variant="h4" className="text-tertiary">{totalBetSlipsWinnings}$</Typography>
         </div>
       </div>
     </div>

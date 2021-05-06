@@ -19,31 +19,36 @@ $bp-sm: 575px;
 $bp-xs: 460px;
 
 // Colors
-$c-light : #ffffff;
-$c-dark  : #3c4146;
-$c-gray-1: #f3f4f7;
-$c-gray-2: #e7ecf2;
-$c-gray-3: #9099a6;
-$c-primary-1: #5e00d6;
-$c-primary-2: #44009a;
-$c-accent-1 : #ffc700;
-$c-accent-2 : #48d09f;
-$c-danger   : #e1233d;
+$c-light           : #ffffff;
+$c-dark            : #3c4146;
+$c-primary         : #5e00d6;
+$c-primary-light   : #923dff;
+$c-primary-dark    : #44009a;
+$c-secondary       : #ffc700;
+$c-secondary-dark  : #cc9f00;
+$c-secondary-light : #ffdd66;
+$c-tertiary        : #48d09f;
+$c-tertiary-light  : #c8f1e2;
+$c-quaternary      : #e7ecf2;
+$c-quaternary-light: #f3f4f7;
+$c-quaternary-dark : #9099a6;
+$c-danger          : #e1233d;
+$c-danger-light    : #f9d7db;
 
 // Themes
 $theme: (
-  base        : $c-gray-1,
-  theme       : $c-light,
-  text-primary: $c-dark,
-  text-alt    : $c-light,
-  text-gray   : $c-gray-3,
+  base         : $c-quaternary-light,
+  theme        : $c-light,
+  text-primary : $c-dark,
+  text-seconday: $c-quaternary-dark,
+  text-contrast: $c-light,
 );
 $theme-dark: (
-  base        : darken($c-dark, 8%),
-  theme       : $c-dark,
-  text-primary: $c-light,
-  text-alt    : $c-dark,
-  text-gray   : $c-light,
+  base         : #292d30,
+  theme        : $c-dark,
+  text-primary : $c-light,
+  text-seconday: $c-light,
+  text-contrast: $c-dark,
 );
 
 // UI colors

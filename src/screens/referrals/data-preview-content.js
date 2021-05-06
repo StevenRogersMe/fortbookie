@@ -37,7 +37,7 @@ export const dataPreviewContent = () => {
   return [
     {
       header: () => (
-        <Typography component="h5">Tier 1 <Typography component="span" className="text-gray-3 text-regular">4% Commission</Typography></Typography>
+        <Typography component="h5">Tier 1 <Typography component="span" className="text-quaternary-dark text-regular">4% Commission</Typography></Typography>
       ),
       body: () => (
         <div className="referrals-screen__info">
@@ -51,7 +51,7 @@ export const dataPreviewContent = () => {
     },
     {
       header: () => (
-        <Typography component="h5">$456.50 <Typography component="span" className="text-gray-3 text-regular">Wagered</Typography></Typography>
+        <Typography component="h5">$456.50 <Typography component="span" className="text-quaternary-dark text-regular">Wagered</Typography></Typography>
       ),
       body: () => (
         <div className="referrals-screen__info">

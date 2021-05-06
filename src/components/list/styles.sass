@@ -5,11 +5,11 @@
   border: 1px solid getColor('base')
   border-radius: $r-primary
   &--alt
-    border-color: rgba($c-primary-1, 0.3)
+    border-color: rgba($c-primary, 0.3)
     .list__header
-      background-color: rgba($c-primary-1, 0.3)
+      background-color: rgba($c-primary, 0.3)
     .list__item
-      border-color: rgba($c-primary-1, 0.3)
+      border-color: rgba($c-primary, 0.3)
   &--blocked
     .list__items:after
       position: absolute
@@ -18,7 +18,7 @@
       left: 0
       right: 0
       bottom: 0
-      background: rgba($c-primary-1, 0.5)
+      background: rgba($c-primary, 0.5)
       backdrop-filter: blur(5px)
 
   &__header
@@ -48,11 +48,11 @@
     &:hover,
     &:focus
       outline: none
-      background: rgba($c-primary-1, 0.1)
+      background: rgba($c-primary, 0.1)
       +media-max($bp-lg)
         background: none
     &.is-active
-      background: rgba($c-primary-1, 0.2)
+      background: rgba($c-primary, 0.2)
     &:nth-child(even)
       border-right: 0
     &-game

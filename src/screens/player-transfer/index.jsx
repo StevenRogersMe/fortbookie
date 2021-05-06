@@ -62,7 +62,7 @@ const ProfileTransferScreen = () => {
                 placeholder="$"
               />
               <div className="player-transfer-screen__info">
-                <Typography component="p" className="text-bold text-accent-2">$180.00 Available to Transfer</Typography>
+                <Typography component="p" className="text-bold text-tertiary">$180.00 Available to Transfer</Typography>
                 <Typography component="p">Your balance remaining after player transfer must be $10 or grater</Typography>
               </div>
             </FormGroup>

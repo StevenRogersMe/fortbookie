@@ -1,13 +1,6 @@
 @import "~styles/abstract/variables"
 @import "~styles/abstract/mixins"
 
-@mixin b-variant($color)
-  background: $color
-  box-shadow: 0px 5px 0px darken($color, 10%)
-  &:hover,
-  &:focus
-    background: lighten($color, 25%)
-
 .button
   position: relative
   display: inline-flex
@@ -25,10 +18,18 @@
 
   // Variants
   &--primary
-    +b-variant($c-primary-1)
+    background: $c-primary
+    box-shadow: 0px 5px 0px $c-primary-dark
+    &:hover,
+    &:focus
+      background: $c-primary-light
   &--accent
-    +b-variant($c-accent-1)
+    background: $c-secondary
+    box-shadow: 0px 5px 0px $c-secondary-dark
     color: $c-dark
+    &:hover,
+    &:focus
+      background: $c-secondary-light
 
   // Sizes
   &--xl

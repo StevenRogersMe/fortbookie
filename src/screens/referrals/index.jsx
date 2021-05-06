@@ -51,9 +51,9 @@ const ReferralsScreen = () => {
               </Box>
             </div>
             <div className="referrals-screen__control-text">
-              <Typography component="h6">Share the link above or have friends use the promo code <Typography component="span" className="text-accent-1">“fortbettor”</Typography>.<br />
+              <Typography component="h6">Share the link above or have friends use the promo code <Typography component="span" className="text-secondary">“fortbettor”</Typography>.<br />
               </Typography>
-              <Typography component="p" className="text-gray-3">
+              <Typography component="p" className="text-quaternary-dark">
                 They will be rewarded with <Typography component="span" className="text-primary text-bold">rewards level 2</Typography> - and you will be rewarded with commission on all wagers, for life.
               </Typography>
             </div>
@@ -61,7 +61,7 @@ const ReferralsScreen = () => {
           <div className="referrals-screen__graphics">
             <DataPreview content={dataPreviewContent()} />
           </div>
-          <Typography component="h6">Earn Tier 2 (5%) at <Typography component="span" className="text-regular text-gray-3">- 10 Referrals + $500 wagered</Typography>
+          <Typography component="h6">Earn Tier 2 (5%) at <Typography component="span" className="text-regular text-quaternary-dark">- 10 Referrals + $500 wagered</Typography>
           </Typography>
         </ContentBox.Body>
       </ContentBox>

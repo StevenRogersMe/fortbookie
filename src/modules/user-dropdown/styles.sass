@@ -6,7 +6,7 @@
   // Header
   &__header
     padding-left: 10px
-    border-left: 1px solid $c-gray-3
+    border-left: 1px solid $c-quaternary-dark
     display: flex
     align-items: center
     +media-max($bp-xl)
@@ -31,14 +31,14 @@
       margin-bottom: 20px
   &__name,
   &__pending
-    color: getColor("text-gray")
+    color: getColor("text-seconday")
   &__balance
     color: getColor("text-primary")
     margin-right: 10px
   &__icon
     transition: 0.2s
     path
-      fill: getColor("text-gray")
+      fill: getColor("text-seconday")
     +media-max($bp-sm)
       display: none
     &.is-active
@@ -71,4 +71,4 @@
     &:last-child
       margin-top: 15px
       padding-top: 15px
-      border-top: 1px solid $c-gray-2
+      border-top: 1px solid $c-quaternary

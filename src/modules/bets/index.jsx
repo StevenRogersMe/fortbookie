@@ -32,7 +32,7 @@ const Bets = ({ removeAllBetSlips }) => {
         </div>
         <div className="bets__balance">
           <Typography component="span" variant="h6" className="bets__balance-current">Balance: 100$</Typography>
-          <Typography component="span" variant="p" className="text-medium text-gray-3 bets__balance-pending">Pending : $10.00</Typography>
+          <Typography component="span" variant="p" className="text-medium text-quaternary-dark bets__balance-pending">Pending : $10.00</Typography>
         </div>
         <div className="bets__content">
           {selectedTab === 'betSlips' ?

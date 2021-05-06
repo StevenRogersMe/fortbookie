@@ -15,7 +15,7 @@
   +media-max($bp-sm)
     padding: 20px 15px
   &:focus-visible
-    background-color: rgba($c-gray-3, 0.1)
+    background-color: $c-quaternary-light
   &__title
     width: 35%
     +media-max($bp-md)
@@ -55,18 +55,18 @@
       display: flex
       justify-content: center
       align-items: center
-      border: 2px solid $c-gray-2
+      border: 2px solid $c-quaternary
     &-line
       position: relative
       width: 16px
       height: 2px
       border-radius: 5px
       display: block
-      background-color: $c-gray-2
+      background-color: $c-quaternary
       &:after
         position: absolute
         content: ''
-        background-color: $c-gray-2
+        background-color: $c-quaternary
         transform: rotate(90deg)
         display: block
         width: 16px
