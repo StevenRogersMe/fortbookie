@@ -34,6 +34,8 @@
     &:checked ~ .checkbox__checkmark
       background-color: $c-primary-1
       border-color: $c-primary-1
+    &:checked ~ .checkbox__checkmark .checkbox__checkmark-icon
+      opacity: 1
   &__checkmark
     position: absolute
     top: 0
@@ -47,6 +49,9 @@
     align-items: center
     border-radius: $r-primary
     transition: 0.2s
+    &-icon
+      transition: 0.2s
+      opacity: 0
   &__error-msg
     position: absolute
     left: 30px
